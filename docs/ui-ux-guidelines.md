@@ -102,5 +102,5 @@ Shape: 10px rounded rectangle, 48px minimum height (42px in the header), weight-
 | About | Morning Mist | White skills card |
 | Free lead check + footer | Deep Canopy (dark anchor) | Raised form panel, sky eyebrow, lime CTA |
 
-- **Fonts:** Option A is the default until a final pick. Switching means changing the font `<link>` and the `--font-*` tokens in `:root`.
+- **Fonts:** Option D (chosen). Archivo 700 headings (−0.02em), Archivo 400 body and 600 buttons, Space Mono 400 (+0.02em) for numbers and labels. To switch, change the font `<link>` and the `--font-*` / `--head-*` / `--mono-*` tokens in `:root`.
 - **Dark mode:** follows the system setting, using its own token set. Every pair is re-verified to pass.
