@@ -329,34 +329,43 @@
     .glance dt { color: var(--anchor-sky); }
     .glance dd { font-size: 1rem; font-weight: 600; line-height: 1.45; color: var(--on-anchor); }
 
-    .chapter { display: grid; grid-template-columns: 11rem minmax(0, 1fr); gap: var(--s4); padding-block: var(--s4); border-top: 1px solid var(--line); }
-    .chapter:last-child { border-bottom: 1px solid var(--line); }
-    .chapter > .label { margin: 0.35rem 0 0; }
-    .chapter h4 { font-size: 1.25rem; font-weight: 700; line-height: 1.35; letter-spacing: -0.01em; color: var(--ink); margin-bottom: var(--s3); max-width: 46rem; }
-    .chapter p:not(.label), .chapter li { font-size: 1rem; line-height: 1.6; color: var(--ink-soft); }
-    .chapter .body > * + * { margin-top: var(--s3); }
-    .chapter strong { color: var(--ink); font-weight: 600; }
-
-    .duo, .trio { display: grid; gap: var(--s2); }
-    .duo { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    .trio { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .duo { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s2); }
     .box { background: var(--surface-1); border: 1px solid var(--line); border-radius: 10px; padding: var(--s3); }
     .box .label { margin-bottom: 0.375rem; }
-    .box h5 { font-size: 1rem; font-weight: 700; line-height: 1.35; color: var(--ink); margin-bottom: 0.375rem; }
-    .box p:not(.label) { font-size: 0.9375rem; line-height: 1.55; }
-    .box .why { margin-top: 0.75rem; padding-top: 0.75rem; border-top: 1px solid var(--line); font-size: 0.875rem; }
-    .box .why b { font: var(--mono-weight) 0.75rem/1 var(--font-mono); letter-spacing: var(--mono-track); text-transform: uppercase; color: var(--brand); margin-right: 0.35rem; }
+    .box h5 { font-size: 1rem; font-weight: 700; line-height: 1.35; color: var(--ink); margin-bottom: 0.25rem; }
+    .box p:not(.label) { font-size: 0.9375rem; line-height: 1.55; color: var(--ink-soft); }
     .box.observed { border: 1.5px dashed var(--field); }
     .box.expected { border-left: 3px solid var(--brand); background: var(--brand-tint); }
-    .box.design { background: var(--sky-tint); border-top: 3px solid var(--sky); }
-    .trio .box { border-top: 3px solid var(--sky); }
-    .chapter > .label { color: var(--brand); }
-    .chapter > .label::before { content: ""; display: block; width: 1.5rem; height: 3px; border-radius: 2px; background: var(--sky); margin-bottom: 0.6rem; }
 
-    .callout { display: grid; grid-template-columns: 10rem minmax(0, 1fr); gap: var(--s2); align-items: baseline; background: var(--brand-tint); border-left: 3px solid var(--brand); border-radius: 0 10px 10px 0; padding: 1rem var(--s3); }
-    .callout .label { margin: 0; }
-    .callout p { color: var(--ink); font-weight: 600; }
-    .callout.open { border: 1.5px dashed var(--field); border-radius: 10px; background: var(--surface-1); }
+    .case-body { display: grid; gap: var(--s4); }
+    .case-body > .label { margin-bottom: calc(var(--s4) * -1 + 0.6rem); }
+    .keynums { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--s2); }
+    .keynum { background: var(--surface-1); border: 1px solid var(--line); border-top: 3px solid var(--sky); border-radius: 10px; padding: var(--s3); }
+    .keynum .kind { display: inline-block; font: var(--mono-weight) 0.6875rem/1.3 var(--font-mono); letter-spacing: var(--mono-track); text-transform: uppercase; color: var(--ink-soft); margin-bottom: 0.5rem; }
+    .keynum .val { display: block; font: var(--mono-weight) clamp(1.5rem, 3vw, 2rem)/1.1 var(--font-mono); letter-spacing: -0.01em; color: var(--brand); margin-bottom: 0.5rem; }
+    .keynum p { font-size: 0.9375rem; line-height: 1.45; color: var(--ink); }
+    .keynum .est { display: inline; margin-left: 0.25rem; }
+    .case-foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--s2); padding-top: var(--s3); border-top: 1px solid var(--line); }
+    .case-foot p { font-size: 0.875rem; color: var(--ink-soft); }
+    .est { font-size: 0.75rem; font-style: italic; font-weight: 400; color: var(--ink-soft); }
+
+    .slides-btn { gap: 0.6rem; }
+    .slides-btn svg { width: 18px; height: 18px; flex: none; }
+
+    .lightbox { margin: auto; width: min(1100px, 100vw - 2rem); max-width: none; max-height: calc(100dvh - 2rem); padding: 0; border: 0; border-radius: var(--radius); background: var(--surface-0); color: var(--ink); box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35); overflow: hidden; }
+    .lightbox::backdrop { background: rgba(10, 18, 10, 0.82); }
+    .lb-top { display: flex; align-items: center; justify-content: space-between; gap: var(--s2); padding: 0.75rem 0.75rem 0.75rem 1.25rem; border-bottom: 1px solid var(--line); }
+    .lb-title { font-size: 0.9375rem; font-weight: 600; line-height: 1.3; }
+    .lb-count { font: var(--mono-weight) 0.8125rem/1 var(--font-mono); color: var(--ink-soft); margin-left: 0.5rem; }
+    .lb-stage { position: relative; background: var(--surface-1); touch-action: pan-y; }
+    .lb-stage img { display: block; width: 100%; height: auto; max-height: calc(100dvh - 9.5rem); object-fit: contain; }
+    .lb-nav { display: flex; align-items: center; justify-content: center; gap: var(--s2); padding: 0.75rem; border-top: 1px solid var(--line); }
+    .lb-btn { display: inline-grid; place-items: center; width: 44px; height: 44px; border: 1px solid var(--line); border-radius: 10px; background: var(--surface-0); color: var(--ink); font-size: 1.25rem; line-height: 1; cursor: pointer; }
+    .lb-btn:hover { background: var(--brand-tint); color: var(--brand); }
+    .lb-btn:disabled { opacity: 0.35; cursor: default; background: var(--surface-0); color: var(--ink); }
+    .lb-dots { display: flex; gap: 0.4rem; }
+    .lb-dots span { width: 8px; height: 8px; border-radius: 50%; background: var(--line); }
+    .lb-dots span.on { background: var(--brand); }
 
     .hflow { list-style: none; display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem; }
     .hflow li { display: flex; align-items: center; gap: 0.5rem; }
@@ -365,18 +374,8 @@
     .hflow li:last-child span { background: var(--brand-tint); border-color: var(--brand); color: var(--brand); }
     .note { font-size: 0.8125rem !important; color: var(--ink-soft); }
 
-    .ktable { width: 100%; border-collapse: collapse; font-size: 0.9375rem; }
-    .ktable th { text-align: left; font: var(--mono-weight) 0.75rem/1.3 var(--font-mono); letter-spacing: calc(var(--mono-track) + 0.04em); text-transform: uppercase; color: var(--ink-soft); padding: 0 var(--s2) 0.75rem 0; border-bottom: 1px solid var(--line); }
-    .ktable td { padding: 0.875rem var(--s2) 0.875rem 0; border-bottom: 1px solid var(--line); vertical-align: top; line-height: 1.45; color: var(--ink-soft); }
-    .ktable td:first-child { color: var(--ink); font-weight: 600; }
-    .ktable .grp td { background: var(--brand-tint); padding: 0.5rem 0.75rem; border-bottom: 0; font: var(--mono-weight) 0.75rem/1.3 var(--font-mono); letter-spacing: calc(var(--mono-track) + 0.04em); text-transform: uppercase; color: var(--brand); }
-    .ktable .tgt { color: var(--brand); font-weight: 600; }
     .est { display: block; font-size: 0.75rem; font-style: italic; font-weight: 400; color: var(--ink-soft); }
-    .ktable.two td:last-child { color: var(--ink); font-weight: 600; }
 
-    .worklist { list-style: none; counter-reset: w; display: grid; gap: 0.6rem; }
-    .worklist li { counter-increment: w; display: grid; grid-template-columns: 2.25rem minmax(0, 1fr); color: var(--ink); font-weight: 600; }
-    .worklist li::before { content: "0" counter(w); font: var(--mono-weight) 0.875rem/1.6 var(--font-mono); color: var(--brand); }
 
     .case-panel.builds { max-width: none; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s4); align-items: stretch; }
     .case-panel.builds .case-head { grid-column: 1 / -1; margin-bottom: var(--s2); }
@@ -408,7 +407,7 @@
     .anchor p { color: var(--on-anchor-soft); }
 
     .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s6); align-items: start; }
-    .hero-grid > *, .about-grid > *, .contact-grid > *, .case-panel > *, .chapter > * { min-width: 0; }
+    .hero-grid > *, .about-grid > *, .contact-grid > *, .case-panel > *, .case-body > * { min-width: 0; }
     .contact-grid h2 { margin-bottom: var(--s2); }
 
     form { display: grid; gap: var(--s3); background: var(--anchor-raised); border: 1px solid var(--anchor-line); border-radius: var(--radius); padding: clamp(var(--s3), 4vw, var(--s4)); }
@@ -434,8 +433,6 @@
 
     @media (max-width: 900px) {
       .hero-grid, .about-grid, .contact-grid, .case-panel.builds { grid-template-columns: 1fr; gap: var(--s4); }
-      .chapter { grid-template-columns: 1fr; gap: var(--s2); }
-      .trio { grid-template-columns: 1fr; }
       .cards { grid-template-columns: 1fr; }
       .nav ul li:not(:last-child) { display: none; }
       .phone { justify-self: start; }
@@ -446,16 +443,11 @@
       .build-card { padding: var(--s3); }
       .duo, .glance { grid-template-columns: 1fr; }
       .glance > div + div { border-left: 0; border-top: 1px solid var(--anchor-line); }
-      .callout { grid-template-columns: 1fr; gap: 0.375rem; }
       .hflow { flex-direction: column; align-items: stretch; }
       .hflow li { flex-direction: column; align-items: stretch; }
       .hflow li:not(:last-child)::after { content: "\2193"; text-align: center; }
-      .ktable thead { display: none; }
-      .ktable, .ktable tbody, .ktable tr, .ktable td { display: block; width: 100%; }
-      .ktable tr:not(.grp) { padding-block: 0.75rem; border-bottom: 1px solid var(--line); }
-      .ktable td { border: 0; padding: 0.15rem 0; }
-      .ktable td[data-k]::before { content: attr(data-k) ": "; font-weight: 600; color: var(--ink); }
-      .ktable .grp td { border-bottom: 1px solid var(--line); padding-bottom: 0.5rem; }
+      .keynums { grid-template-columns: 1fr; }
+      .case-foot .btn { width: 100%; }
       .tablist { width: 100%; }
       .tab { flex: 1 1 0; min-width: 0; padding: 0.55rem 0.5rem; font-size: 0.875rem; line-height: 1.25; white-space: normal; text-align: center; }
       .actions .btn { width: 100%; }
@@ -659,59 +651,19 @@
               <div><dt>Fix</dt><dd>One GHL collections process that routes every unpaid balance to follow-up until it&rsquo;s verified paid.</dd></div>
               <div><dt>Status</dt><dd>Design documented. 3-week build underway; results reviewed at 30 days.</dd></div>
             </dl>
-            <section class="chapter">
-              <p class="label">01 / Problem</p>
-              <div class="body">
-                <h4>Two billing paths. No consistent view of unpaid balances.</h4>
-                <div class="duo">
-                  <div class="box"><p class="label">Stripe</p><p>Failed recurring charges did not consistently trigger owner follow-up.</p></div>
-                  <div class="box"><p class="label">Off-Stripe</p><p>External payments had no automatic status update in GoHighLevel.</p></div>
-                </div>
-                <div class="callout"><p class="label">Operating gap</p><p>The owner reconciled payments manually; failed or overdue items lacked timely alerts.</p></div>
+            <div class="case-body">
+              <div class="keynums">
+                <div class="keynum"><span class="kind">Target</span><span class="val">&minus;50%</span><p>Card balance overdue 14+ days: $2,700 &rarr; $1,350 by Mar 31 <span class="est">(estimate)</span></p></div>
+                <div class="keynum"><span class="kind">Baseline</span><span class="val">73%</span><p>Card failures recovered within 14 days (19 of 26)</p></div>
+                <div class="keynum"><span class="kind">Target</span><span class="val">100%</span><p>Failed charges routed to Collections, checked weekly</p></div>
               </div>
-            </section>
-            <section class="chapter">
-              <p class="label">02 / The design</p>
-              <div class="body">
-                <h4>Confirm the billing source. Let verified payment status control <span class="nowrap">follow-up.</span></h4>
-                <div class="duo">
-                  <div class="box design"><p class="label">A / Card subscriptions</p><p>Verify failed-charge events and retry rules. Route unresolved balances to owner alerts and rider follow-up.</p></div>
-                  <div class="box design"><p class="label">B / Off-Stripe payments</p><p>Owner verifies receipt and records the payment in GHL. Only then does the item close.</p></div>
-                </div>
-                <ol class="hflow" aria-label="Proposed collections board"><li><span>Due</span></li><li><span>Overdue</span></li><li><span>Follow-up</span></li><li><span>Paid</span></li></ol>
-                <p class="note"><strong>Workflows + dashboard:</strong> failure alerts, timed reminders, paid-state suppression, overdue aging and recovery views. <strong>SMS:</strong> A2P 10DLC approval, linked number and consent verified first.</p>
+              <p class="label">Proposed collections board</p>
+              <ol class="hflow" aria-label="Proposed collections board"><li><span>Due</span></li><li><span>Overdue</span></li><li><span>Follow-up</span></li><li><span>Paid</span></li></ol>
+              <div class="case-foot">
+                <p>Problem, design, KPI scorecard and rollout plan.</p>
+                <button class="btn btn-secondary slides-btn" type="button" data-deck="collections" data-title="Collections System"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg>View the full case study &middot; 4 slides</button>
               </div>
-            </section>
-            <section class="chapter">
-              <p class="label">03 / Success measures</p>
-              <div class="body">
-                <h4>Four KPIs. Baselines and targets, no assumed results.</h4>
-                <table class="ktable">
-                  <thead><tr><th>Measure</th><th>Baseline</th><th>Target</th><th>Check</th></tr></thead>
-                  <tbody>
-                    <tr class="grp"><td colspan="4">Card subscriptions</td></tr>
-                    <tr><td>Failed charges routed to Collections</td><td data-k="Baseline">Not yet tracked</td><td data-k="Target" class="tgt">100%</td><td data-k="Check">Weekly from Dec 1</td></tr>
-                    <tr><td>Card balance overdue &gt;14 days</td><td data-k="Baseline">$2,700</td><td data-k="Target" class="tgt">&le; $1,350 by Mar 31<span class="est">estimate</span></td><td data-k="Check">Monthly</td></tr>
-                    <tr><td>Card failures recovered within 14 days</td><td data-k="Baseline">73% (19 of 26)</td><td data-k="Target" class="tgt">73% or higher</td><td data-k="Check">Mar 1, 90-day review</td></tr>
-                    <tr class="grp"><td colspan="4">Pay-as-you-go</td></tr>
-                    <tr><td>Lessons marked paid within 7 days</td><td data-k="Baseline">December sets baseline</td><td data-k="Target" class="tgt">Set Jan 1<span class="est">estimate</span></td><td data-k="Check">Dec 31</td></tr>
-                  </tbody>
-                </table>
-                <p class="note"><strong>QA plan:</strong> verify event coverage, duplicate prevention, paid-state stop and approved messaging.</p>
-              </div>
-            </section>
-            <section class="chapter">
-              <p class="label">04 / Status</p>
-              <div class="body">
-                <h4>Build in progress. Impact not yet measured.</h4>
-                <div class="trio">
-                  <div class="box"><p class="label">Week 01</p><h5>Plan</h5><p>Map payment sources, overdue balances and owner-approved messaging.</p></div>
-                  <div class="box"><p class="label">Week 02</p><h5>Build</h5><p>Configure payment events, collection records, alerts and reporting.</p></div>
-                  <div class="box"><p class="label">Week 03</p><h5>Verify + launch</h5><p>Test failed, recovered and manual payments; sign-off and handover.</p></div>
-                </div>
-                <div class="callout"><p class="label">30-day review</p><p>Failed-charge capture, 14-day recoveries and overdue balances.</p></div>
-              </div>
-            </section>
+            </div>
           </div>
 
           <div class="case-panel" role="tabpanel" id="panel-aud" aria-labelledby="tab-aud" tabindex="0" hidden>
@@ -724,59 +676,18 @@
               <div><dt>Fix</dt><dd>Audited triggers, waits and purchase checks; applied scoped logic corrections.</dd></div>
               <div><dt>Status</dt><dd>Corrections applied and retested. Impact not yet quantified.</dd></div>
             </dl>
-            <section class="chapter">
-              <p class="label">01 / Problem</p>
-              <div class="body">
-                <h4>Promotional emails continued after customers purchased.</h4>
-                <div class="duo">
-                  <div class="box expected"><p class="label">Expected</p><h5>Purchase completed</h5><p>First-purchase nurture stops.</p></div>
-                  <div class="box observed"><p class="label">Observed</p><h5>Purchase completed</h5><p>Another nurture email sent.</p></div>
-                </div>
-                <p><strong>Business risk:</strong> irrelevant follow-ups, poor audience segmentation and customer friction.</p>
+            <div class="case-body">
+              <div class="duo">
+                <div class="box expected"><p class="label">Expected</p><h5>Purchase completed</h5><p>First-purchase nurture stops.</p></div>
+                <div class="box observed"><p class="label">Observed</p><h5>Purchase completed</h5><p>Another nurture email sent.</p></div>
               </div>
-            </section>
-            <section class="chapter">
-              <p class="label">02 / What we did</p>
-              <div class="body">
-                <h4>Audit the send path. Correct the decision logic.</h4>
-                <div class="trio">
-                  <div class="box"><p class="label">01</p><h5>Review entry and logic</h5><p>Triggers, Wait steps and If/Else purchase conditions.</p><p class="why"><b>Why</b>Define valid nurture eligibility.</p></div>
-                  <div class="box"><p class="label">02</p><h5>Trace contact execution</h5><p>Execution histories, purchase checks and Goal Events.</p><p class="why"><b>Why</b>Locate the extra-send decision point.</p></div>
-                  <div class="box"><p class="label">03</p><h5>Refine and retest</h5><p>Scoped logic changes, then retested the affected workflow.</p><p class="why"><b>Why</b>Limit changes to affected logic.</p></div>
-                </div>
-                <ol class="hflow" aria-label="Audit checkpoints"><li><span>Entry trigger</span></li><li><span>Wait / If-Else</span></li><li><span>Purchase check</span></li><li><span>Email send</span></li></ol>
-                <p class="note">Illustrative audit path, not a client workflow screenshot.</p>
+              <p class="label">Audit checkpoints</p>
+              <ol class="hflow" aria-label="Audit checkpoints"><li><span>Entry trigger</span></li><li><span>Wait / If-Else</span></li><li><span>Purchase check</span></li><li><span>Email send</span></li></ol>
+              <div class="case-foot">
+                <p>Problem, audit steps, QA scenarios and result.</p>
+                <button class="btn btn-secondary slides-btn" type="button" data-deck="audit" data-title="Workflow Audit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg>View the full case study &middot; 4 slides</button>
               </div>
-            </section>
-            <section class="chapter">
-              <p class="label">03 / Success measures</p>
-              <div class="body">
-                <div class="callout"><p class="label">Acceptance target</p><p>Zero first-purchase nurture emails after a verified purchase.</p></div>
-                <table class="ktable two">
-                  <thead><tr><th>QA scenario</th><th>Expected behavior</th></tr></thead>
-                  <tbody>
-                    <tr><td>Contact has not purchased</td><td data-k="Expected">Eligible first-purchase emails continue</td></tr>
-                    <tr><td>Purchase occurs during a Wait</td><td data-k="Expected">No later first-purchase emails send</td></tr>
-                    <tr><td>Contact purchased before entry</td><td data-k="Expected">First-purchase nurture is excluded</td></tr>
-                    <tr><td>Previous buyer qualifies again</td><td data-k="Expected">Purchase eligibility is rechecked</td></tr>
-                  </tbody>
-                </table>
-                <p class="note"><strong>Evidence to check:</strong> purchase event · enrollment and execution logs · email send timestamps · branch and exit decisions.</p>
-              </div>
-            </section>
-            <section class="chapter">
-              <p class="label">04 / Result</p>
-              <div class="body">
-                <h4>Workflow audited. Corrections applied and retested.</h4>
-                <ol class="worklist">
-                  <li>Audited triggers, Waits and If/Else logic</li>
-                  <li>Reviewed purchase checks and Goal Events</li>
-                  <li>Traced contact-level execution histories</li>
-                  <li>Applied targeted changes; retested the workflow</li>
-                </ol>
-                <div class="callout open"><p class="label">Impact</p><p>Not yet quantified. Before-and-after send data were not supplied, so no reduction is claimed.</p></div>
-              </div>
-            </section>
+            </div>
           </div>
 
           <div class="case-panel builds" role="tabpanel" id="panel-web" aria-labelledby="tab-web" tabindex="0" hidden>
@@ -790,7 +701,7 @@
               <p class="label">Problem</p>
               <p>Social links sent high-intent riders to a generic homepage, and a retired booking link added friction.</p>
               <p class="label">Built</p>
-              <p>Section-by-section copy repositioning, an evaluation form that sends a booking link right away, two-way SMS to the owner&rsquo;s GHL app and automatic review requests.</p>
+              <p>An evaluation form that sends a booking link instantly, plus two-way SMS and review requests.</p>
               <dl class="stats"><div class="stat"><dt>Evaluation &rarr; booking flow</dt><dd>2-step</dd></div><div class="stat"><dt>Two-way texting in the GHL app</dt><dd>SMS</dd></div><div class="stat"><dt>Review requests after each lesson</dt><dd>Auto</dd></div></dl>
             </article>
             <article class="build-card">
@@ -799,7 +710,7 @@
               <p class="label">Problem</p>
               <p>An outdated brochure site with slow mobile pages, and quote requests landing in an inbox nobody watched.</p>
               <p class="label">Built</p>
-              <p>A 5-page GoHighLevel site with a quote form that validates project type, location and timeline, alerts the owner and creates a pipeline opportunity.</p>
+              <p>A 5-page GHL site whose quote form alerts the owner and creates a pipeline opportunity.</p>
               <dl class="stats"><div class="stat"><dt>Conversion site</dt><dd>5-page</dd></div><div class="stat"><dt>Scope validation</dt><dd>3-field</dd></div><div class="stat"><dt>Owner SMS + email alert</dt><dd>Instant</dd></div></dl>
             </article>
           </div>
@@ -860,6 +771,18 @@
         </form>
       </div>
     </section>
+    <dialog class="lightbox" id="lightbox" aria-labelledby="lb-title">
+      <div class="lb-top">
+        <p class="lb-title" id="lb-title"><span id="lb-name">Case study</span><span class="lb-count" id="lb-count"></span></p>
+        <button class="lb-btn" type="button" id="lb-close" aria-label="Close slides">&times;</button>
+      </div>
+      <div class="lb-stage" id="lb-stage"><img id="lb-img" src="" alt="" width="1600" height="1200"></div>
+      <div class="lb-nav">
+        <button class="lb-btn" type="button" id="lb-prev" aria-label="Previous slide">&larr;</button>
+        <div class="lb-dots" id="lb-dots" aria-hidden="true"></div>
+        <button class="lb-btn" type="button" id="lb-next" aria-label="Next slide">&rarr;</button>
+      </div>
+    </dialog>
   </main>
 
   <footer class="anchor">
@@ -908,6 +831,50 @@
       status.textContent = 'Thanks! Your request is copied. Paste it into an email or Upwork message to me and I\'ll reply within one business day.';
       form.reset();
     });
+
+    const decks = {"collections": ["Slide 1, Problem: payment failures went without clear follow-up. Stripe failed recurring charges did not trigger owner follow-up; off-Stripe payments had no automatic status update in GoHighLevel; the owner reconciled payments manually.", "Slide 2, What we designed: two paths, one collections process. Card subscriptions route unresolved balances to owner alerts; off-Stripe payments close only after the owner records them. Proposed board: Due, Overdue, Follow-up, Paid.", "Slide 3, How success will be measured: four KPIs with baselines and targets, including card balance overdue 14+ days from $2,700 to at most $1,350 by Mar 31 (estimate) and 73% of card failures recovered within 14 days.", "Slide 4, Result: build in progress, impact not yet measured. Week 1 plan, week 2 build, week 3 verify and launch, then a 30-day review."], "audit": ["Slide 1, Problem: promotional emails continued after customers purchased. Expected: purchase completed, nurture stops. Observed: another nurture email sent.", "Slide 2, What we did: audit the send path and correct the decision logic. Review entry and logic, trace contact execution, refine and retest.", "Slide 3, How to measure: acceptance target of zero first-purchase nurture emails after a verified purchase, with four QA scenarios.", "Slide 4, Result: workflow audited, corrections applied and retested. Impact not quantified because before-and-after send data were not supplied."]};
+    const lb = document.getElementById('lightbox');
+    if (lb && lb.showModal) {
+      const img = document.getElementById('lb-img'), count = document.getElementById('lb-count'), dots = document.getElementById('lb-dots');
+      const prev = document.getElementById('lb-prev'), next = document.getElementById('lb-next');
+      let deck = null, idx = 0, opener = null, startX = 0;
+      const show = (i) => {
+        idx = Math.max(0, Math.min(deck.length - 1, i));
+        img.src = `assets/cases/${deck.name}-${idx + 1}.webp`;
+        img.alt = deck.alts[idx];
+        count.textContent = `${idx + 1} / ${deck.length}`;
+        prev.disabled = idx === 0;
+        next.disabled = idx === deck.length - 1;
+        [...dots.children].forEach((d, k) => d.classList.toggle('on', k === idx));
+      };
+      document.querySelectorAll('.slides-btn').forEach((btn) => btn.addEventListener('click', () => {
+        const alts = decks[btn.dataset.deck];
+        deck = { name: btn.dataset.deck, alts, length: alts.length };
+        opener = btn;
+        document.getElementById('lb-name').textContent = btn.dataset.title;
+        dots.innerHTML = alts.map(() => '<span></span>').join('');
+        show(0);
+        lb.showModal();
+        next.focus();
+      }));
+      prev.addEventListener('click', () => show(idx - 1));
+      next.addEventListener('click', () => show(idx + 1));
+      document.getElementById('lb-close').addEventListener('click', () => lb.close());
+      lb.addEventListener('click', (e) => { if (e.target === lb) lb.close(); });
+      lb.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowRight') { e.preventDefault(); show(idx + 1); }
+        if (e.key === 'ArrowLeft') { e.preventDefault(); show(idx - 1); }
+      });
+      const stage = document.getElementById('lb-stage');
+      stage.addEventListener('touchstart', (e) => { startX = e.touches[0].clientX; }, { passive: true });
+      stage.addEventListener('touchend', (e) => {
+        const dx = e.changedTouches[0].clientX - startX;
+        if (Math.abs(dx) > 40) show(idx + (dx < 0 ? 1 : -1));
+      });
+      lb.addEventListener('close', () => { if (opener) opener.focus(); });
+    } else {
+      document.querySelectorAll('.slides-btn').forEach((b) => { b.hidden = true; });
+    }
   </script>
 </body>
 </html>
