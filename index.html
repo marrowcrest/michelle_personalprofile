@@ -434,15 +434,21 @@
 
     .about-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: var(--s6); align-items: start; }
     .about-grid h2 { margin-bottom: var(--s3); }
+    .principles { background: var(--surface-0); border: 1px solid var(--line); border-top: 3px solid var(--brand); border-radius: var(--radius); padding: var(--s4); }
+    .principles h3 { font-size: 1.15rem; margin-bottom: var(--s3); }
+    .principles ol { list-style: none; display: grid; gap: var(--s3); }
+    .principles li { display: grid; grid-template-columns: 2.5rem minmax(0, 1fr); gap: var(--s2); align-items: start; }
+    .principles li + li { padding-top: var(--s3); border-top: 1px solid var(--line); }
+    .pr-num { display: grid; place-items: center; width: 2.5rem; height: 2.1rem; border-radius: 8px; background: var(--brand-tint); font: 800 0.9375rem/1 var(--font-num); color: var(--brand); }
+    .principles h4 { font-size: 1rem; font-weight: 700; line-height: 1.35; color: var(--ink); margin-bottom: 0.2rem; }
+    .principles p { font-size: 0.9375rem; line-height: 1.55; color: var(--ink-soft); }
+    #about .micro-cta { margin-top: var(--s5); }
+    .or-book { white-space: nowrap; }
+    .or-book a { color: var(--brand); }
+    .sec-0 .faq-item { background: var(--surface-1); }
     .prose p { color: var(--ink-soft); }
     .prose p + p { margin-top: var(--s3); }
 
-    .sec-0 .skills { background: var(--surface-1); }
-    .skills { background: var(--surface-0); border: 1px solid var(--line); border-radius: var(--radius); padding: var(--s4); }
-    .skills h3 { font-size: 1.15rem; margin-bottom: var(--s3); }
-    .skills dl { display: grid; gap: var(--s3); }
-    .skills dt { font-size: 0.9375rem; font-weight: 600; line-height: 1.4; margin-bottom: 0.25rem; }
-    .skills dd { font-size: 0.9375rem; line-height: 1.6; color: var(--ink-soft); }
 
     .anchor { background: var(--anchor); color: var(--on-anchor); --focus: var(--accent); }
     .anchor h2 { color: var(--on-anchor); }
@@ -483,12 +489,7 @@
     .book-meta li { padding: 0.25rem 0.6rem; border: 1px solid var(--anchor-line); border-radius: 999px; font: var(--mono-weight) 0.6875rem/1.3 var(--font-mono); letter-spacing: var(--mono-track); text-transform: uppercase; color: var(--on-anchor-soft); }
     .book-card form { background: transparent; border: 0; border-radius: 0; }
     .opt { font-weight: 400; color: var(--on-anchor-soft); }
-    .trust-line { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.35rem 1.25rem; margin-top: var(--s2); max-width: none; font-size: 0.8125rem; line-height: 1.5; text-align: center; }
-    .trust-line > span { white-space: nowrap; }
-    .trust-line > span::before { content: ""; display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--anchor-sky); margin-right: 0.45rem; vertical-align: 2px; }
-    .trust-line .tn { margin-right: 0.2rem; }
     .book-card .btn { gap: 0.45rem; }
-    .trust-line .tn { font: 800 0.875rem/1 var(--font-num); color: var(--on-anchor); }
     .anchor .form-status { color: var(--on-anchor); }
     .form-status:empty { display: none; }
 
@@ -518,7 +519,7 @@
       .tab { flex: 1 1 0; min-width: 0; padding: 0.55rem 0.5rem; font-size: 0.875rem; line-height: 1.25; white-space: normal; text-align: center; }
       .actions .btn { width: 100%; }
       .proof { grid-template-columns: 1fr; }
-      .card, .skills { padding: var(--s3); }
+      .card, .principles { padding: var(--s3); }
       .faq-item summary { grid-template-columns: 1.75rem minmax(0, 1fr) 24px; gap: 0.75rem; padding: 0.9rem 1rem; }
       .faq-q { font-size: 1rem; }
       .faq-item p { padding: 0 1rem 1rem 1rem; }
@@ -863,7 +864,30 @@
       </div>
     </section>
 
-    <section class="sec-1" id="faq" aria-labelledby="faq-title">
+    <section class="sec-1" id="about" aria-labelledby="about-title">
+      <div class="wrap">
+        <div class="about-grid">
+          <div class="prose">
+            <span class="eyebrow">Behind the Builds · <span class="nowrap">Operator Profile</span></span>
+            <h2 id="about-title">Built for founders who want reliable systems&mdash;not another agency retainer.</h2>
+            <p>Most businesses don&rsquo;t fail at marketing because they lack tools. They struggle because their website, forms, and CRM were stitched together without a clear blueprint&mdash;leaving leads waiting hours for a reply or getting lost between stages.</p>
+            <p>Over 1,600+ hours of hands-on production delivery, I&rsquo;ve helped distributed teams and service operators replace messy, manual follow-up with fast conversion websites and automated GoHighLevel pipelines that work around the clock.</p>
+            <p>Every project is approached with the same standard: map the logic clearly, build in an isolated staging environment, stress-test every trigger before launch, and hand over a clean, documented system your team can actually run.</p>
+          </div>
+          <aside class="principles" aria-labelledby="principles-title">
+            <h3 id="principles-title">3 Core Operating Principles</h3>
+            <ol>
+              <li><span class="pr-num" aria-hidden="true">01</span><div><h4>Precision Over Patchwork</h4><p>No fragile workarounds&mdash;every form, tag, and calendar rule is built to route deterministically.</p></div></li>
+              <li><span class="pr-num" aria-hidden="true">02</span><div><h4>Async Speed, Live Overlap</h4><p>Deep, uninterrupted build windows paired with clear daytime overlap across timezones.</p></div></li>
+              <li><span class="pr-num" aria-hidden="true">03</span><div><h4>Documented From Day One</h4><p>Clean folder structures and custom Loom SOPs so you never feel locked out of your own tech stack.</p></div></li>
+            </ol>
+          </aside>
+        </div>
+        <p class="micro-cta center">Have questions about how we work together? <a class="link-arrow" href="#faq"><span class="link-text">Read the FAQs below</span> <span class="arrow" aria-hidden="true">&rarr;</span></a> <span class="or-book">(or <a href="#contact">book your audit directly</a>)</span></p>
+      </div>
+    </section>
+
+    <section class="sec-0" id="faq" aria-labelledby="faq-title">
       <div class="wrap">
         <div class="section-head wide center">
           <span class="eyebrow">Common Questions · <span class="nowrap">Before You Book</span></span>
@@ -908,34 +932,6 @@
       </div>
     </section>
 
-    <section class="sec-0" id="about">
-      <div class="wrap about-grid">
-        <div class="prose">
-          <span class="eyebrow">About</span>
-          <h2>An engineer's approach to leads.</h2>
-          <p>I trained in structural engineering, where you never guess where a load goes. I bring the same habit to marketing systems: trace every path a lead can take, then test it before a real customer does.</p>
-          <p>I'm based in the Philippines and work with clients in the US, Australia and the UK, async or with daytime overlap. You get a clear plan, a tested system and plain-English updates.</p>
-        </div>
-        <aside class="skills" aria-labelledby="skills-title">
-          <h3 id="skills-title">What I work with</h3>
-          <dl>
-            <div>
-              <dt>GoHighLevel</dt>
-              <dd>Pipelines, workflows, calendars, texting, reviews, reporting</dd>
-            </div>
-            <div>
-              <dt>Web</dt>
-              <dd>GHL sites and funnels, HTML, CSS, JavaScript, technical SEO</dd>
-            </div>
-            <div>
-              <dt>Growth</dt>
-              <dd>Cold email deliverability, content calendars, AI writing systems</dd>
-            </div>
-          </dl>
-        </aside>
-      </div>
-    </section>
-
     <section class="anchor" id="contact" aria-labelledby="contact-title">
       <div class="wrap contact-grid">
         <div class="book-copy">
@@ -976,7 +972,6 @@
               <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
             </form>
           </div>
-          <p class="trust-line"><span><strong class="tn">1,600+</strong> Hours Verified Production Delivery</span><span>Multi-Timezone Overlap</span><span><strong class="tn">100%</strong> Pre-Launch QA</span></p>
         </div>
       </div>
     </section>
