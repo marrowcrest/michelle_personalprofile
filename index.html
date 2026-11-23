@@ -468,6 +468,27 @@
     input:focus, textarea:focus { outline: none; border-color: var(--accent); }
     textarea { resize: vertical; min-height: 7.5rem; }
     .form-status { font-size: 0.9375rem; line-height: 1.5; }
+    .contact-grid { align-items: center; }
+    .book-lead { font-size: 1.0625rem; line-height: 1.65; margin-top: var(--s2); }
+    .book-label { margin: var(--s4) 0 var(--s2); font: var(--mono-weight) 0.75rem/1.3 var(--font-mono); letter-spacing: calc(var(--mono-track) + 0.04em); text-transform: uppercase; color: var(--anchor-sky) !important; }
+    .takeaways { list-style: none; display: grid; gap: var(--s3); }
+    .takeaways li { display: grid; grid-template-columns: 2.75rem minmax(0, 1fr); gap: var(--s2); align-items: start; }
+    .tk-num { display: grid; place-items: center; width: 2.75rem; height: 2.25rem; border-radius: 8px; background: var(--anchor-raised); border: 1px solid var(--anchor-line); font: 800 1rem/1 var(--font-num); color: var(--accent); }
+    .takeaways h3 { font-size: 1.0625rem; line-height: 1.35; color: var(--on-anchor); margin-bottom: 0.2rem; }
+    .takeaways p { font-size: 0.9375rem; line-height: 1.55; }
+    .book-card { background: var(--anchor-raised); border: 1px solid var(--anchor-line); border-radius: var(--radius); overflow: hidden; }
+    .book-card-head { padding: var(--s3) clamp(var(--s3), 4vw, var(--s4)) var(--s2); border-bottom: 1px solid var(--anchor-line); }
+    .book-card-title { font-size: 1.125rem; font-weight: 700; color: var(--on-anchor) !important; margin-bottom: 0.5rem; }
+    .book-meta { list-style: none; display: flex; flex-wrap: wrap; gap: 0.4rem; }
+    .book-meta li { padding: 0.25rem 0.6rem; border: 1px solid var(--anchor-line); border-radius: 999px; font: var(--mono-weight) 0.6875rem/1.3 var(--font-mono); letter-spacing: var(--mono-track); text-transform: uppercase; color: var(--on-anchor-soft); }
+    .book-card form { background: transparent; border: 0; border-radius: 0; }
+    .opt { font-weight: 400; color: var(--on-anchor-soft); }
+    .trust-line { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.35rem 1.25rem; margin-top: var(--s2); max-width: none; font-size: 0.8125rem; line-height: 1.5; text-align: center; }
+    .trust-line > span { white-space: nowrap; }
+    .trust-line > span::before { content: ""; display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--anchor-sky); margin-right: 0.45rem; vertical-align: 2px; }
+    .trust-line .tn { margin-right: 0.2rem; }
+    .book-card .btn { gap: 0.45rem; }
+    .trust-line .tn { font: 800 0.875rem/1 var(--font-num); color: var(--on-anchor); }
     .anchor .form-status { color: var(--on-anchor); }
     .form-status:empty { display: none; }
 
@@ -915,29 +936,48 @@
       </div>
     </section>
 
-    <section class="anchor" id="contact">
+    <section class="anchor" id="contact" aria-labelledby="contact-title">
       <div class="wrap contact-grid">
-        <div>
-          <span class="eyebrow">Free lead check</span>
-          <h2>Find out what happens when a customer calls after hours.</h2>
-          <p>Tell me about your business. I'll test your phone and web form, then send you a short video of what I find. No cost, no pressure.</p>
+        <div class="book-copy">
+          <span class="eyebrow">Book Your Audit · <span class="nowrap">Zero Obligation</span></span>
+          <h2 id="contact-title">Find out where your pipeline is losing leads and how to fix it.</h2>
+          <p class="book-lead">Grab a 20-minute slot on the calendar. We will review your current website, funnels, or GoHighLevel setup live and map out the exact system fixes to turn more inquiries into booked calls.</p>
+          <p class="book-label">What you leave the call with</p>
+          <ol class="takeaways">
+            <li><span class="tk-num" aria-hidden="true">01</span><div><h3>Bottleneck Diagnosis</h3><p>Pinpoint the exact stage where leads stall, drop off, or wait too long for follow-up.</p></div></li>
+            <li><span class="tk-num" aria-hidden="true">02</span><div><h3>System Fix Blueprint</h3><p>A clear architectural recommendation connecting your pages, forms, and GHL automations.</p></div></li>
+            <li><span class="tk-num" aria-hidden="true">03</span><div><h3>Fixed Scope &amp; Timeline</h3><p>A transparent sprint roadmap and quote with zero surprise add-ons or hard pitching.</p></div></li>
+          </ol>
         </div>
-        <form id="contact-form" novalidate>
-          <div>
-            <label for="f-name">Your name</label>
-            <input id="f-name" name="name" type="text" autocomplete="name" required>
+        <div class="book-side">
+          <div class="book-card" id="booking-slot">
+            <div class="book-card-head">
+              <p class="book-card-title">20-Minute Pipeline Audit</p>
+              <ul class="book-meta"><li>Free</li><li>20 min</li><li>Video call</li><li>Your timezone</li></ul>
+            </div>
+            <form id="contact-form" novalidate>
+              <div>
+                <label for="f-name">Your name</label>
+                <input id="f-name" name="name" type="text" autocomplete="name" required>
+              </div>
+              <div>
+                <label for="f-email">Work email</label>
+                <input id="f-email" name="email" type="email" autocomplete="email" required>
+              </div>
+              <div>
+                <label for="f-biz">Website or funnel URL</label>
+                <input id="f-biz" name="business" type="url" inputmode="url" autocomplete="url" placeholder="https://" required>
+              </div>
+              <div>
+                <label for="f-msg">Where are leads getting stuck? <span class="opt">(optional)</span></label>
+                <textarea id="f-msg" name="message" rows="3"></textarea>
+              </div>
+              <button class="btn btn-primary" type="submit">Book My Free Audit <span aria-hidden="true">&rarr;</span></button>
+              <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+            </form>
           </div>
-          <div>
-            <label for="f-biz">Business website</label>
-            <input id="f-biz" name="business" type="url" inputmode="url" autocomplete="url" placeholder="https://" required>
-          </div>
-          <div>
-            <label for="f-msg">What would you like help with?</label>
-            <textarea id="f-msg" name="message" rows="4"></textarea>
-          </div>
-          <button class="btn btn-primary" type="submit">Request my free lead check</button>
-          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
-        </form>
+          <p class="trust-line"><span><strong class="tn">1,600+</strong> Hours Verified Production Delivery</span><span>Multi-Timezone Overlap</span><span><strong class="tn">100%</strong> Pre-Launch QA</span></p>
+        </div>
       </div>
     </section>
     <dialog class="lightbox" id="lightbox" aria-labelledby="lb-title">
@@ -989,15 +1029,17 @@
       const form = e.currentTarget;
       const status = document.getElementById('form-status');
       const name = form.name.value.trim();
+      const email = form.email.value.trim();
       const biz = form.business.value.trim();
-      if (!name || !biz) {
-        status.textContent = 'Please add your name and website so I know where to look.';
-        (name ? form.business : form.name).focus();
+      const missing = [!name && form.name, !email && form.email, !biz && form.business].filter(Boolean);
+      if (missing.length) {
+        status.textContent = 'Please add your name, email and website so I can prepare for the call.';
+        missing[0].focus();
         return;
       }
-      const brief = `Free lead check request\nName: ${name}\nWebsite: ${biz}\nNotes: ${form.message.value.trim() || '-'}`;
+      const brief = `Pipeline Audit request\nName: ${name}\nEmail: ${email}\nWebsite: ${biz}\nNotes: ${form.message.value.trim() || '-'}`;
       if (navigator.clipboard) navigator.clipboard.writeText(brief).catch(() => {});
-      status.textContent = 'Thanks! Your request is copied. Paste it into an email or Upwork message to me and I\'ll reply within one business day.';
+      status.textContent = 'Thanks! Your request is copied. Paste it into an email or Upwork message to me and I\'ll reply within one business day with audit times.';
       form.reset();
     });
 
