@@ -430,6 +430,13 @@
     .faq-item::details-content { block-size: 0; overflow: hidden; transition: block-size 0.25s ease, content-visibility 0.25s allow-discrete; }
     .faq-item[open]::details-content { block-size: auto; }
 
+    .dark { --surface-0: #1A3119; --surface-1: #162A15; --surface-2: #22391E; --line: #2D4529; --field: #7E9673; --ink: #F3F7F0; --ink-soft: #B6C5AE; --brand: #A8CF8A; --brand-strong: #C2E0AA; --brand-tint: #22391E; --on-brand: #0E150D; --secondary: #2D4529; --secondary-hover: #36502F; --secondary-ink: #F3F7F0; --secondary-ink-hover: #FFFFFF; --sky: #6BA6DE; --focus: #B8D432; background: #122312 !important; color: var(--ink); }
+    .dark h1, .dark h2, .dark h3, .dark h4 { color: var(--ink); }
+    .dark .steps-flow::before { opacity: 0.5; }
+    .dark .step-num { box-shadow: 0 0 0 6px var(--surface-0); }
+    .tier.featured.dark { box-shadow: 0 30px 60px -28px rgba(18, 35, 18, 0.6); }
+    .sec-0 .principles { background: var(--surface-1); }
+
     .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 
     .about-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: var(--s6); align-items: start; }
@@ -791,7 +798,7 @@
       </div>
     </section>
 
-    <section class="sec-1" id="process" aria-labelledby="process-title">
+    <section class="sec-1 dark" id="process" aria-labelledby="process-title">
       <div class="wrap">
         <div class="section-head wide center">
           <span class="eyebrow">How We Work · <span class="nowrap">From Audit to Live System</span></span>
@@ -822,7 +829,7 @@
       </div>
     </section>
 
-    <section class="sec-0" id="offers" aria-labelledby="offers-title">
+    <section class="sec-1" id="offers" aria-labelledby="offers-title">
       <div class="wrap">
         <div class="section-head wide center">
           <span class="eyebrow">Engagement Options · <span class="nowrap">Clear Scope &amp; Deliverables</span></span>
@@ -840,7 +847,7 @@
             <span></span>
             <a class="btn btn-secondary tier-cta" href="#contact">Get a Fix Quote&nbsp;<span aria-hidden="true">&rarr;</span></a>
           </article>
-          <article class="card tier featured">
+          <article class="card tier featured dark">
             <div class="tier-top"><span class="tag">Tier 02</span><span class="pop-pill">Most popular</span></div>
             <h3>Website + GHL Setup</h3>
             <dl class="tier-meta">
@@ -864,7 +871,7 @@
       </div>
     </section>
 
-    <section class="sec-1" id="about" aria-labelledby="about-title">
+    <section class="sec-0" id="about" aria-labelledby="about-title">
       <div class="wrap">
         <div class="about-grid">
           <div class="prose">
@@ -887,7 +894,7 @@
       </div>
     </section>
 
-    <section class="sec-0" id="faq" aria-labelledby="faq-title">
+    <section class="sec-1" id="faq" aria-labelledby="faq-title">
       <div class="wrap">
         <div class="section-head wide center">
           <span class="eyebrow">Common Questions · <span class="nowrap">Before You Book</span></span>
