@@ -56,7 +56,7 @@
       --s4: 2rem;
       --s5: 3rem;
       --s6: 4.5rem;
-      --section: clamp(4.5rem, 10vw, 7.5rem);
+      --section: clamp(3.5rem, 7vw, 5.5rem);
       --radius: 14px;
       --measure: 62ch;
     }
@@ -135,7 +135,7 @@
 
     .lead { font-size: 1.1875rem; line-height: 1.6; color: var(--ink-soft); }
 
-    .section-head { max-width: 40rem; margin-bottom: var(--s5); }
+    .section-head { max-width: 40rem; margin-bottom: var(--s4); }
     .section-head.wide { max-width: 48rem; }
     .section-head.center { margin-inline: auto; text-align: center; }
     .section-head.center .lead { margin-inline: auto; text-wrap: balance; }
@@ -280,7 +280,11 @@
     .fix-icon::before, .fix-icon::after { content: ""; position: absolute; left: 50%; top: 50%; width: 10px; height: 1.5px; background: currentColor; transform: translate(-50%, -50%); }
     .fix-icon::after { transform: translate(-50%, -50%) rotate(90deg); }
     .fix[open] .fix-icon { transform: rotate(45deg); }
-    .fix p { padding: 0 1rem 1rem; font-size: 0.975rem; line-height: 1.6; color: var(--ink-soft); }
+    .fix > p { padding: 0 1rem 1rem; font-size: 0.975rem; line-height: 1.6; color: var(--ink-soft); }
+    .sec-1 .fix { background: var(--surface-1); }
+    .fix > p.fix-layer { padding: 0 1rem; font: var(--mono-weight) 0.6875rem/1.3 var(--font-mono); letter-spacing: var(--mono-track); text-transform: uppercase; color: var(--brand); }
+    .fix .fix-list { margin: 0.6rem 1rem 1rem; padding-top: 0.75rem; gap: 0.5rem; }
+    .fix .fix-list li { font-size: 0.875rem; }
     .fix::details-content { block-size: 0; overflow: hidden; transition: block-size 0.25s ease, content-visibility 0.25s allow-discrete; }
     .fix[open]::details-content { block-size: auto; }
 
@@ -292,12 +296,6 @@
     .link-arrow:hover .arrow { transform: translateX(3px); }
     .nowrap { white-space: nowrap; }
 
-    .pillar { position: relative; display: flex; flex-direction: column; gap: var(--s3); }
-    .pillar .tag { margin-bottom: 0; font-family: var(--font-mono); font-weight: var(--mono-weight); letter-spacing: var(--mono-track); text-transform: uppercase; }
-    .pillar h3 { margin-bottom: 0; }
-    .pillar .pillar-num { font-size: 0.875rem; font-weight: 600; line-height: 1.4; color: var(--ink-soft); margin-bottom: 0.25rem; }
-    .pillar .role-label { font-size: 0.8125rem; font-weight: 600; line-height: 1.4; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink); margin-bottom: 0.375rem; }
-    .pillar .role { font-size: 0.975rem; line-height: 1.6; color: var(--ink-soft); }
     .checks { list-style: none; display: grid; gap: 0.75rem; padding-top: var(--s3); border-top: 1px solid var(--line); }
     .checks li { position: relative; padding-left: 1.75rem; font-size: 0.9375rem; line-height: 1.55; color: var(--ink); }
     .checks li::before { content: ""; position: absolute; left: 0; top: 0.2em; width: 1.125rem; height: 1.125rem; border-radius: 50%; background: var(--brand-tint); }
@@ -407,14 +405,21 @@
     .tier .tag { margin: 0; font-family: var(--font-mono); font-weight: var(--mono-weight); letter-spacing: var(--mono-track); text-transform: uppercase; }
     .tier h3 { margin: 0; font-size: 1.375rem; line-height: 1.25; min-height: 2.5em; }
     .tier-meta { display: grid; grid-template-rows: 1fr auto; gap: var(--s2); padding-bottom: var(--s3); border-bottom: 1px solid var(--line); }
-    .tier .tier-meta dt, .tier .incl-label { font-size: 0.75rem; font-weight: 600; line-height: 1.3; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink); margin-bottom: 0.3rem; }
+    .tier .tier-meta dt { font-size: 0.75rem; font-weight: 600; line-height: 1.3; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink); margin-bottom: 0.3rem; }
     .tier-meta dd { font-size: 0.9375rem; line-height: 1.55; color: var(--ink-soft); }
     .tier-meta dd.tl { font: 800 1.125rem/1.3 var(--font-num); letter-spacing: -0.015em; color: var(--brand); }
-    .incl-label { margin-bottom: calc(var(--s3) * -0.5); }
     .tier .checks { padding-top: 0; border-top: 0; align-content: start; }
     .tier-cta { display: block; margin-top: auto; width: 100%; white-space: normal; text-align: center; line-height: 1.35; padding-block: 0.8rem; }
     .tier.featured { border: 2px solid var(--brand); box-shadow: 0 18px 40px -24px rgba(18, 35, 18, 0.35); }
     @supports (grid-template-rows: subgrid) { .tier { display: grid; grid-row: span 6; grid-template-rows: subgrid; row-gap: var(--s3); } .tier-cta { align-self: end; } }
+    .more summary { cursor: pointer; list-style: none; display: inline-flex; align-items: center; min-height: 44px; font-size: 0.875rem; font-weight: 600; color: var(--brand); }
+    .more summary::-webkit-details-marker { display: none; }
+    .more summary:hover { text-decoration: underline; text-underline-offset: 0.2em; }
+    .more[open] summary { margin-bottom: 0.5rem; }
+    .more .checks { padding-top: 0; border-top: 0; }
+    .step-more summary::before { content: "+"; display: inline-block; width: 1rem; font-weight: 700; }
+    .step-more[open] summary::before { content: "\2212"; }
+    .step-more .step-body { margin-top: 0; }
     .pop-pill { display: inline-block; padding: 0.3rem 0.65rem; border-radius: 999px; background: var(--brand); color: var(--on-brand); font: var(--mono-weight) 0.6875rem/1.3 var(--font-mono); letter-spacing: var(--mono-track); text-transform: uppercase; white-space: nowrap; }
 
     .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
@@ -511,7 +516,7 @@
     <nav class="wrap nav" aria-label="Main">
       <a class="logo" href="#top">Mich Candelaria</a>
       <ul>
-        <li><a href="#pillars">Services</a></li>
+        <li><a href="#diagnostic">Services</a></li>
         <li><a href="#work">Work</a></li>
         <li><a href="#process">Process</a></li>
         <li><a href="#offers">Offers</a></li>
@@ -522,7 +527,7 @@
   </header>
 
   <main id="main">
-    <section class="hero sec-1" id="top">
+    <section class="hero sec-0" id="top">
       <div class="wrap hero-grid">
         <div>
           <span class="eyebrow">GoHighLevel CRM · Websites · Conversion Funnels</span>
@@ -552,7 +557,7 @@
       </div>
     </section>
 
-    <section class="sec-0" id="diagnostic" aria-labelledby="diag-title">
+    <section class="sec-1" id="diagnostic" aria-labelledby="diag-title">
       <div class="wrap">
         <div class="section-head wide center">
           <span class="eyebrow">The Diagnostic · <span class="nowrap">Where Qualified Leads Drop Off</span></span>
@@ -570,6 +575,8 @@
             <details class="fix">
               <summary><span>How we fix it</span><span class="fix-icon" aria-hidden="true"></span></summary>
               <p>Automated missed-call text-back and instant SMS/email routing that engage every inquiry in under 10 seconds&mdash;24/7, across every timezone.</p>
+              <p class="fix-layer">Layer 03 · Book &amp; Track</p>
+              <ul class="checks fix-list"><li>Sub-10-second missed-call text-back and instant SMS/email sequences</li><li>Dynamic calendar routing with automated timezone detection</li></ul>
             </details>
           </article>
           <article class="card gap">
@@ -582,6 +589,8 @@
             <details class="fix">
               <summary><span>How we fix it</span><span class="fix-icon" aria-hidden="true"></span></summary>
               <p>Clean, end-to-end GoHighLevel architecture where every form, funnel step, and pipeline stage updates reliably without manual cleanup.</p>
+              <p class="fix-layer">Layers 01&ndash;02 · Capture &amp; Qualify</p>
+              <ul class="checks fix-list"><li>Custom, responsive GoHighLevel &amp; web builds engineered for speed</li><li>Clear value hierarchy and conversion-focused call-to-action placement</li><li>Embedded intake forms, instant chat widgets, and call-tracking hooks</li><li>Multi-step lead capture forms and conditional qualification logic</li><li>Dedicated landing pages built for paid traffic and specific service offers</li></ul>
             </details>
           </article>
           <article class="card gap">
@@ -594,68 +603,9 @@
             <details class="fix">
               <summary><span>How we fix it</span><span class="fix-icon" aria-hidden="true"></span></summary>
               <p>Multi-step SMS and email follow-up sequences paired with clean source tracking from first click to confirmed calendar booking.</p>
+              <p class="fix-layer">Layer 03 · Book &amp; Track</p>
+              <ul class="checks fix-list"><li>Deterministic pipeline stage movement, tagging, and round-robin assignment</li><li>Full UTM attribution tracking and pre-launch QA verification</li></ul>
             </details>
-          </article>
-        </div>
-        <p class="micro-cta center">See how everything connects: <a class="link-arrow" href="#pillars"><span class="link-text">Explore the 3 Core Pillars</span> <span class="arrow" aria-hidden="true">&rarr;</span></a></p>
-      </div>
-    </section>
-
-    <section class="sec-1" id="pillars" aria-labelledby="pillars-title">
-      <div class="wrap">
-        <div class="section-head wide center">
-          <span class="eyebrow">System Architecture · <span class="nowrap">The 3 Core Pillars</span></span>
-          <h2 id="pillars-title">Three connected layers built to capture, qualify, and book leads automatically.</h2>
-          <p class="lead">A website without follow-up loses leads, and a CRM without clean intake creates chaos. Each build connects your front-end pages, conversion funnels, and GoHighLevel backend into one unified system:</p>
-        </div>
-        <div class="cards pillars">
-          <article class="card pillar">
-            <span class="tag">Layer 01 · Capture</span>
-            <div>
-              <p class="pillar-num">Pillar 01</p>
-              <h3>High-Converting Websites</h3>
-            </div>
-            <div>
-              <p class="role-label">Role</p>
-              <p class="role">Turn cold traffic into high-intent inquiries with fast load speeds, clear service positioning, and friction-free mobile layouts.</p>
-            </div>
-            <ul class="checks">
-              <li>Custom, responsive GoHighLevel &amp; web builds engineered for speed</li>
-              <li>Clear value hierarchy and conversion-focused call-to-action placement</li>
-              <li>Embedded intake forms, instant chat widgets, and call-tracking hooks</li>
-            </ul>
-          </article>
-          <article class="card pillar">
-            <span class="tag">Layer 02 · Qualify</span>
-            <div>
-              <p class="pillar-num">Pillar 02</p>
-              <h3>Targeted Conversion Funnels</h3>
-            </div>
-            <div>
-              <p class="role-label">Role</p>
-              <p class="role">Pre-qualify prospects and route them to the right offer or calendar without manual back-and-forth.</p>
-            </div>
-            <ul class="checks">
-              <li>Multi-step lead capture forms and conditional qualification logic</li>
-              <li>Dedicated landing pages built for paid traffic and specific service offers</li>
-              <li>Dynamic calendar routing with automated timezone detection</li>
-            </ul>
-          </article>
-          <article class="card pillar">
-            <span class="tag">Layer 03 · Book &amp; Track</span>
-            <div>
-              <p class="pillar-num">Pillar 03</p>
-              <h3>End-to-End GHL Automation</h3>
-            </div>
-            <div>
-              <p class="role-label">Role</p>
-              <p class="role">Follow up in seconds, nurture warm prospects, and track every dollar from first click to booked consultation.</p>
-            </div>
-            <ul class="checks">
-              <li>Sub-10-second missed-call text-back and instant SMS/email sequences</li>
-              <li>Deterministic pipeline stage movement, tagging, and round-robin assignment</li>
-              <li>Full UTM attribution tracking and pre-launch QA verification</li>
-            </ul>
           </article>
         </div>
         <p class="micro-cta center">Want to see this architecture in production? <a class="link-arrow" href="#work"><span class="link-text">Examine the 3 Flagship Case Studies</span> <span class="arrow" aria-hidden="true">&rarr;</span></a></p>
@@ -763,19 +713,19 @@
           <li class="card step-card">
             <span class="step-num"><span class="sr-only">Step </span>01</span>
             <h3>20-Minute Pipeline &amp; Funnel Audit</h3>
-            <p class="step-body">We review your current website, lead capture forms, and GoHighLevel setup live&mdash;pinpointing the exact bottlenecks costing you booked appointments and mapping out the fix.</p>
+            <details class="more step-more"><summary>How it works</summary><p class="step-body">We review your current website, lead capture forms, and GoHighLevel setup live&mdash;pinpointing the exact bottlenecks costing you booked appointments and mapping out the fix.</p></details>
             <div class="deliverable"><p class="label">Deliverable</p><p>Clear bottleneck breakdown &amp; fixed scope recommendation</p></div>
           </li>
           <li class="card step-card">
             <span class="step-num"><span class="sr-only">Step </span>02</span>
             <h3>System Blueprint &amp; Build</h3>
-            <p class="step-body">Once approved, your pages, funnels, and GHL workflows are built inside a clean staging environment with daily async progress updates&mdash;so your team never gets bogged down in micromanagement.</p>
+            <details class="more step-more"><summary>How it works</summary><p class="step-body">Once approved, your pages, funnels, and GHL workflows are built inside a clean staging environment with daily async progress updates&mdash;so your team never gets bogged down in micromanagement.</p></details>
             <div class="deliverable"><p class="label">Deliverable</p><p>Complete website, funnel, and automation architecture</p></div>
           </li>
           <li class="card step-card">
             <span class="step-num"><span class="sr-only">Step </span>03</span>
             <h3>End-to-End QA &amp; Team Handoff</h3>
-            <p class="step-body">Every form, SMS trigger, calendar rule, and UTM tag is stress-tested across devices and timezones before going live&mdash;complete with a recorded Loom walkthrough for your team.</p>
+            <details class="more step-more"><summary>How it works</summary><p class="step-body">Every form, SMS trigger, calendar rule, and UTM tag is stress-tested across devices and timezones before going live&mdash;complete with a recorded Loom walkthrough for your team.</p></details>
             <div class="deliverable"><p class="label">Deliverable</p><p>Live, QA-verified system + custom Loom SOP library</p></div>
           </li>
         </ol>
@@ -798,8 +748,8 @@
               <div><dt>Best for</dt><dd>Operators with an existing website who need broken triggers fixed, speed-to-lead automated, and CRM stages organized.</dd></div>
               <div><dt>Timeline</dt><dd class="tl">5 to 10 business days</dd></div>
             </dl>
-            <p class="incl-label">What&rsquo;s included</p>
-            <ul class="checks"><li>Full GoHighLevel workflow audit and duplicate cleanup</li><li>Sub-10-second missed-call text-back and SMS/email follow-up sequences</li><li>Deterministic pipeline stage movement, tagging, and calendar routing</li><li>End-to-end sandbox QA testing and custom Loom walkthroughs</li></ul>
+            <ul class="checks"><li>Full GoHighLevel workflow audit and duplicate cleanup</li><li>Sub-10-second missed-call text-back and SMS/email follow-up sequences</li><li>Deterministic pipeline stage movement, tagging, and calendar routing</li></ul>
+            <details class="more"><summary>+ 1 more included</summary><ul class="checks"><li>End-to-end sandbox QA testing and custom Loom walkthroughs</li></ul></details>
             <a class="btn btn-secondary tier-cta" href="#contact">Scope a Pipeline Sprint&nbsp;<span aria-hidden="true">&rarr;</span></a>
           </article>
           <article class="card tier featured">
@@ -809,8 +759,8 @@
               <div><dt>Best for</dt><dd>Growing service businesses ready to launch a high-converting website or funnel wired directly into an automated GoHighLevel backend.</dd></div>
               <div><dt>Timeline</dt><dd class="tl">Weekly build sprints</dd></div>
             </dl>
-            <p class="incl-label">What&rsquo;s included</p>
-            <ul class="checks"><li>Custom, mobile-first conversion website or multi-step lead funnel</li><li>Complete GoHighLevel CRM setup, pipeline architecture, and automation logic</li><li>Multi-timezone calendar routing, intake qualification, and UTM attribution</li><li>Live staging environment with zero downtime for active campaigns</li><li>Post-launch monitoring window and full team Loom SOP library</li></ul>
+            <ul class="checks"><li>Custom, mobile-first conversion website or multi-step lead funnel</li><li>Complete GoHighLevel CRM setup, pipeline architecture, and automation logic</li><li>Multi-timezone calendar routing, intake qualification, and UTM attribution</li></ul>
+            <details class="more"><summary>+ 2 more included</summary><ul class="checks"><li>Live staging environment with zero downtime for active campaigns</li><li>Post-launch monitoring window and full team Loom SOP library</li></ul></details>
             <a class="btn btn-primary tier-cta" href="#contact">Book Your System Audit&nbsp;<span aria-hidden="true">&rarr;</span></a>
           </article>
           <article class="card tier">
@@ -820,8 +770,8 @@
               <div><dt>Best for</dt><dd>Multi-location operators and agencies needing ongoing funnel launches, workflow expansion, and continuous conversion optimization.</dd></div>
               <div><dt>Timeline</dt><dd class="tl">Monthly retainer</dd></div>
             </dl>
-            <p class="incl-label">What&rsquo;s included</p>
-            <ul class="checks"><li>Priority weekly build sprints for new offers, pages, and automations</li><li>Ongoing A/B testing, attribution audits, and pipeline health checks</li><li>Direct async Slack/Loom collaboration with live daytime overlap</li><li>Continuous QA verification across all new campaigns and integrations</li></ul>
+            <ul class="checks"><li>Priority weekly build sprints for new offers, pages, and automations</li><li>Ongoing A/B testing, attribution audits, and pipeline health checks</li><li>Direct async Slack/Loom collaboration with live daytime overlap</li></ul>
+            <details class="more"><summary>+ 1 more included</summary><ul class="checks"><li>Continuous QA verification across all new campaigns and integrations</li></ul></details>
             <a class="btn btn-secondary tier-cta" href="#contact">Inquire About Retainer <span class="nowrap">Capacity&nbsp;<span aria-hidden="true">&rarr;</span></span></a>
           </article>
         </div>
