@@ -78,15 +78,16 @@ Taken from a photo looking up through sunlit leaves into a clear sky. Deep fores
 
 ## 5. Buttons
 
-Shape: 10px rounded rectangle, 48px minimum height (42px in the header), weight-600 label, 1.5px edge.
+Shape: 10px rounded rectangle, 48px minimum height (42px in the header), weight-600 label, no visible outline.
 
-| Role | Light surfaces | Dark surfaces | Contrast |
+| Role | Light surfaces | Dark surfaces | Text contrast |
 | --- | --- | --- | --- |
-| Primary (CTA only) | Sunlit Leaf `#B8D432`, Deep Canopy text, `#6F8418` edge. Hover `#A6C220` | Same lime; the edge blends in | Text 9.81:1; edge 3.89:1 on mist, 4.21:1 on white |
-| Secondary | Sage chip `#E4ECE0`, Forest Moss text, `#7C8A76` edge. Hover `#D6E2CF` | `#22301F` chip, `#A8CF8A` text, `#6E7E69` edge | Text 7.24:1; edge 3.38:1 on mist |
+| Primary (CTA only) | Sunlit Leaf `#B8D432`, Deep Canopy text. Hover `#A6C220` | Same lime | 9.81:1 |
+| Secondary | Sage chip `#D8E5D0`, Forest Moss text. Hover `#CADBBF` | `#22301F` chip, `#A8CF8A` text | 6.69:1 light, 7.92:1 dark |
 
 - Lime is the only primary color on every section, so the CTA color never changes.
-- The secondary is a filled tint chip, never a second accent color.
+- The secondary is a filled tint chip, never a second accent color. It was deepened from `#E4ECE0` so it stays visible on Morning Mist without an outline.
+- No visible outline: the text label identifies the button, which WCAG 1.4.11 accepts. A transparent 1.5px border is kept, so Windows high-contrast mode still draws an outline.
 - Never put lime on a lime or green background.
 
 ## 6. As applied to this site
