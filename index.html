@@ -503,6 +503,57 @@
     footer.anchor { padding-block: var(--s4) var(--s5); font-size: 0.875rem; line-height: 1.5; color: var(--on-anchor-soft); }
     footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--s2); border-top: 1px solid var(--anchor-line); padding-top: var(--s4); }
 
+
+    .menu-btn, .mnav, .mcta, .read-more, .swipe-dots { display: none; }
+    @media (max-width: 900px) {
+      .nav ul { display: none; }
+      .menu-btn { display: inline-grid; place-content: center; gap: 5px; width: 44px; height: 44px; border: 1px solid var(--line); border-radius: 10px; background: var(--surface-0); cursor: pointer; }
+      .menu-btn span { display: block; width: 18px; height: 2px; border-radius: 2px; background: var(--ink); transition: transform 0.2s ease, opacity 0.2s ease; }
+      .menu-btn[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+      .menu-btn[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+      .menu-btn[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+      .mnav:not([hidden]) { display: block; border-top: 1px solid var(--line); background: var(--surface-0); }
+      .mnav ul { list-style: none; padding-block: 0.5rem 1rem; }
+      .mnav a { display: flex; align-items: center; min-height: 48px; font-size: 1.0625rem; font-weight: 600; color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--line); }
+
+      .mcta { display: block; position: fixed; left: 0; right: 0; bottom: 0; z-index: 6; padding: 0.75rem 1.25rem calc(0.75rem + env(safe-area-inset-bottom)); background: color-mix(in srgb, var(--surface-0) 94%, transparent); backdrop-filter: blur(10px); border-top: 1px solid var(--line); transform: translateY(110%); transition: transform 0.25s ease; }
+      .mcta .btn { width: 100%; }
+      .mcta.show { transform: none; }
+      body { padding-bottom: 4.75rem; }
+
+      .js .swipe { display: flex; gap: var(--s2); overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-inline: 1.25rem; margin-inline: -1.25rem; padding: 0.25rem 1.25rem 0.75rem; scrollbar-width: none; align-items: flex-start; grid-template-columns: none; }
+      .js .swipe::-webkit-scrollbar { display: none; }
+      .js .swipe > * { flex: 0 0 min(85%, 420px); scroll-snap-align: start; }
+      .js .tiers.swipe { align-items: stretch; }
+      .js .tiers.swipe > .tier { display: flex; flex-direction: column; grid-row: auto; }
+      .js .steps-flow.swipe::before { display: none; }
+      .swipe-dots { display: flex; justify-content: center; gap: 0.5rem; margin-top: var(--s2); }
+      .swipe-dots button { width: 24px; height: 24px; padding: 0; border: 0; background: transparent; cursor: pointer; display: grid; place-items: center; }
+      .swipe-dots button::before { content: ""; width: 8px; height: 8px; border-radius: 999px; background: var(--field); transition: width 0.2s ease, background-color 0.2s ease; }
+      .swipe-dots button[aria-current="true"]::before { width: 22px; background: var(--brand); }
+      .dark .swipe-dots button::before { background: #7E9673; }
+      .dark .swipe-dots button[aria-current="true"]::before { background: var(--brand); }
+
+      .hero { padding-top: var(--s5); }
+      .hero-grid { display: flex; flex-direction: column; gap: 0; }
+      .hero-grid > div:first-child { display: contents; }
+      .hero-grid .eyebrow { order: 1; }
+      .hero h1 { order: 2; margin-bottom: var(--s3); }
+      .hero .phone { order: 3; max-width: 100%; padding: var(--s2); border-radius: 20px; margin-bottom: var(--s3); justify-self: auto; }
+      .hero .phone .msg { font-size: 0.875rem; padding: 0.55rem 0.8rem; }
+      .hero .phone .msgs { gap: 0.5rem; }
+      .hero .phone .phone-meta { padding-bottom: 0.6rem; margin-bottom: 0.6rem; }
+      .hero .phone .phone-note { margin-top: 0.6rem; }
+      .hero .lead { order: 4; }
+      .hero .actions { order: 5; }
+      .hero .proof { order: 6; grid-template-columns: repeat(3, minmax(0, 1fr)) !important; gap: var(--s2); margin-top: var(--s4); }
+      .hero .proof strong { font-size: 0.8125rem; }
+      .hero .proof li > span { font-size: 0.75rem; }
+
+      .js .more-text:not(.open) { max-height: 9.6em; overflow: hidden; -webkit-mask-image: linear-gradient(#000 55%, transparent); mask-image: linear-gradient(#000 55%, transparent); }
+      .js .read-more { display: inline-flex; align-items: center; min-height: 44px; margin-top: 0.25rem; padding: 0; border: 0; background: none; font: 600 0.9375rem/1 var(--font-body); color: var(--brand); text-decoration: underline; text-underline-offset: 0.2em; cursor: pointer; }
+    }
+    @media (max-width: 900px) and (prefers-reduced-motion: reduce) { .mcta { transition: none; } }
     @media (max-width: 900px) {
       .hero-grid, .about-grid, .contact-grid, .case-panel.builds { grid-template-columns: 1fr; gap: var(--s4); }
       .cards { grid-template-columns: 1fr; }
@@ -564,7 +615,18 @@
         <li><a href="#about">About</a></li>
         <li><a class="btn btn-primary" href="#contact">Book a Free Audit</a></li>
       </ul>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mnav" aria-label="Open menu"><span></span><span></span><span></span></button>
     </nav>
+    <div class="mnav" id="mnav" hidden>
+      <ul class="wrap">
+        <li><a href="#pillars">Services</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#offers">Offers</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
+    </div>
   </header>
 
   <main id="main">
@@ -605,7 +667,7 @@
           <h2 id="diag-title">Most service businesses don&rsquo;t have a lead generation problem. <span class="h2-accent">They have a follow-up and systems problem.</span></h2>
           <p class="lead">Your ads, website, and forms bring in inquiries&mdash;but when speed-to-lead slows down, triggers misfire, or follow-up stops after one attempt, qualified bookings slip away. Here are the three gaps costing you revenue every week:</p>
         </div>
-        <div class="cards">
+        <div class="cards swipe" data-swipe>
           <article class="card gap">
             <span class="tag">Gap 01</span>
             <h3>Slow Response to New Inquiries</h3>
@@ -654,7 +716,7 @@
           <h2 id="pillars-title">Three connected layers built to capture, qualify, and book leads automatically.</h2>
           <p class="lead">A website without follow-up loses leads, and a CRM without clean intake creates chaos. Each build connects your front-end pages, conversion funnels, and GoHighLevel backend into one unified system:</p>
         </div>
-        <div class="cards pillars">
+        <div class="cards pillars swipe" data-swipe>
           <article class="card pillar">
             <span class="tag">Layer 01 · Capture</span>
             <div>
@@ -805,7 +867,7 @@
           <h2 id="process-title">A clear, three-step build process with zero guesswork.</h2>
           <p class="lead">No endless discovery calls or vague timelines. Every project moves through a structured sequence designed for distributed teams and busy operators:</p>
         </div>
-        <ol class="cards steps-flow">
+        <ol class="cards steps-flow swipe" data-swipe>
           <li class="card step-card">
             <span class="step-num"><span class="sr-only">Step </span>01</span>
             <h3>20-Minute Pipeline &amp; Funnel Audit</h3>
@@ -836,7 +898,7 @@
           <h2 id="offers-title">Choose the exact level of build your pipeline needs.</h2>
           <p class="lead">Whether you need a targeted workflow repair or a full conversion website and CRM overhaul, every engagement is scoped around clear deliverables and verified QA:</p>
         </div>
-        <div class="cards tiers">
+        <div class="cards tiers swipe" data-swipe>
           <article class="card tier">
             <div class="tier-top"><span class="tag">Tier 01</span></div>
             <h3>GHL Fix &amp; Automation</h3>
@@ -877,9 +939,12 @@
           <div class="prose">
             <span class="eyebrow">Behind the Builds · <span class="nowrap">Operator Profile</span></span>
             <h2 id="about-title">Built for founders who want reliable systems&mdash;not another agency retainer.</h2>
+            <div class="more-text" id="about-more">
             <p>Most businesses don&rsquo;t fail at marketing because they lack tools. They struggle because their website, forms, and CRM were stitched together without a clear blueprint&mdash;leaving leads waiting hours for a reply or getting lost between stages.</p>
             <p>Over 1,600+ hours of hands-on production delivery, I&rsquo;ve helped distributed teams and service operators replace messy, manual follow-up with fast conversion websites and automated GoHighLevel pipelines that work around the clock.</p>
             <p>Every project is approached with the same standard: map the logic clearly, build in an isolated staging environment, stress-test every trigger before launch, and hand over a clean, documented system your team can actually run.</p>
+            </div>
+            <button class="read-more" type="button" aria-expanded="false" aria-controls="about-more">Read more</button>
           </div>
           <aside class="principles" aria-labelledby="principles-title">
             <h3 id="principles-title">3 Core Operating Principles</h3>
@@ -995,6 +1060,7 @@
       </div>
     </dialog>
   </main>
+  <div class="mcta" id="mcta" aria-hidden="true"><a class="btn btn-primary" href="#contact" tabindex="-1">Book a Free Audit</a></div>
 
   <footer class="anchor">
     <div class="wrap">
@@ -1088,6 +1154,54 @@
     } else {
       document.querySelectorAll('.slides-btn').forEach((b) => { b.hidden = true; });
     }
+
+    const menuBtn = document.querySelector('.menu-btn'), mnav = document.getElementById('mnav');
+    if (menuBtn && mnav) {
+      const setMenu = (open) => { mnav.hidden = !open; menuBtn.setAttribute('aria-expanded', open); menuBtn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu'); };
+      menuBtn.addEventListener('click', () => setMenu(mnav.hidden));
+      mnav.addEventListener('click', (e) => { if (e.target.closest('a')) setMenu(false); });
+      document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !mnav.hidden) { setMenu(false); menuBtn.focus(); } });
+    }
+
+    const mcta = document.getElementById('mcta');
+    if (mcta && 'IntersectionObserver' in window) {
+      const vis = new Map();
+      const io = new IntersectionObserver((es) => {
+        es.forEach((e) => vis.set(e.target.id, e.isIntersecting));
+        const show = !vis.get('hero-cta') && !vis.get('contact');
+        mcta.classList.toggle('show', show);
+        mcta.setAttribute('aria-hidden', !show);
+        mcta.querySelector('a').tabIndex = show ? 0 : -1;
+      }, { rootMargin: '-80px 0px 0px 0px' });
+      const heroCta = document.querySelector('.hero .actions'); if (heroCta) { heroCta.id = 'hero-cta'; io.observe(heroCta); }
+      const contact = document.getElementById('contact'); if (contact) io.observe(contact);
+    }
+
+    document.querySelectorAll('[data-swipe]').forEach((row) => {
+      const items = [...row.children];
+      const dots = document.createElement('div');
+      dots.className = 'swipe-dots';
+      dots.innerHTML = items.map((_, i) => `<button type="button" aria-label="Show card ${i + 1} of ${items.length}"></button>`).join('');
+      row.after(dots);
+      const btns = [...dots.children];
+      const update = () => {
+        const x = row.scrollLeft, w = row.scrollWidth - row.clientWidth;
+        let idx = w <= 0 ? 0 : Math.round((x / w) * (items.length - 1));
+        btns.forEach((b, i) => b.setAttribute('aria-current', i === idx));
+      };
+      btns.forEach((b, i) => b.addEventListener('click', () => row.scrollTo({ left: items[i].offsetLeft - row.offsetLeft - parseFloat(getComputedStyle(row).paddingLeft), behavior: 'smooth' })));
+      row.addEventListener('scroll', () => requestAnimationFrame(update), { passive: true });
+      update();
+    });
+
+    document.querySelectorAll('.read-more').forEach((btn) => {
+      const box = document.getElementById(btn.getAttribute('aria-controls'));
+      btn.addEventListener('click', () => {
+        const open = box.classList.toggle('open');
+        btn.setAttribute('aria-expanded', open);
+        btn.textContent = open ? 'Read less' : 'Read more';
+      });
+    });
   </script>
 </body>
 </html>
