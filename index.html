@@ -5,34 +5,44 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mich Candelaria · GoHighLevel Lead Systems</title>
   <meta name="description" content="Mich Candelaria builds GoHighLevel lead systems for contractors: missed-call text-back, instant form replies, follow-up and online booking.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link id="font-sheet" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&family=Space+Grotesk:wght@600;700&display=swap">
   <style>
     :root {
       --surface-0: #FFFFFF;
-      --surface-1: #F3F7F8;
-      --surface-2: #E6EDF0;
-      --line: #DCE5E8;
-      --field: #7F8B84;
-      --ink: #141A12;
-      --ink-soft: #4A5546;
-      --brand: #2F5516;
-      --brand-strong: #22400F;
-      --brand-tint: #E6EFDF;
-      --on-brand: #F4F8F1;
-      --accent: #D9E04A;
-      --accent-hover: #C9D132;
-      --accent-edge: #7C8216;
-      --on-accent: #141A12;
-      --focus: #2F5516;
+      --surface-1: #F4F7F2;
+      --surface-2: #E4ECE0;
+      --line: #E4ECE0;
+      --field: #7C8A76;
+      --ink: #122312;
+      --ink-soft: #46543F;
+      --brand: #2C5422;
+      --brand-strong: #1E3D16;
+      --brand-tint: #EAF1E5;
+      --on-brand: #F3F7F0;
+      --accent: #B8D432;
+      --accent-hover: #A6C220;
+      --accent-edge: #6F8418;
+      --on-accent: #122312;
+      --sky: #4E91D2;
+      --focus: #2C5422;
 
-      --anchor: #14240E;
-      --anchor-raised: #1C3114;
-      --anchor-line: #2E4424;
-      --anchor-field: #7D9271;
-      --on-anchor: #F1F6EE;
-      --on-anchor-soft: #B7C6AE;
+      --anchor: #122312;
+      --anchor-raised: #1A3119;
+      --anchor-line: #2D4529;
+      --anchor-field: #7E9673;
+      --anchor-sky: #4E91D2;
+      --on-anchor: #F3F7F0;
+      --on-anchor-soft: #B6C5AE;
 
-      --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-      --font-serif: Georgia, "Times New Roman", serif;
+      --font-head: "Space Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+      --head-weight: 600;
+      --head-track: -0.025em;
+      --mono-weight: 500;
+      --mono-track: 0.04em;
 
       --s1: 0.5rem;
       --s2: 1rem;
@@ -47,24 +57,26 @@
 
     @media (prefers-color-scheme: dark) {
       :root {
-        --surface-0: #0F140E;
-        --surface-1: #151C13;
-        --surface-2: #1F291C;
-        --line: #2A3527;
-        --field: #6C7A68;
+        --surface-0: #0E150D;
+        --surface-1: #131C12;
+        --surface-2: #1C281A;
+        --line: #283626;
+        --field: #6E7E69;
         --ink: #EEF3EB;
         --ink-soft: #B3BFAE;
-        --brand: #A9CC8C;
-        --brand-strong: #C2DDAA;
-        --brand-tint: #1F2B1B;
-        --on-brand: #0F140E;
-        --accent-edge: #D9E04A;
-        --focus: #D9E04A;
+        --brand: #A8CF8A;
+        --brand-strong: #C2E0AA;
+        --brand-tint: #1C281A;
+        --on-brand: #0E150D;
+        --accent-edge: #B8D432;
+        --sky: #6BA6DE;
+        --focus: #B8D432;
 
-        --anchor: #1B2E12;
-        --anchor-raised: #233B18;
-        --anchor-line: #36502A;
-        --anchor-field: #7F956F;
+        --anchor: #1A2F17;
+        --anchor-raised: #22391E;
+        --anchor-line: #36502F;
+        --anchor-field: #809872;
+        --anchor-sky: #6BA6DE;
       }
     }
 
@@ -73,7 +85,7 @@
     html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
 
     body {
-      font-family: var(--font-sans);
+      font-family: var(--font-body);
       font-size: 1.0625rem;
       line-height: 1.65;
       color: var(--ink);
@@ -81,10 +93,10 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    h1, h2, h3 { font-family: var(--font-serif); font-weight: 400; color: var(--ink); text-wrap: balance; }
-    h1 { font-size: clamp(2.25rem, 5vw, 3.5rem); line-height: 1.12; letter-spacing: -0.02em; }
-    h2 { font-size: clamp(1.75rem, 3.5vw, 2.5rem); line-height: 1.18; letter-spacing: -0.015em; }
-    h3 { font-size: 1.3rem; line-height: 1.3; letter-spacing: -0.005em; }
+    h1, h2, h3 { font-family: var(--font-head); font-weight: var(--head-weight); color: var(--ink); text-wrap: balance; }
+    h1 { font-size: clamp(2.25rem, 5vw, 3.5rem); line-height: 1.1; letter-spacing: var(--head-track); }
+    h2 { font-size: clamp(1.75rem, 3.5vw, 2.5rem); line-height: 1.16; letter-spacing: calc(var(--head-track) * 0.75); }
+    h3 { font-size: 1.25rem; line-height: 1.3; letter-spacing: calc(var(--head-track) * 0.3); }
 
     p { max-width: var(--measure); text-wrap: pretty; }
 
@@ -101,10 +113,11 @@
 
     .eyebrow {
       display: block;
-      font-size: 0.8125rem;
-      font-weight: 600;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-weight: var(--mono-weight);
       line-height: 1.4;
-      letter-spacing: 0.08em;
+      letter-spacing: calc(var(--mono-track) + 0.04em);
       text-transform: uppercase;
       color: var(--brand);
       margin-bottom: var(--s2);
@@ -121,7 +134,7 @@
       min-height: 48px;
       padding: 0.75rem 1.5rem;
       border-radius: 999px;
-      font: 600 1rem/1.2 var(--font-sans);
+      font: 600 1rem/1.2 var(--font-body);
       letter-spacing: 0.01em;
       text-decoration: none;
       white-space: nowrap;
@@ -148,7 +161,7 @@
 
     .nav { display: flex; align-items: center; justify-content: space-between; gap: var(--s3); min-height: 72px; }
 
-    .logo { font-family: var(--font-serif); font-size: 1.25rem; line-height: 1; letter-spacing: -0.01em; color: var(--ink); text-decoration: none; white-space: nowrap; }
+    .logo { font-family: var(--font-head); font-weight: var(--head-weight); font-size: 1.2rem; line-height: 1; letter-spacing: calc(var(--head-track) * 0.5); color: var(--ink); text-decoration: none; white-space: nowrap; }
 
     .nav ul { display: flex; align-items: center; gap: var(--s4); list-style: none; }
     .nav ul a { font-size: 0.9375rem; font-weight: 500; line-height: 1.4; color: var(--ink-soft); text-decoration: none; }
@@ -175,7 +188,8 @@
       line-height: 1.5;
       color: var(--ink-soft);
     }
-    .proof strong { color: var(--ink); font-weight: 600; }
+    .proof strong { font-weight: 600; color: var(--ink); }
+    .proof .num { font-family: var(--font-mono); font-weight: var(--mono-weight); letter-spacing: var(--mono-track); }
 
     .phone {
       background: var(--surface-0);
@@ -190,13 +204,18 @@
     .phone-meta {
       display: flex;
       justify-content: space-between;
-      font-size: 0.8125rem;
+      align-items: center;
+      gap: var(--s2);
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      letter-spacing: var(--mono-track);
       line-height: 1.4;
       color: var(--ink-soft);
       padding-bottom: var(--s2);
       margin-bottom: var(--s2);
       border-bottom: 1px solid var(--line);
     }
+    .dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--sky); margin-right: 0.5rem; vertical-align: 1px; }
     .msgs { display: flex; flex-direction: column; gap: 0.75rem; list-style: none; }
     .msg { max-width: 85%; padding: 0.7rem 0.95rem; border-radius: 16px; font-size: 0.9375rem; line-height: 1.5; }
     .msg-sys { align-self: center; max-width: 100%; padding: 0; font-size: 0.8125rem; color: var(--ink-soft); }
@@ -214,7 +233,8 @@
 
     .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--s3); list-style: none; counter-reset: step; }
     .steps li { counter-increment: step; }
-    .step-num { display: block; font-family: var(--font-serif); font-size: 2rem; line-height: 1; color: var(--brand); margin-bottom: var(--s2); }
+    .steps .card { border-top: 3px solid var(--sky); }
+    .step-num { display: block; font-family: var(--font-mono); font-weight: var(--mono-weight); font-size: 1.5rem; line-height: 1; letter-spacing: var(--mono-track); color: var(--brand); margin-bottom: var(--s2); }
     .step-num::before { content: "0" counter(step); }
     .steps h3 { font-size: 1.15rem; margin-bottom: var(--s1); }
     .steps p { font-size: 0.9875rem; line-height: 1.6; color: var(--ink-soft); }
@@ -240,7 +260,7 @@
 
     .anchor { background: var(--anchor); color: var(--on-anchor); --focus: var(--accent); }
     .anchor h2 { color: var(--on-anchor); }
-    .anchor .eyebrow { color: var(--accent); }
+    .anchor .eyebrow { color: var(--anchor-sky); }
     .anchor p { color: var(--on-anchor-soft); }
 
     .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s6); align-items: start; }
@@ -250,7 +270,7 @@
     label { display: block; font-size: 0.9375rem; font-weight: 600; line-height: 1.4; margin-bottom: var(--s1); color: var(--on-anchor); }
     input, textarea {
       width: 100%;
-      font: 400 1rem/1.5 var(--font-sans);
+      font: 400 1rem/1.5 var(--font-body);
       color: var(--on-anchor);
       background: var(--anchor);
       border: 1.5px solid var(--anchor-field);
@@ -316,13 +336,13 @@
           </div>
           <ul class="proof" aria-label="Track record">
             <li><strong>Top Rated</strong> on Upwork</li>
-            <li><strong>100%</strong> Job Success</li>
-            <li><strong>1,600+</strong> client hours</li>
+            <li><strong class="num">100%</strong> Job Success</li>
+            <li><strong class="num">1,600+</strong> client hours</li>
           </ul>
         </div>
 
         <figure class="phone" aria-label="Example of an automatic text after a missed call">
-          <div class="phone-meta"><span>Stonebridge Outdoor Living</span><span>7:42 PM</span></div>
+          <div class="phone-meta"><span><span class="dot" aria-hidden="true"></span>Stonebridge Outdoor Living</span><span>7:42 PM</span></div>
           <ul class="msgs">
             <li class="msg msg-sys">Missed call · (555) 014-2290</li>
             <li class="msg msg-out">Hi, this is Stonebridge. Sorry we missed you! What project can we help with?</li>
