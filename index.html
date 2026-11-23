@@ -132,6 +132,9 @@
     .lead { font-size: 1.1875rem; line-height: 1.6; color: var(--ink-soft); }
 
     .section-head { max-width: 40rem; margin-bottom: var(--s5); }
+    .section-head.wide { max-width: 48rem; }
+    .section-head .lead { margin-top: var(--s2); }
+    .h2-accent { display: block; color: var(--brand); }
 
     .btn {
       display: inline-flex;
@@ -239,6 +242,22 @@
     .card p { color: var(--ink-soft); font-size: 1rem; line-height: 1.65; }
     .tag { display: inline-block; margin-bottom: var(--s2); font-size: 0.8125rem; font-weight: 600; line-height: 1.4; letter-spacing: 0.02em; color: var(--brand); }
 
+    .gap { display: flex; flex-direction: column; }
+    .gap .tag { font-family: var(--font-mono); font-weight: var(--mono-weight); letter-spacing: var(--mono-track); text-transform: uppercase; }
+    .gap-pair { display: grid; gap: var(--s2); margin-top: var(--s1); flex: 1; grid-template-rows: auto 1fr; }
+    .gap-pair dt { font-size: 0.8125rem; font-weight: 600; line-height: 1.4; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink); margin-bottom: 0.375rem; }
+    .gap-pair dd { font-size: 0.975rem; line-height: 1.6; color: var(--ink-soft); }
+    .gap-pair .fix { background: var(--surface-0); border-left: 3px solid var(--sky); border-radius: 8px; padding: 0.875rem 1rem; }
+    .gap-pair .fix dt { color: var(--brand); }
+
+    .micro-cta { margin-top: var(--s5); font-size: 1rem; line-height: 1.6; color: var(--ink-soft); max-width: none; }
+    .link-arrow { font-weight: 600; color: var(--brand); white-space: nowrap; text-decoration: none; }
+    .link-arrow .link-text { text-decoration: underline; text-underline-offset: 0.2em; text-decoration-thickness: 1px; }
+    .link-arrow:hover .link-text { text-decoration-thickness: 2px; }
+    .link-arrow .arrow { display: inline-block; transition: transform 0.15s ease; }
+    .link-arrow:hover .arrow { transform: translateX(3px); }
+    .nowrap { white-space: nowrap; }
+
     .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--s3); list-style: none; counter-reset: step; }
     .steps li { counter-increment: step; }
     .steps .card { border-top: 3px solid var(--sky); }
@@ -336,7 +355,7 @@
     <nav class="wrap nav" aria-label="Main">
       <a class="logo" href="#top">Mich Candelaria</a>
       <ul>
-        <li><a href="#services">Services</a></li>
+        <li><a href="#pillars">Services</a></li>
         <li><a href="#work">Work</a></li>
         <li><a href="#about">About</a></li>
         <li><a class="btn btn-primary" href="#contact">Book a Free Audit</a></li>
@@ -375,33 +394,44 @@
       </div>
     </section>
 
-    <section class="sec-0" id="services">
+    <section class="sec-0" id="diagnostic" aria-labelledby="diag-title">
       <div class="wrap">
-        <div class="section-head">
-          <span class="eyebrow">Services</span>
-          <h2>Start small, then build what the numbers support.</h2>
+        <div class="section-head wide">
+          <span class="eyebrow">The Diagnostic · <span class="nowrap">Where Qualified Leads Drop Off</span></span>
+          <h2 id="diag-title">Most service businesses don&rsquo;t have a lead generation problem. <span class="h2-accent">They have a follow-up and systems problem.</span></h2>
+          <p class="lead">Your ads, website, and forms bring in inquiries&mdash;but when speed-to-lead slows down, triggers misfire, or follow-up stops after one attempt, qualified bookings slip away. Here are the three gaps costing you revenue every week:</p>
         </div>
         <div class="cards">
-          <article class="card">
-            <span class="tag">Start here</span>
-            <h3>Missed-Lead Audit</h3>
-            <p>I call and message your business the way a customer would, then show you where leads slip away and what to fix first.</p>
+          <article class="card gap">
+            <span class="tag">Gap 01</span>
+            <h3>Slow Response to New Inquiries</h3>
+            <dl class="gap-pair">
+              <div><dt>What happens</dt><dd>A prospect calls or submits a form, hits voicemail or an inbox queue, and books with a faster competitor within minutes.</dd></div>
+              <div class="fix"><dt>How we fix it</dt><dd>Automated missed-call text-back and instant SMS/email routing that engage every inquiry in under 10 seconds&mdash;24/7, across every timezone.</dd></div>
+            </dl>
           </article>
-          <article class="card">
-            <span class="tag">Core system</span>
-            <h3>Never-Miss-a-Lead Setup</h3>
-            <p>Missed-call text-back, instant form replies, 30 days of follow-up, online booking, review requests and a simple pipeline.</p>
+          <article class="card gap">
+            <span class="tag">Gap 02</span>
+            <h3>Disconnected Pages, Forms &amp; CRM Pipelines</h3>
+            <dl class="gap-pair">
+              <div><dt>What happens</dt><dd>Landing pages, calendars, and workflows are patched together with fragile workarounds&mdash;creating duplicate records, misfired tags, and leads stuck in the wrong stage.</dd></div>
+              <div class="fix"><dt>How we fix it</dt><dd>Clean, end-to-end GoHighLevel architecture where every form, funnel step, and pipeline stage updates reliably without manual cleanup.</dd></div>
+            </dl>
           </article>
-          <article class="card">
-            <span class="tag">Fixes &amp; builds</span>
-            <h3>Workflow Repair &amp; Websites</h3>
-            <p>Already on GoHighLevel? I fix broken automations. Need a better site? I build fast, mobile-first pages you can edit.</p>
+          <article class="card gap">
+            <span class="tag">Gap 03</span>
+            <h3>Inconsistent <span class="nowrap">Follow-Up</span> &amp; Missing Attribution</h3>
+            <dl class="gap-pair">
+              <div><dt>What happens</dt><dd>Warm leads go cold after a single message, and your team cannot clearly see which channel actually produced booked appointments.</dd></div>
+              <div class="fix"><dt>How we fix it</dt><dd>Multi-step SMS and email follow-up sequences paired with clean source tracking from first click to confirmed calendar booking.</dd></div>
+            </dl>
           </article>
         </div>
+        <p class="micro-cta">See how everything connects: <a class="link-arrow" href="#pillars"><span class="link-text">Explore the 3 Core Pillars</span> <span class="arrow" aria-hidden="true">&rarr;</span></a></p>
       </div>
     </section>
 
-    <section class="sec-1" aria-labelledby="how-title">
+    <section class="sec-1" id="pillars" aria-labelledby="how-title">
       <div class="wrap">
         <div class="section-head">
           <span class="eyebrow">How it works</span>
