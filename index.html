@@ -25,6 +25,11 @@
       --accent-hover: #A6C220;
       --accent-edge: #6F8418;
       --on-accent: #122312;
+      --secondary: #E4ECE0;
+      --secondary-hover: #D6E2CF;
+      --secondary-ink: #2C5422;
+      --secondary-ink-hover: #1E3D16;
+      --secondary-edge: #7C8A76;
       --sky: #4E91D2;
       --focus: #2C5422;
 
@@ -69,6 +74,11 @@
         --brand-tint: #1C281A;
         --on-brand: #0E150D;
         --accent-edge: #B8D432;
+        --secondary: #22301F;
+        --secondary-hover: #2A3A26;
+        --secondary-ink: #A8CF8A;
+        --secondary-ink-hover: #C2E0AA;
+        --secondary-edge: #6E7E69;
         --sky: #6BA6DE;
         --focus: #B8D432;
 
@@ -133,7 +143,7 @@
       justify-content: center;
       min-height: 48px;
       padding: 0.75rem 1.5rem;
-      border-radius: 999px;
+      border-radius: 10px;
       font: 600 1rem/1.2 var(--font-body);
       letter-spacing: 0.01em;
       text-decoration: none;
@@ -144,8 +154,8 @@
     }
     .btn-primary { background: var(--accent); color: var(--on-accent); border-color: var(--accent-edge); }
     .btn-primary:hover { background: var(--accent-hover); color: var(--on-accent); }
-    .btn-ghost { background: transparent; color: var(--brand); border-color: currentColor; }
-    .btn-ghost:hover { background: var(--brand-tint); color: var(--brand-strong); }
+    .btn-secondary { background: var(--secondary); color: var(--secondary-ink); border-color: var(--secondary-edge); }
+    .btn-secondary:hover { background: var(--secondary-hover); color: var(--secondary-ink-hover); }
 
     .skip { position: absolute; left: var(--s2); top: -100px; background: var(--surface-0); padding: var(--s1) var(--s2); z-index: 10; }
     .skip:focus { top: var(--s2); }
@@ -332,7 +342,7 @@
           <p class="lead">I set up GoHighLevel so contractors stop losing jobs to voicemail, slow replies and forgotten follow-ups. You keep working; the system keeps the lead warm until it books.</p>
           <div class="actions">
             <a class="btn btn-primary" href="#contact">Get a free lead check</a>
-            <a class="btn btn-ghost" href="#work">See my work</a>
+            <a class="btn btn-secondary" href="#work">See my work</a>
           </div>
           <ul class="proof" aria-label="Track record">
             <li><strong>Top Rated</strong> on Upwork</li>

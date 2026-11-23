@@ -76,7 +76,20 @@ Taken from a photo looking up through sunlit leaves into a clear sky. Deep fores
 
 **Mono rule:** use it only for numbers and short labels: eyebrows, step numbers, stats, timestamps. Never use it for words in sentences.
 
-## 5. As applied to this site
+## 5. Buttons
+
+Shape: 10px rounded rectangle, 48px minimum height (42px in the header), weight-600 label, 1.5px edge.
+
+| Role | Light surfaces | Dark surfaces | Contrast |
+| --- | --- | --- | --- |
+| Primary (CTA only) | Sunlit Leaf `#B8D432`, Deep Canopy text, `#6F8418` edge. Hover `#A6C220` | Same lime; the edge blends in | Text 9.81:1; edge 3.89:1 on mist, 4.21:1 on white |
+| Secondary | Sage chip `#E4ECE0`, Forest Moss text, `#7C8A76` edge. Hover `#D6E2CF` | `#22301F` chip, `#A8CF8A` text, `#6E7E69` edge | Text 7.24:1; edge 3.38:1 on mist |
+
+- Lime is the only primary color on every section, so the CTA color never changes.
+- The secondary is a filled tint chip, never a second accent color.
+- Never put lime on a lime or green background.
+
+## 6. As applied to this site
 
 | Section | Surface | Inside |
 | --- | --- | --- |
