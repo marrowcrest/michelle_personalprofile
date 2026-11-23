@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mich Candelaria · GoHighLevel CRM, Websites &amp; Funnels</title>
   <meta name="description" content="Mich Candelaria launches reliable GoHighLevel pipelines, websites and conversion funnels that turn clicks into booked calls with 24/7 automation.">
+  <script>document.documentElement.classList.add('js');</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link id="font-sheet" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Space+Mono:wght@400&display=swap">
@@ -288,21 +289,50 @@
     .link-arrow:hover .arrow { transform: translateX(3px); }
     .nowrap { white-space: nowrap; }
 
-    .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--s3); list-style: none; counter-reset: step; }
-    .steps li { counter-increment: step; }
-    .steps .card { border-top: 3px solid var(--sky); }
-    .step-num { display: block; font-family: var(--font-mono); font-weight: var(--mono-weight); font-size: 1.5rem; line-height: 1; letter-spacing: var(--mono-track); color: var(--brand); margin-bottom: var(--s2); }
-    .step-num::before { content: "0" counter(step); }
-    .steps h3 { font-size: 1.15rem; margin-bottom: var(--s1); }
-    .steps p { font-size: 0.9875rem; line-height: 1.6; color: var(--ink-soft); }
+    .pillar { position: relative; display: flex; flex-direction: column; gap: var(--s3); }
+    .pillar .tag { margin-bottom: 0; font-family: var(--font-mono); font-weight: var(--mono-weight); letter-spacing: var(--mono-track); text-transform: uppercase; }
+    .pillar h3 { margin-bottom: 0; }
+    .pillar .pillar-num { font-size: 0.875rem; font-weight: 600; line-height: 1.4; color: var(--ink-soft); margin-bottom: 0.25rem; }
+    .pillar .role-label { font-size: 0.8125rem; font-weight: 600; line-height: 1.4; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink); margin-bottom: 0.375rem; }
+    .pillar .role { font-size: 0.975rem; line-height: 1.6; color: var(--ink-soft); }
+    .checks { list-style: none; display: grid; gap: 0.75rem; padding-top: var(--s3); border-top: 1px solid var(--line); }
+    .checks li { position: relative; padding-left: 1.75rem; font-size: 0.9375rem; line-height: 1.55; color: var(--ink); }
+    .checks li::before { content: ""; position: absolute; left: 0; top: 0.2em; width: 1.125rem; height: 1.125rem; border-radius: 50%; background: var(--brand-tint); }
+    .checks li::after { content: ""; position: absolute; left: 0.4rem; top: 0.42em; width: 0.3rem; height: 0.55rem; border: solid var(--brand); border-width: 0 2px 2px 0; transform: rotate(45deg); }
+    .pillar:not(:last-child)::after { content: ""; position: absolute; top: 3.05rem; right: calc(-1 * var(--s3) - 1px); width: calc(var(--s3) + 2px); height: 2px; background: var(--sky); }
+    .pillar:not(:last-child)::before { content: ""; position: absolute; z-index: 1; top: calc(3.05rem - 4px); right: calc(-1 * var(--s3) - 3px); border: 5px solid transparent; border-left: 7px solid var(--sky); border-right: 0; }
 
-    .work-item { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: var(--s5); padding-block: var(--s5); border-top: 1px solid var(--line); }
-    .work-item:last-child { border-bottom: 1px solid var(--line); }
-    .work-item h3 { font-size: 1.5rem; margin-bottom: var(--s1); }
-    .work-meta { font-size: 0.9375rem; line-height: 1.5; color: var(--ink-soft); }
-    .work-detail { display: grid; gap: var(--s3); }
-    .work-detail h4 { font-size: 0.8125rem; font-weight: 600; line-height: 1.4; letter-spacing: 0.06em; text-transform: uppercase; color: var(--brand); margin-bottom: 0.375rem; }
-    .work-detail p { font-size: 1rem; line-height: 1.65; color: var(--ink-soft); }
+    .tablist { display: flex; gap: 0.25rem; width: max-content; max-width: 100%; margin: 0 auto var(--s5); padding: 0.3rem; background: var(--surface-1); border: 1px solid var(--line); border-radius: 12px; overflow-x: auto; scrollbar-width: none; }
+    .tablist::-webkit-scrollbar { display: none; }
+    .tab { flex: none; min-height: 44px; padding: 0.6rem 1.25rem; border: 0; border-radius: 9px; background: transparent; font: 600 0.9375rem/1.2 var(--font-body); color: var(--ink-soft); cursor: pointer; white-space: nowrap; transition: background-color 0.15s ease, color 0.15s ease; }
+    @media (hover: hover) { .tab:hover { color: var(--brand); } }
+    .tab[aria-selected="true"] { background: var(--surface-0); color: var(--brand); box-shadow: 0 1px 3px rgba(18, 35, 18, 0.12), 0 0 0 1px var(--line); }
+    html:not(.js) .tablist { display: none; }
+    html:not(.js) .case-panel[hidden] { display: grid; }
+    html:not(.js) .case-panel + .case-panel { margin-top: var(--s6); }
+
+    .case-panel { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); gap: var(--s6); align-items: start; border-radius: var(--radius); }
+    .case-panel[hidden] { display: none; }
+    .case-story .tag { font-family: var(--font-mono); font-weight: var(--mono-weight); letter-spacing: var(--mono-track); text-transform: uppercase; margin-bottom: var(--s2); }
+    .case-story h3 { font-size: clamp(1.35rem, 2.2vw, 1.75rem); line-height: 1.25; letter-spacing: calc(var(--head-track) * 0.5); margin-bottom: var(--s4); }
+    .case-steps { list-style: none; display: grid; gap: var(--s3); counter-reset: cs; }
+    .case-steps li { counter-increment: cs; position: relative; padding-left: 3rem; }
+    .case-steps li::before { content: "0" counter(cs); position: absolute; left: 0; top: 0; font: var(--mono-weight) 0.8125rem/1.6 var(--font-mono); letter-spacing: var(--mono-track); color: var(--brand); }
+    .case-steps li:not(:last-child)::after { content: ""; position: absolute; left: 0.6rem; top: 1.7rem; bottom: calc(-1 * var(--s3) + 0.3rem); width: 1px; background: var(--line); }
+    .step-label { font-size: 0.8125rem; font-weight: 600; line-height: 1.6; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink); margin-bottom: 0.25rem; }
+    .case-steps p:not(.step-label) { font-size: 1rem; line-height: 1.65; color: var(--ink-soft); }
+
+    .proof-card { background: var(--surface-1); border: 1px solid var(--line); border-radius: var(--radius); padding: var(--s4); }
+    .stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--s2); padding-bottom: var(--s4); margin-bottom: var(--s4); border-bottom: 1px solid var(--line); }
+    .stat { display: flex; flex-direction: column-reverse; gap: 0.375rem; }
+    .stat dd { font: var(--mono-weight) clamp(1.25rem, 2vw, 1.5rem)/1.1 var(--font-mono); letter-spacing: 0; color: var(--brand); }
+    .stat dt { font-size: 0.8125rem; line-height: 1.4; color: var(--ink-soft); }
+    .flow-title { font-size: 0.8125rem; font-weight: 600; line-height: 1.4; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink); margin-bottom: var(--s2); }
+    .flow { list-style: none; display: grid; gap: 1.5rem; }
+    .node { position: relative; display: grid; gap: 0.2rem; background: var(--surface-0); border: 1px solid var(--line); border-left: 3px solid var(--sky); border-radius: 8px; padding: 0.75rem 1rem; font-size: 0.9375rem; line-height: 1.45; color: var(--ink); }
+    .node:not(:last-child)::after { content: ""; position: absolute; left: 1.5rem; top: 100%; width: 2px; height: calc(1.5rem - 6px); background: var(--sky); }
+    .node:not(:last-child)::before { content: ""; position: absolute; left: calc(1.5rem - 4px); top: calc(100% + 1.5rem - 8px); border: 5px solid transparent; border-top: 6px solid var(--sky); border-bottom: 0; }
+    .node-label { font: var(--mono-weight) 0.75rem/1.3 var(--font-mono); letter-spacing: calc(var(--mono-track) + 0.04em); text-transform: uppercase; color: var(--brand); }
 
     .about-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: var(--s6); align-items: start; }
     .about-grid h2 { margin-bottom: var(--s3); }
@@ -321,7 +351,7 @@
     .anchor p { color: var(--on-anchor-soft); }
 
     .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s6); align-items: start; }
-    .hero-grid > *, .about-grid > *, .contact-grid > *, .work-item > * { min-width: 0; }
+    .hero-grid > *, .about-grid > *, .contact-grid > *, .case-panel > * { min-width: 0; }
     .contact-grid h2 { margin-bottom: var(--s2); }
 
     form { display: grid; gap: var(--s3); background: var(--anchor-raised); border: 1px solid var(--anchor-line); border-radius: var(--radius); padding: clamp(var(--s3), 4vw, var(--s4)); }
@@ -346,16 +376,21 @@
     footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--s2); border-top: 1px solid var(--anchor-line); padding-top: var(--s4); }
 
     @media (max-width: 900px) {
-      .hero-grid, .about-grid, .contact-grid, .work-item { grid-template-columns: 1fr; gap: var(--s4); }
+      .hero-grid, .about-grid, .contact-grid, .case-panel { grid-template-columns: 1fr; gap: var(--s4); }
+      .pillar:not(:last-child)::after { top: auto; bottom: calc(-1 * var(--s3) - 1px); right: auto; left: 50%; width: 2px; height: calc(var(--s3) + 2px); }
+      .pillar:not(:last-child)::before { top: auto; bottom: calc(-1 * var(--s3) - 3px); right: auto; left: calc(50% - 4px); border: 5px solid transparent; border-top: 7px solid var(--sky); border-bottom: 0; }
       .cards { grid-template-columns: 1fr; }
-      .steps { grid-template-columns: repeat(2, 1fr); }
       .nav ul li:not(:last-child) { display: none; }
       .phone { justify-self: start; }
     }
 
     @media (max-width: 520px) {
       body { font-size: 1rem; }
-      .steps { grid-template-columns: 1fr; }
+      .stats { grid-template-columns: 1fr; gap: var(--s2); }
+      .stat { flex-direction: row-reverse; justify-content: flex-end; align-items: baseline; gap: 0.75rem; }
+      .proof-card { padding: var(--s3); }
+      .tablist { width: 100%; }
+      .tab { flex: 1 1 0; min-width: 0; padding: 0.55rem 0.5rem; font-size: 0.875rem; line-height: 1.25; white-space: normal; text-align: center; }
       .actions .btn { width: 100%; }
       .proof { grid-template-columns: 1fr; }
       .card, .skills { padding: var(--s3); }
@@ -473,94 +508,127 @@
       </div>
     </section>
 
-    <section class="sec-1" id="pillars" aria-labelledby="how-title">
+    <section class="sec-1" id="pillars" aria-labelledby="pillars-title">
       <div class="wrap">
-        <div class="section-head">
-          <span class="eyebrow">How it works</span>
-          <h2 id="how-title">From first ring to booked estimate.</h2>
+        <div class="section-head wide center">
+          <span class="eyebrow">System Architecture · <span class="nowrap">The 3 Core Pillars</span></span>
+          <h2 id="pillars-title">Three connected layers built to capture, qualify, and book leads automatically.</h2>
+          <p class="lead">A website without follow-up loses leads, and a CRM without clean intake creates chaos. Each build connects your front-end pages, conversion funnels, and GoHighLevel backend into one unified system:</p>
         </div>
-        <ol class="steps">
-          <li class="card">
-            <span class="step-num" aria-hidden="true"></span>
-            <h3>A lead reaches out</h3>
-            <p>They call, fill in a form or message you, often while you're on a job.</p>
-          </li>
-          <li class="card">
-            <span class="step-num" aria-hidden="true"></span>
-            <h3>They hear back instantly</h3>
-            <p>A friendly text goes out in seconds, so they don't call the next company.</p>
-          </li>
-          <li class="card">
-            <span class="step-num" aria-hidden="true"></span>
-            <h3>Follow-up runs itself</h3>
-            <p>Gentle reminders over 30 days, because big projects take time to decide.</p>
-          </li>
-          <li class="card">
-            <span class="step-num" aria-hidden="true"></span>
-            <h3>They book and review</h3>
-            <p>They pick an estimate time online, and happy customers get a review request.</p>
-          </li>
-        </ol>
+        <div class="cards pillars">
+          <article class="card pillar">
+            <span class="tag">Layer 01 · Capture</span>
+            <div>
+              <p class="pillar-num">Pillar 01</p>
+              <h3>High-Converting Websites</h3>
+            </div>
+            <div>
+              <p class="role-label">Role</p>
+              <p class="role">Turn cold traffic into high-intent inquiries with fast load speeds, clear service positioning, and friction-free mobile layouts.</p>
+            </div>
+            <ul class="checks">
+              <li>Custom, responsive GoHighLevel &amp; web builds engineered for speed</li>
+              <li>Clear value hierarchy and conversion-focused call-to-action placement</li>
+              <li>Embedded intake forms, instant chat widgets, and call-tracking hooks</li>
+            </ul>
+          </article>
+          <article class="card pillar">
+            <span class="tag">Layer 02 · Qualify</span>
+            <div>
+              <p class="pillar-num">Pillar 02</p>
+              <h3>Targeted Conversion Funnels</h3>
+            </div>
+            <div>
+              <p class="role-label">Role</p>
+              <p class="role">Pre-qualify prospects and route them to the right offer or calendar without manual back-and-forth.</p>
+            </div>
+            <ul class="checks">
+              <li>Multi-step lead capture forms and conditional qualification logic</li>
+              <li>Dedicated landing pages built for paid traffic and specific service offers</li>
+              <li>Dynamic calendar routing with automated timezone detection</li>
+            </ul>
+          </article>
+          <article class="card pillar">
+            <span class="tag">Layer 03 · Book &amp; Track</span>
+            <div>
+              <p class="pillar-num">Pillar 03</p>
+              <h3>End-to-End GHL Automation</h3>
+            </div>
+            <div>
+              <p class="role-label">Role</p>
+              <p class="role">Follow up in seconds, nurture warm prospects, and track every dollar from first click to booked consultation.</p>
+            </div>
+            <ul class="checks">
+              <li>Sub-10-second missed-call text-back and instant SMS/email sequences</li>
+              <li>Deterministic pipeline stage movement, tagging, and round-robin assignment</li>
+              <li>Full UTM attribution tracking and pre-launch QA verification</li>
+            </ul>
+          </article>
+        </div>
+        <p class="micro-cta center">Want to see this architecture in production? <a class="link-arrow" href="#work"><span class="link-text">Examine the 3 Flagship Case Studies</span> <span class="arrow" aria-hidden="true">&rarr;</span></a></p>
       </div>
     </section>
 
-    <section class="sec-0" id="work">
+    <section class="sec-0" id="work" aria-labelledby="work-title">
       <div class="wrap">
-        <div class="section-head">
-          <span class="eyebrow">Selected work</span>
-          <h2>Systems built for real businesses.</h2>
+        <div class="section-head wide center">
+          <span class="eyebrow">In Production · <span class="nowrap">3 Flagship Case Studies</span></span>
+          <h2 id="work-title">Systems built for real businesses.</h2>
         </div>
-        <div>
-          <article class="work-item">
-            <div>
-              <h3>Forecast Farms</h3>
-              <p class="work-meta">Equestrian training program · Virginia, US</p>
+        <div class="case-tabs">
+          <div class="tablist" role="tablist" aria-label="Case studies">
+            <button class="tab" type="button" role="tab" id="tab-ff" aria-controls="panel-ff" aria-selected="true" tabindex="0">Forecast Farms</button>
+            <button class="tab" type="button" role="tab" id="tab-cw" aria-controls="panel-cw" aria-selected="false" tabindex="-1">Contractor Website</button>
+            <button class="tab" type="button" role="tab" id="tab-ob" aria-controls="panel-ob" aria-selected="false" tabindex="-1">Outbound System</button>
+          </div>
+          <div class="case-panel" role="tabpanel" id="panel-ff" aria-labelledby="tab-ff" tabindex="0">
+            <div class="case-story">
+              <span class="tag">Equestrian Training · GHL Booking + Web + Content</span>
+              <h3>Replaced a retired booking link with a qualification-first GHL flow that books evaluation lessons and requests reviews automatically.</h3>
+              <ol class="case-steps">
+                <li><p class="step-label">The Bottleneck</p><p>Social bio links sent high-intent riders to a generic homepage, a legacy booking link added friction, and inquiries had no structured follow-up.</p></li>
+                <li><p class="step-label">The System Built</p><p>A GHL evaluation form that tags the contact, opens a pipeline opportunity and texts a booking link instantly, with two-way SMS routed to the owner&rsquo;s GHL app, automatic Google review requests after each lesson, and a rules-based weekly content system.</p></li>
+                <li><p class="step-label">The Verified Result</p><p>Every workflow was test-run end to end before launch, and every web section and post passes a 3-point QA gate. Approved by the owner for public portfolio showcase.</p></li>
+              </ol>
             </div>
-            <div class="work-detail">
-              <div>
-                <h4>The problem</h4>
-                <p>Social links sent people to a generic homepage, and inquiries had no follow-up.</p>
-              </div>
-              <div>
-                <h4>What I built</h4>
-                <p>An evaluation form that sends a booking link right away, two-way texting in the owner's app, automatic review requests, and a weekly content plan.</p>
-              </div>
+            <aside class="proof-card" aria-label="Forecast Farms system specs">
+              <dl class="stats"><div class="stat"><dt>Evaluation → booking flow</dt><dd>2-step</dd></div><div class="stat"><dt>Weekly content cadence</dt><dd>6-day</dd></div><div class="stat"><dt>Pre-publish QA gate</dt><dd>3-point</dd></div></dl>
+              <p class="flow-title">System flow</p>
+              <ol class="flow"><li class="node"><span class="node-label">Trigger</span><span>Evaluation form submitted</span></li><li class="node"><span class="node-label">Logic</span><span>Tag + opportunity + instant SMS booking link</span></li><li class="node"><span class="node-label">Result</span><span>Lesson booked → review request on completion</span></li></ol>
+            </aside>
+          </div>
+          <div class="case-panel" role="tabpanel" id="panel-cw" aria-labelledby="tab-cw" tabindex="0" hidden>
+            <div class="case-story">
+              <span class="tag">Outdoor-Build Contractor · GHL Website + Lead Capture</span>
+              <h3>Turned a brochure site with an unwatched inbox into a 5-page GHL site that creates a pipeline opportunity and alerts the owner on every quote request.</h3>
+              <ol class="case-steps">
+                <li><p class="step-label">The Bottleneck</p><p>An outdated brochure site with slow mobile pages and unvalidated forms, and quote requests landing in an inbox nobody watched.</p></li>
+                <li><p class="step-label">The System Built</p><p>A 5-page GoHighLevel site (Home, Services, Project Gallery, About, Quote Request) with a quote form that validates project type, location and timeline, tags the lead by service, creates a pipeline opportunity and alerts the owner by SMS and email.</p></li>
+                <li><p class="step-label">The Verified Result</p><p>Multi-viewport QA on mobile, tablet and desktop, form error-state checks, and notification delivery confirmed before launch. HTTPS and clean metadata in place.</p></li>
+              </ol>
             </div>
-          </article>
-
-          <article class="work-item">
-            <div>
-              <h3>Contractor website &amp; lead capture</h3>
-              <p class="work-meta">Outdoor-build contractor · US</p>
+            <aside class="proof-card" aria-label="Contractor Website system specs">
+              <dl class="stats"><div class="stat"><dt>Conversion site</dt><dd>5-page</dd></div><div class="stat"><dt>Scope validation</dt><dd>3-field</dd></div><div class="stat"><dt>Owner SMS + email alert</dt><dd>Instant</dd></div></dl>
+              <p class="flow-title">System flow</p>
+              <ol class="flow"><li class="node"><span class="node-label">Trigger</span><span>Quote form submitted</span></li><li class="node"><span class="node-label">Logic</span><span>Validate fields + tag by service type</span></li><li class="node"><span class="node-label">Result</span><span>Opportunity created + owner alerted</span></li></ol>
+            </aside>
+          </div>
+          <div class="case-panel" role="tabpanel" id="panel-ob" aria-labelledby="tab-ob" tabindex="0" hidden>
+            <div class="case-story">
+              <span class="tag">Service Businesses (US &amp; AU) · Outbound Deliverability + CRM Handoff</span>
+              <h3>Built a domain-isolated outbound engine that protects client email and hands warm replies straight to the GHL pipeline.</h3>
+              <ol class="case-steps">
+                <li><p class="step-label">The Bottleneck</p><p>Cold email sent from the main domain put everyday client email at risk of the spam folder, and generic pitches got ignored.</p></li>
+                <li><p class="step-label">The System Built</p><p>A separate sending domain with verified leads and throttled inboxes, a qualification filter that skips agency-managed sites, and personalised homepage mockups as the opening hook. Positive replies move into the main GHL pipeline.</p></li>
+                <li><p class="step-label">The Verified Result</p><p>Outbound runs fully independent of client-facing GHL messaging, so cold outreach never touches the primary domain.</p></li>
+              </ol>
             </div>
-            <div class="work-detail">
-              <div>
-                <h4>The problem</h4>
-                <p>An old brochure site, with quote requests landing in an inbox nobody watched.</p>
-              </div>
-              <div>
-                <h4>What I built</h4>
-                <p>A five-page site in GoHighLevel with a quote form that asks for project type, location and timeline, alerts the owner instantly and adds the lead to a pipeline.</p>
-              </div>
-            </div>
-          </article>
-
-          <article class="work-item">
-            <div>
-              <h3>Outbound lead system</h3>
-              <p class="work-meta">Service businesses · US &amp; Australia</p>
-            </div>
-            <div class="work-detail">
-              <div>
-                <h4>The problem</h4>
-                <p>Cold email from the main domain put everyday client email at risk of the spam folder.</p>
-              </div>
-              <div>
-                <h4>What I built</h4>
-                <p>A separate sending domain, clear rules for which leads to contact, and personalised homepage mockups. Warm replies flow straight into the CRM.</p>
-              </div>
-            </div>
-          </article>
+            <aside class="proof-card" aria-label="Outbound System system specs">
+              <dl class="stats"><div class="stat"><dt>Send cap per inbox</dt><dd>10/day</dd></div><div class="stat"><dt>Cold sends from main domain</dt><dd>0</dd></div><div class="stat"><dt>Homepage mockup per prospect</dt><dd>1:1</dd></div></dl>
+              <p class="flow-title">System flow</p>
+              <ol class="flow"><li class="node"><span class="node-label">Trigger</span><span>Lead passes qualification filter</span></li><li class="node"><span class="node-label">Logic</span><span>Mockup email from separate domain</span></li><li class="node"><span class="node-label">Result</span><span>Warm reply → GHL pipeline</span></li></ol>
+            </aside>
+          </div>
         </div>
       </div>
     </section>
@@ -629,6 +697,26 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    const tabs = [...document.querySelectorAll('.tab')];
+    const selectTab = (tab, focus) => {
+      tabs.forEach((t) => {
+        const on = t === tab;
+        t.setAttribute('aria-selected', on);
+        t.tabIndex = on ? 0 : -1;
+        document.getElementById(t.getAttribute('aria-controls')).hidden = !on;
+      });
+      if (focus) tab.focus();
+    };
+    tabs.forEach((tab, i) => {
+      tab.addEventListener('click', () => selectTab(tab));
+      tab.addEventListener('keydown', (e) => {
+        const map = { ArrowRight: i + 1, ArrowLeft: i - 1, Home: 0, End: tabs.length - 1 };
+        if (!(e.key in map)) return;
+        e.preventDefault();
+        selectTab(tabs[(map[e.key] + tabs.length) % tabs.length], true);
+      });
+    });
 
     document.getElementById('contact-form').addEventListener('submit', (e) => {
       e.preventDefault();
