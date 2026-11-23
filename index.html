@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mich Candelaria · GoHighLevel Lead Systems</title>
-  <meta name="description" content="Mich Candelaria builds GoHighLevel lead systems for contractors: missed-call text-back, instant form replies, follow-up and online booking.">
+  <title>Mich Candelaria · GoHighLevel CRM &amp; Automation Architect</title>
+  <meta name="description" content="Mich Candelaria engineers leak-proof GoHighLevel pipelines, automations and conversion websites with structural-engineering rigor. 1,600+ hours of production delivery.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link id="font-sheet" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Space+Mono:wght@400&display=swap">
@@ -177,15 +177,15 @@
 
     .hero { padding-block: clamp(4rem, 9vw, 7rem) var(--section); border-bottom: 1px solid var(--line); }
     .hero-grid { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: var(--s6); align-items: center; }
-    .hero h1 { margin-bottom: var(--s3); }
-    .hero .lead { margin-bottom: var(--s4); }
+    .hero h1 { font-size: clamp(2rem, 3.6vw, 2.875rem); line-height: 1.1; letter-spacing: var(--head-track); margin-bottom: var(--s3); }
+    .hero .lead { max-width: 60ch; margin-bottom: var(--s4); }
 
     .actions { display: flex; flex-wrap: wrap; gap: var(--s2); }
 
     .proof {
-      display: flex;
-      flex-wrap: wrap;
-      gap: var(--s1) var(--s3);
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: var(--s3) var(--s4);
       margin-top: var(--s5);
       padding-top: var(--s3);
       border-top: 1px solid var(--line);
@@ -194,7 +194,9 @@
       line-height: 1.5;
       color: var(--ink-soft);
     }
-    .proof strong { font-weight: 600; color: var(--ink); }
+    .proof li { display: flex; flex-direction: column; gap: 0.25rem; }
+    .proof strong { font-size: 1rem; font-weight: 600; line-height: 1.35; color: var(--ink); }
+    .proof li > span { font-size: 0.875rem; line-height: 1.45; }
     .proof .num { font-family: var(--font-mono); font-weight: var(--mono-weight); letter-spacing: var(--mono-track); }
 
     .phone {
@@ -270,6 +272,7 @@
     .anchor p { color: var(--on-anchor-soft); }
 
     .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s6); align-items: start; }
+    .hero-grid > *, .about-grid > *, .contact-grid > *, .work-item > * { min-width: 0; }
     .contact-grid h2 { margin-bottom: var(--s2); }
 
     form { display: grid; gap: var(--s3); background: var(--anchor-raised); border: 1px solid var(--anchor-line); border-radius: var(--radius); padding: clamp(var(--s3), 4vw, var(--s4)); }
@@ -305,7 +308,19 @@
       body { font-size: 1rem; }
       .steps { grid-template-columns: 1fr; }
       .actions .btn { width: 100%; }
+      .proof { grid-template-columns: 1fr; }
       .card, .skills { padding: var(--s3); }
+    }
+
+    @media (max-width: 400px) {
+      .nav { gap: var(--s2); }
+      .logo { font-size: 1.05rem; }
+      .nav .btn { padding: 0.55rem 0.9rem; font-size: 0.875rem; }
+    }
+
+    @media (max-width: 340px) {
+      .logo { font-size: 0.95rem; }
+      .nav .btn { padding: 0.5rem 0.75rem; }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -324,7 +339,7 @@
         <li><a href="#services">Services</a></li>
         <li><a href="#work">Work</a></li>
         <li><a href="#about">About</a></li>
-        <li><a class="btn btn-primary" href="#contact">Free lead check</a></li>
+        <li><a class="btn btn-primary" href="#contact">Book a consultation</a></li>
       </ul>
     </nav>
   </header>
@@ -333,17 +348,18 @@
     <section class="hero sec-1" id="top">
       <div class="wrap hero-grid">
         <div>
-          <span class="eyebrow">GoHighLevel lead systems</span>
-          <h1>Every missed call gets a reply in seconds.</h1>
-          <p class="lead">I set up GoHighLevel so contractors stop losing jobs to voicemail, slow replies and forgotten follow-ups. You keep working; the system keeps the lead warm until it books.</p>
+          <span class="eyebrow">GoHighLevel CRM &amp; Automation Architect · Funnels &amp; Web Systems</span>
+          <h1>I build leak-proof GoHighLevel pipelines and conversion websites with structural-engineering rigor.</h1>
+          <p class="lead">Most marketing stacks lose revenue between the click, the inquiry form, and the booked calendar. Trained in building structural systems and backed by 1,600+ hours of production delivery for distributed teams and service operators, I engineer, automate, and QA end-to-end CRM workflows that capture and book leads across every timezone.</p>
           <div class="actions">
-            <a class="btn btn-primary" href="#contact">Get a free lead check</a>
-            <a class="btn btn-secondary" href="#work">See my work</a>
+            <a class="btn btn-primary" href="#contact">Book a consultation</a>
+            <a class="btn btn-secondary" href="#work">Examine the 3 Case Studies</a>
           </div>
           <ul class="proof" aria-label="Track record">
-            <li><strong>Top Rated</strong> on Upwork</li>
-            <li><strong class="num">100%</strong> Job Success</li>
-            <li><strong class="num">1,600+</strong> client hours</li>
+            <li><strong><span class="num">1,600+</span> hrs</strong><span>Verified Production Delivery</span></li>
+            <li><strong>Multi-Timezone</strong><span>Async &amp; Live Handoff Ready</span></li>
+            <li><strong><span class="num">3</span> Core Pillars</strong><span>GHL · Web · Funnels</span></li>
+            <li><strong><span class="num">100%</span> Pre-Deploy QA</strong><span>Stress-Tested Trigger Logic</span></li>
           </ul>
         </div>
 
