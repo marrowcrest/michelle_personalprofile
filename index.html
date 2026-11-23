@@ -306,19 +306,67 @@
     @media (hover: hover) { .tab:hover { color: var(--brand); } }
     .tab[aria-selected="true"] { background: var(--surface-0); color: var(--brand); box-shadow: 0 1px 3px rgba(18, 35, 18, 0.12), 0 0 0 1px var(--line); }
     html:not(.js) .tablist { display: none; }
-    html:not(.js) .case-panel[hidden] { display: grid; }
+    html:not(.js) .case-panel[hidden] { display: grid !important; }
     html:not(.js) .case-panel + .case-panel { margin-top: var(--s6); }
 
     .case-panel { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); gap: var(--s6); align-items: start; border-radius: var(--radius); }
-    .case-panel[hidden] { display: none; }
+    .case-panel[hidden] { display: none !important; }
     .case-story .tag { font-family: var(--font-mono); font-weight: var(--mono-weight); letter-spacing: var(--mono-track); text-transform: uppercase; margin-bottom: var(--s2); }
     .case-story h3 { font-size: clamp(1.35rem, 2.2vw, 1.75rem); line-height: 1.25; letter-spacing: calc(var(--head-track) * 0.5); margin-bottom: var(--s4); }
     .case-steps { list-style: none; display: grid; gap: var(--s3); counter-reset: cs; }
-    .case-steps li { counter-increment: cs; position: relative; padding-left: 3rem; }
-    .case-steps li::before { content: "0" counter(cs); position: absolute; left: 0; top: 0; font: var(--mono-weight) 0.8125rem/1.6 var(--font-mono); letter-spacing: var(--mono-track); color: var(--brand); }
-    .case-steps li:not(:last-child)::after { content: ""; position: absolute; left: 0.6rem; top: 1.7rem; bottom: calc(-1 * var(--s3) + 0.3rem); width: 1px; background: var(--line); }
+    .case-steps > li { counter-increment: cs; position: relative; padding-left: 3rem; }
+    .case-steps > li::before { content: "0" counter(cs); position: absolute; left: 0; top: 0; font: var(--mono-weight) 0.8125rem/1.6 var(--font-mono); letter-spacing: var(--mono-track); color: var(--brand); }
+    .case-steps > li:not(:last-child)::after { content: ""; position: absolute; left: 0.6rem; top: 1.7rem; bottom: calc(-1 * var(--s3) + 0.3rem); width: 1px; background: var(--line); }
     .step-label { font-size: 0.8125rem; font-weight: 600; line-height: 1.6; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink); margin-bottom: 0.25rem; }
     .case-steps p:not(.step-label) { font-size: 1rem; line-height: 1.65; color: var(--ink-soft); }
+
+    .case-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 0.75rem; margin-bottom: var(--s2); }
+    .case-meta .tag { margin-bottom: 0; }
+    .status-pill { display: inline-block; padding: 0.3rem 0.65rem; border: 1px solid var(--line); border-radius: 999px; background: var(--surface-1); font: var(--mono-weight) 0.6875rem/1.3 var(--font-mono); letter-spacing: var(--mono-track); text-transform: uppercase; color: var(--ink); }
+    .sub-points { list-style: none; display: grid; gap: 0.75rem; }
+    .sub-points li { position: relative; padding-left: 1rem; font-size: 1rem; line-height: 1.65; color: var(--ink-soft); }
+    .sub-points li::before { content: ""; position: absolute; left: 0; top: 0.7em; width: 5px; height: 5px; border-radius: 50%; background: var(--sky); }
+    .sub-points strong { color: var(--ink); font-weight: 600; }
+    .sub-points em { font-style: normal; color: var(--brand); }
+    .pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s2); margin-block: var(--s2); }
+    .pair-item { padding: 0.875rem 1rem; border-radius: 8px; background: var(--surface-1); }
+    .pair-item.expected { border-left: 3px solid var(--brand); }
+    .pair-item.observed { border: 1.5px dashed var(--field); }
+    .pair-label { font: var(--mono-weight) 0.75rem/1.3 var(--font-mono); letter-spacing: calc(var(--mono-track) + 0.04em); text-transform: uppercase; color: var(--ink); margin-bottom: 0.25rem; }
+    .pair-item p:not(.pair-label) { font-size: 0.9375rem; line-height: 1.5; color: var(--ink); }
+    .case-steps p.risk { font-size: 0.9375rem; color: var(--ink-soft); }
+
+    .card-note { font-size: 0.8125rem; line-height: 1.5; color: var(--ink-soft); margin-top: -0.5rem; margin-bottom: var(--s3); }
+    .flow + .card-note { margin-top: var(--s3); margin-bottom: 0; }
+    .kpis { display: grid; margin-bottom: var(--s4); border-top: 1px solid var(--line); }
+    .kpi { padding-block: 0.875rem; border-bottom: 1px solid var(--line); }
+    .kpi-name { font-size: 0.9375rem; font-weight: 600; line-height: 1.4; color: var(--ink); margin-bottom: 0.5rem; }
+    .kpi dl { display: grid; grid-template-columns: 1fr 1.15fr 1fr; gap: var(--s2); }
+    .kpi dt { font-size: 0.6875rem; font-weight: 600; line-height: 1.3; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: 0.2rem; }
+    .kpi dd { font-size: 0.875rem; line-height: 1.4; color: var(--ink); }
+    .kpi dd.kpi-target { font-weight: 600; color: var(--brand); }
+    .est { display: block; font-family: var(--font-body); font-size: 0.75rem; font-style: italic; color: var(--ink-soft); }
+    .target { background: var(--surface-0); border: 1px solid var(--line); border-left: 3px solid var(--brand); border-radius: 8px; padding: 0.875rem 1rem; margin-bottom: var(--s4); }
+    .target .flow-title { margin-bottom: 0.25rem; }
+    .target p:not(.flow-title) { font-size: 1rem; font-weight: 600; line-height: 1.45; color: var(--ink); }
+    .qa { display: grid; margin-bottom: var(--s4); border-top: 1px solid var(--line); }
+    .qa > div { display: grid; gap: 0.2rem; padding-block: 0.75rem; border-bottom: 1px solid var(--line); }
+    .qa dt { font-size: 0.875rem; line-height: 1.4; color: var(--ink-soft); }
+    .qa dd { font-size: 0.9375rem; font-weight: 600; line-height: 1.4; color: var(--ink); }
+    .flow-compact { gap: 1.25rem; }
+    .flow-compact .node { padding: 0.6rem 1rem; font-weight: 600; }
+    .flow-compact .node:not(:last-child)::after { height: calc(1.25rem - 6px); }
+    .flow-compact .node:not(:last-child)::before { top: calc(100% + 1.25rem - 8px); }
+    .flow .node-done { background: var(--brand-tint); border-left-color: var(--brand); }
+
+    .case-panel.builds { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s4); align-items: stretch; }
+    .build-card { display: flex; flex-direction: column; background: var(--surface-1); border: 1px solid var(--line); border-radius: var(--radius); padding: var(--s4); }
+    .build-card .tag { font-family: var(--font-mono); font-weight: var(--mono-weight); letter-spacing: var(--mono-track); text-transform: uppercase; margin-bottom: var(--s2); }
+    .build-card h3 { font-size: 1.25rem; line-height: 1.3; margin-bottom: var(--s3); }
+    .build-card .step-label { margin-top: var(--s2); }
+    .build-card p:not(.step-label) { font-size: 0.975rem; line-height: 1.6; color: var(--ink-soft); }
+    .build-card .stats { margin: auto 0 0; padding-top: var(--s3); }
+    .build-card .stat:last-child { border-bottom: 0; padding-bottom: 0; }
 
     .proof-card { background: var(--surface-1); border: 1px solid var(--line); border-radius: var(--radius); padding: var(--s4); }
     .stats { display: grid; margin-bottom: var(--s4); }
@@ -375,7 +423,7 @@
     footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--s2); border-top: 1px solid var(--anchor-line); padding-top: var(--s4); }
 
     @media (max-width: 900px) {
-      .hero-grid, .about-grid, .contact-grid, .case-panel { grid-template-columns: 1fr; gap: var(--s4); }
+      .hero-grid, .about-grid, .contact-grid, .case-panel, .case-panel.builds { grid-template-columns: 1fr; gap: var(--s4); }
       .cards { grid-template-columns: 1fr; }
       .nav ul li:not(:last-child) { display: none; }
       .phone { justify-self: start; }
@@ -383,7 +431,10 @@
 
     @media (max-width: 520px) {
       body { font-size: 1rem; }
-      .proof-card { padding: var(--s3); }
+      .proof-card, .build-card { padding: var(--s3); }
+      .pair { grid-template-columns: 1fr; }
+      .kpi dl { grid-template-columns: 1fr 1fr; }
+      .kpi dl > div:last-child { grid-column: 1 / -1; }
       .tablist { width: 100%; }
       .tab { flex: 1 1 0; min-width: 0; padding: 0.55rem 0.5rem; font-size: 0.875rem; line-height: 1.25; white-space: normal; text-align: center; }
       .actions .btn { width: 100%; }
@@ -567,62 +618,102 @@
     <section class="sec-0" id="work" aria-labelledby="work-title">
       <div class="wrap">
         <div class="section-head wide center">
-          <span class="eyebrow">In Production · <span class="nowrap">3 Flagship Case Studies</span></span>
+          <span class="eyebrow">Selected Work · <span class="nowrap">3 Flagship Case Studies</span></span>
           <h2 id="work-title">Systems built for real businesses.</h2>
         </div>
         <div class="case-tabs">
           <div class="tablist" role="tablist" aria-label="Case studies">
-            <button class="tab" type="button" role="tab" id="tab-ff" aria-controls="panel-ff" aria-selected="true" tabindex="0">Forecast Farms</button>
-            <button class="tab" type="button" role="tab" id="tab-cw" aria-controls="panel-cw" aria-selected="false" tabindex="-1">Contractor Website</button>
-            <button class="tab" type="button" role="tab" id="tab-ob" aria-controls="panel-ob" aria-selected="false" tabindex="-1">Outbound System</button>
+            <button class="tab" type="button" role="tab" id="tab-col" aria-controls="panel-col" aria-selected="true" tabindex="0">Collections System</button>
+            <button class="tab" type="button" role="tab" id="tab-aud" aria-controls="panel-aud" aria-selected="false" tabindex="-1">Workflow Audit</button>
+            <button class="tab" type="button" role="tab" id="tab-web" aria-controls="panel-web" aria-selected="false" tabindex="-1">Website Builds</button>
           </div>
-          <div class="case-panel" role="tabpanel" id="panel-ff" aria-labelledby="tab-ff" tabindex="0">
+
+          <div class="case-panel" role="tabpanel" id="panel-col" aria-labelledby="tab-col" tabindex="0">
             <div class="case-story">
-              <span class="tag">Equestrian Training · GHL Booking + Web + Content</span>
-              <h3>Replaced a retired booking link with a qualification-first GHL flow that books evaluation lessons and requests reviews automatically.</h3>
+              <div class="case-meta"><span class="tag">US Equestrian Training Program · GHL Collections Design</span><span class="status-pill">Build in progress</span></div>
+              <h3>Payment failures went without clear <span class="nowrap">follow-up.</span> Two billing paths, one collections process.</h3>
               <ol class="case-steps">
-                <li><p class="step-label">The Bottleneck</p><p>Social bio links sent high-intent riders to a generic homepage, a legacy booking link added friction, and inquiries had no structured follow-up.</p></li>
-                <li><p class="step-label">The System Built</p><p>A GHL evaluation form that tags the contact, opens a pipeline opportunity and texts a booking link instantly, with two-way SMS routed to the owner&rsquo;s GHL app, automatic Google review requests after each lesson, and a rules-based weekly content system.</p></li>
-                <li><p class="step-label">The Verified Result</p><p>Every workflow was test-run end to end before launch, and every web section and post passes a 3-point QA gate. Approved by the owner for public portfolio showcase.</p></li>
+                <li><p class="step-label">The Bottleneck</p><p>Two billing paths and no consistent view of unpaid balances. Failed Stripe recurring charges did not consistently trigger owner follow-up, and off-Stripe payments had no automatic status update in GoHighLevel. The owner reconciled payments manually, so failed or overdue items lacked timely alerts.</p></li>
+                <li><p class="step-label">The System Designed</p>
+                  <ul class="sub-points">
+                    <li><strong>A / Card subscriptions.</strong> Verify failed-charge events and retry rules. Route unresolved balances to GHL owner alerts and rider follow-up.</li>
+                    <li><strong>B / Off-Stripe payments.</strong> The owner verifies receipt and records the external payment in GHL. Only then is the collection item closed.</li>
+                    <li><strong>Workflows + dashboard.</strong> Failure alerts, timed reminders, paid-state suppression, overdue aging and recovery views. A2P 10DLC approval, linked number and consent verified before any SMS.</li>
+                  </ul>
+                </li>
+                <li><p class="step-label">Project Status</p><p>Solution design documented; live collection results have not yet been verified. Rollout runs Plan &rarr; Build &rarr; Verify + launch over three weeks, followed by a 30-day review of failed-charge capture, 14-day recoveries and overdue balances.</p></li>
               </ol>
             </div>
-            <aside class="proof-card" aria-label="Forecast Farms system specs">
-              <dl class="stats"><div class="stat"><dt>Evaluation → booking flow</dt><dd>2-step</dd></div><div class="stat"><dt>Weekly content cadence</dt><dd>6-day</dd></div><div class="stat"><dt>Pre-publish QA gate</dt><dd>3-point</dd></div></dl>
-              <p class="flow-title">System flow</p>
-              <ol class="flow"><li class="node"><span class="node-label">Trigger</span><span>Evaluation form submitted</span></li><li class="node"><span class="node-label">Logic</span><span>Tag + opportunity + instant SMS booking link</span></li><li class="node"><span class="node-label">Result</span><span>Lesson booked → review request on completion</span></li></ol>
+            <aside class="proof-card" aria-label="Collections KPI scorecard">
+              <p class="flow-title">KPI scorecard</p>
+              <p class="card-note">Starting baselines and scheduled targets, not post-launch results.</p>
+              <div class="kpis">
+                <div class="kpi"><p class="kpi-name">Failed charges routed to Collections</p><dl><div><dt>Baseline</dt><dd>Not yet tracked</dd></div><div><dt>Target</dt><dd class="kpi-target">100%</dd></div><div><dt>Check</dt><dd>Weekly from Dec 1</dd></div></dl></div>
+                <div class="kpi"><p class="kpi-name">Card balance overdue more than 14 days</p><dl><div><dt>Baseline</dt><dd>$2,700</dd></div><div><dt>Target</dt><dd class="kpi-target">&le; $1,350 by Mar 31 <span class="est">estimate</span></dd></div><div><dt>Check</dt><dd>Monthly</dd></div></dl></div>
+                <div class="kpi"><p class="kpi-name">Card failures recovered within 14 days</p><dl><div><dt>Baseline</dt><dd>73% (19 of 26)</dd></div><div><dt>Target</dt><dd class="kpi-target">73% or higher</dd></div><div><dt>Check</dt><dd>Mar 1 (90-day review)</dd></div></dl></div>
+                <div class="kpi"><p class="kpi-name">Pay-as-you-go lessons marked paid within 7 days</p><dl><div><dt>Baseline</dt><dd>December sets baseline</dd></div><div><dt>Target</dt><dd class="kpi-target">Set Jan 1 <span class="est">estimate</span></dd></div><div><dt>Check</dt><dd>Dec 31</dd></div></dl></div>
+              </div>
+              <p class="flow-title">Proposed collections board</p>
+              <ol class="flow flow-compact"><li class="node">Due</li><li class="node">Overdue</li><li class="node">Follow-up</li><li class="node node-done">Paid</li></ol>
             </aside>
           </div>
-          <div class="case-panel" role="tabpanel" id="panel-cw" aria-labelledby="tab-cw" tabindex="0" hidden>
+
+          <div class="case-panel" role="tabpanel" id="panel-aud" aria-labelledby="tab-aud" tabindex="0" hidden>
             <div class="case-story">
+              <div class="case-meta"><span class="tag">Purchase-Focused Email Nurturing · GoHighLevel</span><span class="status-pill">Corrections applied + retested</span></div>
+              <h3>Promotional emails continued after customers purchased. Audited the send path and corrected the decision logic.</h3>
+              <ol class="case-steps">
+                <li><p class="step-label">The Bottleneck</p><p>Customers who had already purchased continued receiving first-purchase nurture emails.</p>
+                  <div class="pair">
+                    <div class="pair-item expected"><p class="pair-label">Expected</p><p>Purchase completed &rarr; first-purchase nurture stops</p></div>
+                    <div class="pair-item observed"><p class="pair-label">Observed</p><p>Purchase completed &rarr; another nurture email sent</p></div>
+                  </div>
+                  <p class="risk">Business risk: irrelevant follow-ups, poor audience segmentation, and customer friction.</p>
+                </li>
+                <li><p class="step-label">What We Did</p>
+                  <ul class="sub-points">
+                    <li><strong>Review entry and logic.</strong> Reviewed triggers, Wait steps and If/Else purchase conditions. <em>Why: define valid nurture eligibility.</em></li>
+                    <li><strong>Trace contact execution.</strong> Examined execution histories, purchase checks and Goal Events. <em>Why: locate the extra-send decision point.</em></li>
+                    <li><strong>Refine and retest.</strong> Applied scoped logic changes, then retested the affected workflow. <em>Why: limit changes to affected logic.</em></li>
+                  </ul>
+                </li>
+                <li><p class="step-label">The Result</p><p>Workflow audited; corrections applied and retested. Impact not quantified: before-and-after send data were not supplied, so no measured reduction is claimed.</p></li>
+              </ol>
+            </div>
+            <aside class="proof-card" aria-label="Workflow audit QA plan">
+              <div class="target"><p class="flow-title">Acceptance target</p><p>Zero first-purchase nurture emails after a verified purchase.</p></div>
+              <p class="flow-title">QA scenarios</p>
+              <dl class="qa">
+                <div><dt>Contact has not purchased</dt><dd>Eligible first-purchase emails continue</dd></div>
+                <div><dt>Purchase occurs during a Wait</dt><dd>No later first-purchase emails send</dd></div>
+                <div><dt>Contact purchased before entry</dt><dd>First-purchase nurture is excluded</dd></div>
+                <div><dt>Previous buyer qualifies again</dt><dd>Purchase eligibility is rechecked</dd></div>
+              </dl>
+              <p class="flow-title">Audit checkpoints</p>
+              <ol class="flow flow-compact"><li class="node">Entry trigger</li><li class="node">Wait / If-Else</li><li class="node">Purchase check</li><li class="node node-done">Email send</li></ol>
+              <p class="card-note">Illustrative audit path, not a client workflow screenshot. Evidence checked: purchase event, enrollment and execution logs, send timestamps, branch and exit decisions.</p>
+            </aside>
+          </div>
+
+          <div class="case-panel builds" role="tabpanel" id="panel-web" aria-labelledby="tab-web" tabindex="0" hidden>
+            <article class="build-card">
+              <span class="tag">US Equestrian Training Program · GHL Website + Booking</span>
+              <h3>Repositioned the site and replaced a retired booking link with an evaluation-first flow.</h3>
+              <p class="step-label">Problem</p>
+              <p>Social links sent high-intent riders to a generic homepage, and a retired booking link added friction.</p>
+              <p class="step-label">Built</p>
+              <p>Section-by-section copy repositioning, an evaluation form that sends a booking link right away, two-way SMS to the owner&rsquo;s GHL app and automatic review requests.</p>
+              <dl class="stats"><div class="stat"><dt>Evaluation &rarr; booking flow</dt><dd>2-step</dd></div><div class="stat"><dt>Two-way texting in the GHL app</dt><dd>SMS</dd></div><div class="stat"><dt>Review requests after each lesson</dt><dd>Auto</dd></div></dl>
+            </article>
+            <article class="build-card">
               <span class="tag">Outdoor-Build Contractor · GHL Website + Lead Capture</span>
-              <h3>Turned a brochure site with an unwatched inbox into a 5-page GHL site that creates a pipeline opportunity and alerts the owner on every quote request.</h3>
-              <ol class="case-steps">
-                <li><p class="step-label">The Bottleneck</p><p>An outdated brochure site with slow mobile pages and unvalidated forms, and quote requests landing in an inbox nobody watched.</p></li>
-                <li><p class="step-label">The System Built</p><p>A 5-page GoHighLevel site (Home, Services, Project Gallery, About, Quote Request) with a quote form that validates project type, location and timeline, tags the lead by service, creates a pipeline opportunity and alerts the owner by SMS and email.</p></li>
-                <li><p class="step-label">The Verified Result</p><p>Multi-viewport QA on mobile, tablet and desktop, form error-state checks, and notification delivery confirmed before launch. HTTPS and clean metadata in place.</p></li>
-              </ol>
-            </div>
-            <aside class="proof-card" aria-label="Contractor Website system specs">
+              <h3>Turned a brochure site into a 5-page lead-capture site wired to the pipeline.</h3>
+              <p class="step-label">Problem</p>
+              <p>An outdated brochure site with slow mobile pages, and quote requests landing in an inbox nobody watched.</p>
+              <p class="step-label">Built</p>
+              <p>A 5-page GoHighLevel site with a quote form that validates project type, location and timeline, alerts the owner and creates a pipeline opportunity.</p>
               <dl class="stats"><div class="stat"><dt>Conversion site</dt><dd>5-page</dd></div><div class="stat"><dt>Scope validation</dt><dd>3-field</dd></div><div class="stat"><dt>Owner SMS + email alert</dt><dd>Instant</dd></div></dl>
-              <p class="flow-title">System flow</p>
-              <ol class="flow"><li class="node"><span class="node-label">Trigger</span><span>Quote form submitted</span></li><li class="node"><span class="node-label">Logic</span><span>Validate fields + tag by service type</span></li><li class="node"><span class="node-label">Result</span><span>Opportunity created + owner alerted</span></li></ol>
-            </aside>
-          </div>
-          <div class="case-panel" role="tabpanel" id="panel-ob" aria-labelledby="tab-ob" tabindex="0" hidden>
-            <div class="case-story">
-              <span class="tag">Service Businesses (US &amp; AU) · Outbound Deliverability + CRM Handoff</span>
-              <h3>Built a domain-isolated outbound engine that protects client email and hands warm replies straight to the GHL pipeline.</h3>
-              <ol class="case-steps">
-                <li><p class="step-label">The Bottleneck</p><p>Cold email sent from the main domain put everyday client email at risk of the spam folder, and generic pitches got ignored.</p></li>
-                <li><p class="step-label">The System Built</p><p>A separate sending domain with verified leads and throttled inboxes, a qualification filter that skips agency-managed sites, and personalised homepage mockups as the opening hook. Positive replies move into the main GHL pipeline.</p></li>
-                <li><p class="step-label">The Verified Result</p><p>Outbound runs fully independent of client-facing GHL messaging, so cold outreach never touches the primary domain.</p></li>
-              </ol>
-            </div>
-            <aside class="proof-card" aria-label="Outbound System system specs">
-              <dl class="stats"><div class="stat"><dt>Send cap per inbox</dt><dd>10/day</dd></div><div class="stat"><dt>Cold sends from main domain</dt><dd>0</dd></div><div class="stat"><dt>Homepage mockup per prospect</dt><dd>1:1</dd></div></dl>
-              <p class="flow-title">System flow</p>
-              <ol class="flow"><li class="node"><span class="node-label">Trigger</span><span>Lead passes qualification filter</span></li><li class="node"><span class="node-label">Logic</span><span>Mockup email from separate domain</span></li><li class="node"><span class="node-label">Result</span><span>Warm reply → GHL pipeline</span></li></ol>
-            </aside>
+            </article>
           </div>
         </div>
       </div>

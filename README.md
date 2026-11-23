@@ -86,9 +86,9 @@ Based in the Philippines (UTC+8), I work async and in daytime overlap with clien
 
 | Project | What I built | Stack |
 |:--|:--|:--|
-| **Forecast Farms** (equestrian program, Virginia) | Repositioning, an evaluation-form → booking flow, two-way SMS, Google review automation, and a living content system | GHL, HTML/CSS, SKILL.md |
-| **Contractor web & lead capture** (hardscape / outdoor build) | A reusable 5-page conversion site with validated quote forms that create pipeline opportunities and alert the owner instantly | GHL Sites, Workflows |
-| **Domain-isolated outbound system** | A separate sending domain, lead qualification rules and a homepage-mockup outreach loop that hands warm replies to the GHL pipeline | Instantly, GHL |
+| **Payment collections system** (US equestrian training program) | One collections process for two billing paths: failed-charge alerts, off-Stripe payment recording, overdue aging and a KPI scorecard with baselines and targets. *Build in progress.* | GHL Workflows, Stripe |
+| **Purchase-focused email nurture audit** | Traced why buyers kept getting first-purchase emails, applied scoped logic corrections and retested the workflow (impact not yet quantified) | GHL Workflows, Goal Events |
+| **Website builds** (equestrian program + outdoor-build contractor) | An evaluation-first booking flow with two-way SMS and review requests, plus a 5-page lead-capture site with validated quote forms wired to the pipeline | GHL Sites, Workflows |
 
 <p align="center"><img src="assets/divider.svg" alt="" width="60%"></p>
 
