@@ -74,6 +74,8 @@ Taken from a photo looking up through sunlit leaves into a clear sky. Deep fores
 | **C: Editorial Authority** | Instrument Serif 400, −0.015em (it has only one weight) | Geist 400/500/600 | Geist Mono 500 |
 | **D: Swiss Grid** | Archivo 700 (Switzer is the original pick; Fontshare can't be reached from the sandbox) | Archivo 400 | Space Mono 400 |
 
+**Stat numbers:** Plus Jakarta Sans 800, `tabular-nums`, −0.025em, for big figures in case-study stat cards and spec rows (`$2,700 → $1,350`, `73%`, `5-page`). Chosen over Space Mono because the mono figures looked thin and wrapped.
+
 **Mono rule:** use it only for numbers and short labels: eyebrows, step numbers, stats, timestamps. Never use it for words in sentences.
 
 ## 5. Buttons
