@@ -1,21 +1,26 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="300" viewBox="0 0 1200 300">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#FBF5EC"/>
-      <stop offset="1" stop-color="#F3E4D3"/>
+      <stop offset="0" stop-color="#EAF6FB"/>
+      <stop offset="1" stop-color="#C5E3F6"/>
     </linearGradient>
-    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0" stop-color="#B08D57" stop-opacity="0"/>
-      <stop offset=".5" stop-color="#B08D57"/>
-      <stop offset="1" stop-color="#B08D57" stop-opacity="0"/>
+    <radialGradient id="glow" cx="0.08" cy="1" r="0.5">
+      <stop offset="0" stop-color="#D9E04A" stop-opacity=".45"/>
+      <stop offset="1" stop-color="#D9E04A" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#3D6B1F" stop-opacity="0"/>
+      <stop offset=".5" stop-color="#3D6B1F"/>
+      <stop offset="1" stop-color="#3D6B1F" stop-opacity="0"/>
     </linearGradient>
   </defs>
   <rect width="1200" height="300" rx="18" fill="url(#bg)"/>
-  <rect x="14" y="14" width="1172" height="272" rx="12" fill="none" stroke="#B08D57" stroke-opacity=".55" stroke-width="1.5"/>
-  <circle cx="1080" cy="70" r="120" fill="#C8775A" fill-opacity=".08"/>
-  <circle cx="120" cy="250" r="90" fill="#B08D57" fill-opacity=".08"/>
-  <text x="600" y="118" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="20" letter-spacing="8" fill="#B08D57">HELLO, I'M</text>
-  <text x="600" y="182" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="64" font-style="italic" fill="#5B4636">Michelle</text>
-  <rect x="400" y="204" width="400" height="1.5" fill="url(#gold)"/>
-  <text x="600" y="240" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" fill="#C8775A">Creating with intention · Building with heart</text>
+  <rect width="1200" height="300" rx="18" fill="url(#glow)"/>
+  <rect x="14" y="14" width="1172" height="272" rx="12" fill="none" stroke="#3D6B1F" stroke-opacity=".35" stroke-width="1.5"/>
+  <circle cx="1090" cy="60" r="110" fill="#FFFFFF" fill-opacity=".35"/>
+  <text x="600" y="104" text-anchor="middle" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', monospace" font-size="17" letter-spacing="5" fill="#3D6B1F">GOHIGHLEVEL CRM · AUTOMATION · WEB SYSTEMS</text>
+  <rect x="392" y="148" width="416" height="20" fill="#D9E04A" fill-opacity=".6"/>
+  <text x="600" y="170" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="60" font-style="italic" fill="#0F1A0B">Mich Candelaria</text>
+  <rect x="380" y="198" width="440" height="1.5" fill="url(#rule)"/>
+  <text x="600" y="236" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" fill="#2F5516">Leak-proof lead systems for contractors who can't afford to miss a call</text>
 </svg>

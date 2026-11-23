@@ -1,0 +1,1861 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mich Candelaria — GoHighLevel CRM, Automation & Web Systems Architect</title>
+  <meta name="description" content="GoHighLevel CRM & Automation Specialist, Conversion-First Website Builder, and Full-Funnel Content Strategist with a Structural Engineering foundation. Top Rated on Upwork (100% JSS, 1,600+ hours)." />
+  <style>
+    :root {
+      --bg-primary: #F5FAFC;
+      --bg-elevated: #FFFFFF;
+      --bg-subtle: #EAF4F8;
+      --bg-dark: #0E1A0B;
+      --bg-dark-elevated: #1A2B14;
+      --text-primary: #0F1A0B;
+      --text-secondary: #3F4A3C;
+      --text-muted: #66705F;
+      --text-on-dark: #F4F9F1;
+      --text-muted-on-dark: #A9B8A2;
+      --accent-forest: #2F5516;
+      --accent-forest-mid: #3D6B1F;
+      --accent-forest-hover: #24440F;
+      --accent-sky: #C5E3F6;
+      --accent-sky-mist: #EAF6FB;
+      --accent-lime: #D9E04A;
+      --accent-lime-light: #F3F6D0;
+      --accent-leaf: #3D6B1F;
+      --accent-leaf-bg: #EDF5E4;
+      --border-light: #D9E7E4;
+      --border-strong: #BFD3CB;
+      --shadow-sm: 0 2px 8px rgba(20, 40, 12, 0.05);
+      --shadow-md: 0 10px 30px rgba(20, 40, 12, 0.08);
+      --shadow-lg: 0 20px 45px rgba(20, 40, 12, 0.14);
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      --font-serif: Georgia, 'Times New Roman', serif;
+      --font-mono: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Typography Utility */
+    .mono-label {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 600;
+      color: var(--accent-forest);
+    }
+
+    .serif-italic {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-weight: 400;
+    }
+
+    /* Container */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Top Verification Bar */
+    .verification-bar {
+      background-color: var(--bg-dark);
+      color: var(--text-on-dark);
+      font-size: 0.78rem;
+      padding: 0.55rem 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .verification-bar-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .verify-badges {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+    }
+
+    .verify-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-family: var(--font-mono);
+      font-size: 0.73rem;
+      color: #E4EEDD;
+    }
+
+    .verify-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background-color: var(--accent-lime);
+      display: inline-block;
+    }
+
+    /* Navigation */
+    header.site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background-color: rgba(245, 250, 252, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 72px;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      color: var(--text-primary);
+    }
+
+    .brand-name {
+      font-weight: 700;
+      font-size: 1.125rem;
+      letter-spacing: -0.02em;
+      color: var(--accent-forest);
+    }
+
+    .brand-role {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      letter-spacing: 0.02em;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-secondary);
+      font-size: 0.88rem;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent-forest);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.65rem 1.25rem;
+      border-radius: var(--radius-sm);
+      font-weight: 600;
+      font-size: 0.875rem;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border: 1px solid transparent;
+    }
+
+    .btn-primary {
+      background-color: var(--accent-forest);
+      color: #FFFFFF !important;
+    }
+
+    .btn-primary:hover {
+      background-color: var(--accent-forest-hover);
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .btn-secondary {
+      background-color: var(--bg-elevated);
+      color: var(--accent-forest);
+      border-color: var(--border-strong);
+    }
+
+    .btn-secondary:hover {
+      background-color: var(--bg-subtle);
+      border-color: var(--accent-forest);
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 4rem 0 3.5rem;
+      border-bottom: 1px solid var(--border-light);
+      background:
+        radial-gradient(60% 70% at 85% 0%, rgba(197, 227, 246, 0.75) 0%, rgba(197, 227, 246, 0) 70%),
+        radial-gradient(45% 55% at 5% 100%, rgba(217, 224, 74, 0.22) 0%, rgba(217, 224, 74, 0) 70%),
+        var(--bg-primary);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 0.9fr;
+      gap: 2.5rem;
+      align-items: start;
+    }
+
+    .hero-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.35rem 0.75rem;
+      background-color: var(--accent-lime-light);
+      border: 1px solid rgba(61, 107, 31, 0.28);
+      border-radius: var(--radius-sm);
+      margin-bottom: 1.25rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      line-height: 1.15;
+      letter-spacing: -0.025em;
+      color: var(--accent-forest);
+      margin-bottom: 1.25rem;
+      font-weight: 700;
+    }
+
+    .hero h1 .serif-italic {
+      font-size: 1.06em;
+      color: var(--accent-forest-mid);
+      font-weight: 400;
+      background: linear-gradient(transparent 62%, rgba(217, 224, 74, 0.55) 62%, rgba(217, 224, 74, 0.55) 92%, transparent 92%);
+      padding: 0 0.08em;
+    }
+
+    .hero-subtitle {
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      margin-bottom: 1.75rem;
+      max-width: 640px;
+      line-height: 1.65;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.875rem;
+      margin-bottom: 2.25rem;
+    }
+
+    /* Metric Strip */
+    .hero-metrics {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border-light);
+    }
+
+    .metric-box {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .metric-val {
+      font-family: var(--font-mono);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--accent-forest);
+    }
+
+    .metric-lbl {
+      font-size: 0.76rem;
+      color: var(--text-muted);
+      margin-top: 0.15rem;
+    }
+
+    /* Hero Right: System Blueprint Card */
+    .blueprint-card {
+      background-color: var(--bg-elevated);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-md);
+      overflow: hidden;
+    }
+
+    .blueprint-header {
+      background-color: var(--bg-dark);
+      color: var(--text-on-dark);
+      padding: 0.95rem 1.25rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .blueprint-title {
+      font-family: var(--font-mono);
+      font-size: 0.76rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: #E4EEDD;
+    }
+
+    .blueprint-status {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      padding: 0.2rem 0.5rem;
+      background-color: rgba(217, 224, 74, 0.16);
+      color: var(--accent-lime);
+      border-radius: 4px;
+    }
+
+    .blueprint-body {
+      padding: 1.25rem;
+    }
+
+    .arch-step {
+      display: flex;
+      gap: 0.85rem;
+      padding: 0.75rem 0;
+      border-bottom: 1px dashed var(--border-light);
+    }
+
+    .arch-step:last-child {
+      border-bottom: none;
+    }
+
+    .arch-num {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--accent-forest);
+      background-color: var(--bg-subtle);
+      width: 26px;
+      height: 26px;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 0.1rem;
+    }
+
+    .arch-content h3 {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 0.2rem;
+    }
+
+    .arch-content p {
+      font-size: 0.79rem;
+      color: var(--text-secondary);
+      line-height: 1.45;
+    }
+
+    /* Section Headers */
+    section {
+      padding: 4rem 0;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .section-header {
+      max-width: 760px;
+      margin-bottom: 2.5rem;
+    }
+
+    .section-header h2 {
+      font-size: clamp(1.55rem, 2.5vw, 2.15rem);
+      color: var(--accent-forest);
+      letter-spacing: -0.02em;
+      margin-top: 0.4rem;
+      margin-bottom: 0.75rem;
+      line-height: 1.2;
+    }
+
+    .section-header p {
+      color: var(--text-secondary);
+      font-size: 0.98rem;
+    }
+
+    /* Recruiter 30-Second Audit Matrix */
+    .audit-panel {
+      background-color: var(--bg-elevated);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-sm);
+      overflow: hidden;
+    }
+
+    .audit-tabs {
+      display: flex;
+      background-color: var(--bg-subtle);
+      border-bottom: 1px solid var(--border-light);
+      overflow-x: auto;
+    }
+
+    .audit-tab {
+      padding: 0.85rem 1.25rem;
+      font-size: 0.83rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      background: transparent;
+      border: none;
+      border-bottom: 2px solid transparent;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.15s ease;
+      font-family: var(--font-sans);
+    }
+
+    .audit-tab:hover {
+      color: var(--accent-forest);
+    }
+
+    .audit-tab.active {
+      color: var(--accent-forest);
+      background-color: var(--bg-elevated);
+      border-bottom-color: var(--accent-forest);
+    }
+
+    .audit-table-wrap {
+      overflow-x: auto;
+    }
+
+    table.recruiter-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.86rem;
+    }
+
+    table.recruiter-table th {
+      background-color: var(--accent-sky-mist);
+      color: var(--accent-forest);
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 0.85rem 1.15rem;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    table.recruiter-table td {
+      padding: 0.95rem 1.15rem;
+      border-bottom: 1px solid var(--border-light);
+      vertical-align: top;
+      color: var(--text-secondary);
+    }
+
+    table.recruiter-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    table.recruiter-table td strong {
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+
+    .tag-pill {
+      display: inline-block;
+      padding: 0.2rem 0.55rem;
+      font-family: var(--font-mono);
+      font-size: 0.71rem;
+      border-radius: 4px;
+      background-color: var(--bg-subtle);
+      color: var(--accent-forest);
+      font-weight: 500;
+      margin: 0.1rem 0.2rem 0.1rem 0;
+    }
+
+    .tag-pill.verified {
+      background-color: var(--accent-leaf-bg);
+      color: var(--accent-leaf);
+    }
+
+    /* Technical Scope & Guardrails Banner */
+    .scope-guardrail {
+      margin-top: 1.5rem;
+      padding: 1.15rem 1.35rem;
+      background-color: var(--accent-lime-light);
+      border-left: 4px solid var(--accent-lime);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .scope-guardrail p {
+      font-size: 0.86rem;
+      color: var(--text-primary);
+      max-width: 880px;
+    }
+
+    /* Case Studies Section */
+    .case-study-list {
+      display: flex;
+      flex-direction: column;
+      gap: 2.25rem;
+    }
+
+    .case-card {
+      background-color: var(--bg-elevated);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-sm);
+      overflow: hidden;
+      transition: box-shadow 0.25s ease;
+    }
+
+    .case-card:hover {
+      box-shadow: var(--shadow-md);
+    }
+
+    .case-top {
+      padding: 1.5rem 1.75rem;
+      border-bottom: 1px solid var(--border-light);
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 1rem;
+      background-color: var(--accent-sky-mist);
+    }
+
+    .case-meta {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.45rem;
+    }
+
+    .case-number {
+      font-family: var(--font-mono);
+      font-size: 0.73rem;
+      font-weight: 600;
+      padding: 0.2rem 0.55rem;
+      background-color: var(--accent-forest);
+      color: #FFFFFF;
+      border-radius: 4px;
+    }
+
+    .case-domain {
+      font-family: var(--font-mono);
+      font-size: 0.73rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+    }
+
+    .case-top h3 {
+      font-size: 1.3rem;
+      color: var(--accent-forest);
+      letter-spacing: -0.015em;
+    }
+
+    .case-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+    }
+
+    .case-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .case-col {
+      padding: 1.35rem 1.5rem;
+      border-right: 1px solid var(--border-light);
+    }
+
+    .case-col:last-child {
+      border-right: none;
+    }
+
+    .case-col-title {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--accent-forest);
+      margin-bottom: 0.6rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .case-col p, .case-col ul {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      line-height: 1.58;
+    }
+
+    .case-col ul {
+      padding-left: 1.1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.38rem;
+    }
+
+    /* Interactive Workflow Drawer inside Case Study */
+    .case-footer {
+      padding: 0.95rem 1.75rem;
+      background-color: var(--bg-subtle);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .case-outcome-highlight {
+      font-size: 0.83rem;
+      font-weight: 600;
+      color: var(--accent-leaf);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .btn-blueprint-toggle {
+      background-color: var(--bg-elevated);
+      border: 1px solid var(--border-strong);
+      color: var(--accent-forest);
+      padding: 0.45rem 0.9rem;
+      border-radius: var(--radius-sm);
+      font-family: var(--font-mono);
+      font-size: 0.74rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .btn-blueprint-toggle:hover {
+      background-color: var(--accent-forest);
+      color: #FFFFFF;
+    }
+
+    .blueprint-drawer {
+      display: none;
+      padding: 1.35rem 1.75rem;
+      background-color: var(--bg-dark);
+      color: var(--text-on-dark);
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .blueprint-drawer.open {
+      display: block;
+    }
+
+    .flow-diagram {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.9rem;
+      margin-top: 0.75rem;
+    }
+
+    .flow-node {
+      background-color: var(--bg-dark-elevated);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: var(--radius-sm);
+      padding: 0.85rem;
+    }
+
+    .flow-node-step {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      color: var(--accent-lime);
+      margin-bottom: 0.25rem;
+      display: block;
+    }
+
+    .flow-node h4 {
+      font-size: 0.83rem;
+      color: #FFFFFF;
+      margin-bottom: 0.3rem;
+    }
+
+    .flow-node p {
+      font-size: 0.75rem;
+      color: var(--text-muted-on-dark);
+      line-height: 1.45;
+    }
+
+    /* Interactive GHL Automation & QA Simulator */
+    .simulator-card {
+      background-color: var(--bg-dark);
+      color: var(--text-on-dark);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .sim-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      padding-bottom: 1.15rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .sim-controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .sim-btn {
+      background-color: var(--bg-dark-elevated);
+      color: #CFDCC6;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      padding: 0.48rem 0.9rem;
+      border-radius: var(--radius-sm);
+      font-family: var(--font-mono);
+      font-size: 0.74rem;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .sim-btn.active, .sim-btn:hover {
+      background-color: var(--accent-lime);
+      color: var(--bg-dark);
+      border-color: var(--accent-lime);
+      font-weight: 600;
+    }
+
+    .sim-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 1.25rem;
+    }
+
+    .sim-box {
+      background-color: var(--bg-dark-elevated);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+    }
+
+    .sim-box h4 {
+      font-family: var(--font-mono);
+      font-size: 0.73rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--accent-lime);
+      margin-bottom: 0.75rem;
+    }
+
+    .sim-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .sim-list li {
+      font-size: 0.83rem;
+      color: #E4EEDD;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.55rem;
+      line-height: 1.48;
+    }
+
+    .sim-check {
+      color: var(--accent-lime);
+      font-family: var(--font-mono);
+      font-weight: 700;
+    }
+
+    /* About & Story Section */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 2.5rem;
+      align-items: start;
+    }
+
+    .story-prose p {
+      margin-bottom: 1.1rem;
+      color: var(--text-secondary);
+      font-size: 0.96rem;
+      line-height: 1.68;
+    }
+
+    .story-prose p strong {
+      color: var(--text-primary);
+    }
+
+    .resume-ledger {
+      background-color: var(--bg-elevated);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .ledger-item {
+      padding: 0.9rem 0;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .ledger-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .ledger-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 0.2rem;
+      gap: 0.5rem;
+    }
+
+    .ledger-role {
+      font-weight: 700;
+      font-size: 0.92rem;
+      color: var(--accent-forest);
+    }
+
+    .ledger-time {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      white-space: nowrap;
+    }
+
+    .ledger-desc {
+      font-size: 0.81rem;
+      color: var(--text-secondary);
+    }
+
+    /* Contact Section */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 2.5rem;
+      background-color: var(--bg-elevated);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-lg);
+      padding: 2.25rem;
+      box-shadow: var(--shadow-md);
+    }
+
+    .contact-specs {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      margin-top: 1.25rem;
+    }
+
+    .spec-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.55rem 0;
+      border-bottom: 1px solid var(--border-light);
+      font-size: 0.85rem;
+      gap: 1rem;
+    }
+
+    .spec-key {
+      font-family: var(--font-mono);
+      font-size: 0.73rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+    }
+
+    .spec-val {
+      font-weight: 600;
+      color: var(--accent-forest);
+      text-align: right;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+    }
+
+    .form-group label {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--accent-forest);
+    }
+
+    .form-control {
+      padding: 0.65rem 0.85rem;
+      border: 1px solid var(--border-strong);
+      border-radius: var(--radius-sm);
+      font-family: var(--font-sans);
+      font-size: 0.88rem;
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+    }
+
+    .form-control:focus {
+      outline: none;
+      border-color: var(--accent-forest);
+      background-color: #FFFFFF;
+    }
+
+    .brief-output {
+      display: none;
+      margin-top: 0.85rem;
+      padding: 0.95rem;
+      background-color: var(--accent-leaf-bg);
+      border: 1px solid rgba(61, 107, 31, 0.3);
+      border-radius: var(--radius-sm);
+      font-size: 0.81rem;
+      color: var(--accent-leaf);
+    }
+
+    footer.site-footer {
+      padding: 2rem 0;
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    @media (max-width: 960px) {
+      .hero-grid,
+      .case-grid,
+      .sim-grid,
+      .about-grid,
+      .contact-grid,
+      .flow-diagram {
+        grid-template-columns: 1fr;
+      }
+
+      .case-col {
+        border-right: none;
+        border-bottom: 1px solid var(--border-light);
+      }
+
+      .hero-metrics {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero-grid > *,
+      .contact-grid > *,
+      .about-grid > * {
+        min-width: 0;
+      }
+
+      .contact-grid {
+        padding: 1.5rem 1rem;
+      }
+
+      .form-control {
+        width: 100%;
+        max-width: 100%;
+      }
+
+      .spec-row {
+        flex-direction: column;
+        gap: 0.2rem;
+      }
+
+      .spec-val {
+        text-align: left;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Recruiter Verification Bar -->
+  <div class="verification-bar">
+    <div class="container verification-bar-inner">
+      <div class="verify-badges">
+        <span class="verify-item"><span class="verify-dot"></span> UPWORK TOP RATED · 100% JOB SUCCESS SCORE</span>
+        <span class="verify-item">1,600+ VERIFIED CLIENT HOURS</span>
+        <span class="verify-item">MARKETS: US · AUSTRALIA · UK / EU</span>
+      </div>
+      <div class="verify-item">
+        <span>BASE: ASIA/MANILA (UTC+8) · ASYNC &amp; DAYTIME OVERLAP</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sticky Navigation -->
+  <header class="site-header">
+    <div class="container nav-inner">
+      <a href="#top" class="brand" id="nav-brand">
+        <span class="brand-name">MICH CANDELARIA</span>
+        <span class="brand-role">GHL SYSTEMS · CONVERSION WEB · CONTENT ARCHITECTURE</span>
+      </a>
+      <nav aria-label="Primary Navigation">
+        <ul class="nav-links">
+          <li><a href="#recruiter-audit" id="nav-audit">30-Sec Recruiter Audit</a></li>
+          <li><a href="#case-studies" id="nav-projects">Case Studies (3)</a></li>
+          <li><a href="#qa-simulator" id="nav-simulator">Live Workflow &amp; QA Protocol</a></li>
+          <li><a href="#story-resume" id="nav-about">The Story &amp; Resume</a></li>
+          <li><a href="#contact" class="btn btn-primary" id="nav-contact-btn">Request Technical Walkthrough</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- 1. HERO SECTION: THE HEADLINE & VALUE PROPOSITION -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="hero-kicker">
+            <span class="mono-label">GOHIGHLEVEL CRM &amp; AUTOMATION SPECIALIST · FUNNELS &amp; SYSTEMS</span>
+          </div>
+          <h1>
+            I build <span class="serif-italic">leak-proof</span> GoHighLevel pipelines, conversion websites, and organic content systems with structural-engineering rigor.
+          </h1>
+          <p class="hero-subtitle">
+            Most marketing stacks leak revenue between the click, the inquiry form, and the calendar. Trained in structural calculation systems (ETABS &amp; Mathcad) and proven across <strong>1,600+ hours at a 100% Job Success Score</strong>, I architect, troubleshoot, and QA end-to-end GoHighLevel CRM workflows, conversion web revamps, and full-funnel content engines that turn traffic into booked evaluations.
+          </p>
+          <div class="hero-actions">
+            <a href="#case-studies" class="btn btn-primary" id="hero-cta-cases">Examine the 3 Case Studies</a>
+            <a href="#recruiter-audit" class="btn btn-secondary" id="hero-cta-audit">View Recruiter Skill Matrix</a>
+          </div>
+          <div class="hero-metrics">
+            <div class="metric-box">
+              <span class="metric-val">100% JSS</span>
+              <span class="metric-lbl">Upwork Top Rated Standing</span>
+            </div>
+            <div class="metric-box">
+              <span class="metric-val">1,600+ hrs</span>
+              <span class="metric-lbl">Production Client Delivery</span>
+            </div>
+            <div class="metric-box">
+              <span class="metric-val">4 Pillars</span>
+              <span class="metric-lbl">GHL · Web · Funnels · Content</span>
+            </div>
+            <div class="metric-box">
+              <span class="metric-val">100% QA</span>
+              <span class="metric-lbl">Pre-Deploy Trigger Verification</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Architectural Blueprint Snapshot -->
+        <aside class="blueprint-card" aria-label="Core Systems Architecture">
+          <div class="blueprint-header">
+            <span class="blueprint-title">SYSTEM ARCHITECTURE OVERVIEW</span>
+            <span class="blueprint-status">PRODUCTION-READY</span>
+          </div>
+          <div class="blueprint-body">
+            <div class="arch-step">
+              <div class="arch-num">01</div>
+              <div class="arch-content">
+                <h3>GoHighLevel CRM &amp; Pipeline Architecture</h3>
+                <p>Custom fields, opportunity stages, tag taxonomies, lead routing, and attribution tracking built without bloat.</p>
+              </div>
+            </div>
+            <div class="arch-step">
+              <div class="arch-num">02</div>
+              <div class="arch-content">
+                <h3>Automated Workflow &amp; Follow-Up Logic</h3>
+                <p>Form submission → instant SMS/email confirmation → conditional calendar booking → automated Google review request.</p>
+              </div>
+            </div>
+            <div class="arch-step">
+              <div class="arch-num">03</div>
+              <div class="arch-content">
+                <h3>Conversion-First Web &amp; Funnel Builds</h3>
+                <p>Responsive GHL &amp; HTML/CSS builds, frictionless evaluation/inquiry forms with validation, and section-by-section copy hierarchy.</p>
+              </div>
+            </div>
+            <div class="arch-step">
+              <div class="arch-num">04</div>
+              <div class="arch-content">
+                <h3>Living Brand Voice (`SKILL.md`) &amp; Content Funnels</h3>
+                <p>Codified TOFU/MOFU/BOFU content calendars, theme rotation rules, and diagnostic bio-to-booking conversion audits.</p>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- 2. WHAT RECRUITERS CHECK FIRST: 30-SECOND SKILL & VERIFICATION MATRIX -->
+    <section id="recruiter-audit">
+      <div class="container">
+        <div class="section-header">
+          <span class="mono-label">WHAT HIRING MANAGERS &amp; TECHNICAL RECRUITERS CHECK FIRST</span>
+          <h2>The 30-Second Capability &amp; Verification Matrix</h2>
+          <p>
+            No vague claims. Below is the exact breakdown of what I build, how I diagnose broken systems, and how every deliverable is stress-tested before going live. Filter by core discipline to inspect the technical scope.
+          </p>
+        </div>
+
+        <div class="audit-panel">
+          <div class="audit-tabs" role="tablist">
+            <button class="audit-tab active" data-filter="all" id="tab-all" role="tab" aria-selected="true">All Core Pillars (12)</button>
+            <button class="audit-tab" data-filter="ghl" id="tab-ghl" role="tab" aria-selected="false">GoHighLevel CRM &amp; Automation</button>
+            <button class="audit-tab" data-filter="web" id="tab-web" role="tab" aria-selected="false">Web Builds &amp; Funnel Architecture</button>
+            <button class="audit-tab" data-filter="content" id="tab-content" role="tab" aria-selected="false">Organic Content &amp; AI Skill Systems</button>
+          </div>
+
+          <div class="audit-table-wrap">
+            <table class="recruiter-table" id="skill-matrix-table">
+              <thead>
+                <tr>
+                  <th style="width: 22%;">Skill Pillar &amp; Competency</th>
+                  <th style="width: 34%;">What I Execute in Production</th>
+                  <th style="width: 24%;">Verification &amp; QA Protocol</th>
+                  <th style="width: 20%;">Proof / Artifact</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr data-category="ghl">
+                  <td><strong>GHL CRM &amp; Pipeline Configuration</strong></td>
+                  <td>Custom field architecture, multi-stage pipeline tracking, opportunity value triggers, smart lists, and clean tag taxonomies.</td>
+                  <td>End-to-end test contact injection across every stage transition.</td>
+                  <td><span class="tag-pill verified">Forecast Farms GHL</span> <span class="tag-pill">Upwork Verified</span></td>
+                </tr>
+                <tr data-category="ghl">
+                  <td><strong>Workflow Automation &amp; Speed-to-Lead</strong></td>
+                  <td>Inquiry form → instant SMS/email notification → GHL mobile app two-way text routing → automated booking link &amp; reminder sequence.</td>
+                  <td>Timestamped delivery logs, trigger condition audit, and loop prevention check.</td>
+                  <td><span class="tag-pill verified">Evaluation Booking Flow</span></td>
+                </tr>
+                <tr data-category="ghl">
+                  <td><strong>System Audits &amp; Workflow Troubleshooting</strong></td>
+                  <td>Diagnosing form-to-calendar drop-offs, broken trigger filters, retired external booking links, and unmonitored pipeline leaks.</td>
+                  <td>Root-cause audit table + before/after conversion path verification.</td>
+                  <td><span class="tag-pill verified">Booking Drop-Off Audit</span></td>
+                </tr>
+                <tr data-category="ghl">
+                  <td><strong>Reputation &amp; Post-Booking Systems</strong></td>
+                  <td>Automated Google review request sequences triggered by completed appointments or pipeline stage completion.</td>
+                  <td>Sandbox contact run verifying SMS/email branch logic and opt-out compliance.</td>
+                  <td><span class="tag-pill">GHL Launch Stack</span></td>
+                </tr>
+                <tr data-category="web">
+                  <td><strong>Conversion-First Website Revamps</strong></td>
+                  <td>Up to 5+ core pages built in GoHighLevel or clean semantic HTML/CSS, mobile-first responsive layouts, HTTPS deployment, and basic technical SEO.</td>
+                  <td>Cross-device viewport QA, form validation test, and page speed check.</td>
+                  <td><span class="tag-pill verified">Demi Contractor Build</span> <span class="tag-pill verified">Forecast Farms</span></td>
+                </tr>
+                <tr data-category="web">
+                  <td><strong>Two-Step Evaluation &amp; Inquiry Forms</strong></td>
+                  <td>Replacing cold, high-friction booking calendars with qualification-first inquiry forms that route qualified prospects to booking links.</td>
+                  <td>Field validation testing, error state checks, and CRM field mapping check.</td>
+                  <td><span class="tag-pill verified">Forecast Farms Deploy</span></td>
+                </tr>
+                <tr data-category="web">
+                  <td><strong>Section-by-Section Copy Repositioning</strong></td>
+                  <td>Upgrading existing layouts without destructive redesigns—aligning headlines, service hierarchy, and terminology with higher-ticket buyers.</td>
+                  <td>Side-by-side terminology compliance check and CTA clarity audit.</td>
+                  <td><span class="tag-pill verified">Marshall VA Repositioning</span></td>
+                </tr>
+                <tr data-category="web">
+                  <td><strong>Funnel &amp; Lead-Gen Architecture</strong></td>
+                  <td>Opt-in, tripwire, webinar, and high-ticket service funnels; custom homepage mockup outreach systems and domain-isolated outbound architecture.</td>
+                  <td>Funnel step attribution tracking and inbox deliverability isolation rules.</td>
+                  <td><span class="tag-pill">Outbound Mockup System</span> <span class="tag-pill">The Covetry</span></td>
+                </tr>
+                <tr data-category="content">
+                  <td><strong>Living Brand Voice (`SKILL.md`) Engineering</strong></td>
+                  <td>Building version-controlled AI brand voice specification files with strict vocabulary rules, banned clichés, and an Iteration Log.</td>
+                  <td>Automated &amp; manual QA pass against terminology, tone, and length constraints.</td>
+                  <td><span class="tag-pill verified">Forecast Farms SKILL.md</span></td>
+                </tr>
+                <tr data-category="content">
+                  <td><strong>Full-Funnel Content Systems (TOFU–BOFU)</strong></td>
+                  <td>6-day structured weekly cadence (Sun TOFU awareness → Mon tip → Wed carousel → Thu BOFU bridge → Fri conversion → Sat brand warmth).</td>
+                  <td>Theme bucket rotation rules (no adjacent repeats; strict platform word-count split).</td>
+                  <td><span class="tag-pill verified">10-Column Master Table</span></td>
+                </tr>
+                <tr data-category="content">
+                  <td><strong>Social-to-CRM Attribution &amp; Bio Audits</strong></td>
+                  <td>Auditing social bio links, profile search fields, and CTA friction to ensure social traffic lands directly on evaluation forms rather than dead homepages.</td>
+                  <td>Monthly booked-evaluation tracking vs. social bridge post frequency.</td>
+                  <td><span class="tag-pill verified">Jul–Nov Conversion Audit</span></td>
+                </tr>
+                <tr data-category="ghl">
+                  <td><strong>Structural Engineering Analytical Foundation</strong></td>
+                  <td>Civil/structural calculation reports (ETABS, Excel, Mathcad) applied to marketing operations: deterministic logic, zero guesswork, documented specs.</td>
+                  <td>1-sheet-per-tag calculation discipline translated to CRM documentation.</td>
+                  <td><span class="tag-pill">ETABS / Mathcad Backbone</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="scope-guardrail">
+          <p>
+            <strong>Honest Technical Scope Boundary (What I Claim vs. What I Don't):</strong> I specialize in GoHighLevel CRM configuration, workflow automation, troubleshooting, funnel/website builds, and content systems. I do <em>not</em> claim custom multi-tenant SaaS software engineering or complex custom middleware API development—ensuring you get fast, rock-solid native GHL execution without scope creep.
+          </p>
+          <span class="tag-pill verified">100% Transparent Scope</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. THREE STRONGEST PROJECTS (DEEP-DIVE CASE STUDIES) -->
+    <section id="case-studies">
+      <div class="container">
+        <div class="section-header">
+          <span class="mono-label">PROVEN PRODUCTION SYSTEMS · CASE STUDY FORMAT</span>
+          <h2>Three Flagship Systems (Problem → Architecture → Verification)</h2>
+          <p>
+            Recruiters don't just want pretty screenshots—they want to see how you diagnose a business bottleneck, architect the system in GoHighLevel and web code, and verify that it works. Click <strong>Inspect System Blueprint</strong> on any project to view the underlying workflow nodes.
+          </p>
+        </div>
+
+        <div class="case-study-list">
+
+          <!-- CASE STUDY 01: FORECAST FARMS -->
+          <article class="case-card" id="case-01">
+            <div class="case-top">
+              <div>
+                <div class="case-meta">
+                  <span class="case-number">CASE STUDY 01</span>
+                  <span class="case-domain">EQUESTRIAN TRAINING PROGRAM · MARSHALL, VIRGINIA (US)</span>
+                </div>
+                <h3>Forecast Farms: End-to-End Repositioning, GHL Booking Architecture &amp; Living Content System</h3>
+              </div>
+              <div class="case-stack">
+                <span class="tag-pill">GoHighLevel CRM</span>
+                <span class="tag-pill">2-Step Booking Flow</span>
+                <span class="tag-pill">SMS &amp; Review Automation</span>
+                <span class="tag-pill">GitHub Demo → GHL Deploy</span>
+                <span class="tag-pill">SKILL.md Brand Engine</span>
+              </div>
+            </div>
+
+            <div class="case-grid">
+              <div class="case-col">
+                <div class="case-col-title">01 / THE BOTTLENECK &amp; AUDIT</div>
+                <p>
+                  Forecast Farms (a family-owned Hunter, Jumper, and Equitation program in Virginia) needed to reposition away from a "beginner children's lesson barn" toward committed junior/adult riders and horse owners—while diagnosing a drop in lesson bookings.
+                </p>
+                <ul style="margin-top: 0.65rem;">
+                  <li><strong>Social-to-Web Leak:</strong> Audit revealed bio links pointed to a generic homepage instead of a booking intake page, and legacy <code>ecpro</code> links created friction.</li>
+                  <li><strong>Positioning Drift:</strong> Copy used casual "intro lesson" and "child" phrasing instead of serious equestrian training terminology.</li>
+                  <li><strong>Unstructured Follow-Up:</strong> No automated pipeline connecting initial inquiry, owner SMS response, and Google review capture.</li>
+                </ul>
+              </div>
+
+              <div class="case-col">
+                <div class="case-col-title">02 / THE SYSTEM ARCHITECTURE</div>
+                <ul>
+                  <li><strong>GHL Qualification-First Booking Flow:</strong> Retired the legacy booking link. Built a 2-step system: prospects complete an <strong>Evaluation Lesson Form</strong> first, triggering an automated booking link and routing 2-way SMS directly to the owner's GHL mobile app.</li>
+                  <li><strong>Non-Destructive Web Copy Overhaul:</strong> Preserved the core visual layout in GitHub (<code>forecast-farms-website</code>) and deployed on GHL—re-engineering copy section-by-section around <em>"Training built around horse and rider"</em> (Rider Training, Horse Training, Horse + Rider Development) in brand purple (<code>#7E2B80</code>).</li>
+                  <li><strong>Codified `SKILL.md` Content Engine:</strong> Built a version-controlled brand system enforcing "Evaluation lesson" and "rider (ages 7+)" terminology, zero emojis/hashtags, strict 60–120 word IG vs. FB split rules, and a 6-day weekly TOFU→BOFU cadence.</li>
+                </ul>
+              </div>
+
+              <div class="case-col">
+                <div class="case-col-title">03 / QA &amp; MEASURABLE PROOF</div>
+                <ul>
+                  <li><strong>Pre-Deploy Verification:</strong> Every social post and web section passes a 3-point QA gate (word count, terminology compliance, and theme-bucket rotation so no two adjacent weeks repeat a bucket).</li>
+                  <li><strong>Reputation &amp; SMS Loop:</strong> Configured online booking, two-way GHL mobile texting, and automated Google review requests upon lesson completion.</li>
+                  <li><strong>Client Validation:</strong> Approved by the owner for public Upwork portfolio showcase; ongoing retention across both web systems and weekly content engineering.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="case-footer">
+              <div class="case-outcome-highlight">
+                <span>✓ VERIFIED OUTCOME: Unified GHL Web + Evaluation Form + Two-Way SMS + 10-Column Content Master System</span>
+              </div>
+              <button class="btn-blueprint-toggle" data-target="drawer-01" id="toggle-drawer-01">Inspect System Blueprint +</button>
+            </div>
+
+            <div class="blueprint-drawer" id="drawer-01">
+              <span class="mono-label" style="color: var(--accent-lime);">FORECAST FARMS — GOHIGHLEVEL + CONTENT FUNNEL FLOW</span>
+              <div class="flow-diagram">
+                <div class="flow-node">
+                  <span class="flow-node-step">NODE 01 · ATTRACTION</span>
+                  <h4>6-Day TOFU→BOFU Content</h4>
+                  <p>Sun Mindset Reframe → Wed Carousel → Thu Bridge → Fri Evaluation CTA. Bio link routed directly to intake page.</p>
+                </div>
+                <div class="flow-node">
+                  <span class="flow-node-step">NODE 02 · CAPTURE</span>
+                  <h4>GHL Evaluation Form</h4>
+                  <p>Captures rider experience, goals, and horse ownership status. Retires cold calendar drop-offs.</p>
+                </div>
+                <div class="flow-node">
+                  <span class="flow-node-step">NODE 03 · AUTOMATION</span>
+                  <h4>Instant SMS + Booking Link</h4>
+                  <p>Workflow sends automated calendar link + notifies owner in GHL mobile app for immediate 2-way text reply.</p>
+                </div>
+                <div class="flow-node">
+                  <span class="flow-node-step">NODE 04 · RETENTION</span>
+                  <h4>Lesson Complete → Review</h4>
+                  <p>Pipeline stage update triggers automated Google Review request and logs monthly evaluation booking count.</p>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- CASE STUDY 02: CONTRACTOR WEB & GHL LEAD CAPTURE SYSTEM -->
+          <article class="case-card" id="case-02">
+            <div class="case-top">
+              <div>
+                <div class="case-meta">
+                  <span class="case-number">CASE STUDY 02</span>
+                  <span class="case-domain">SERVICE CONTRACTOR SYSTEMS · US &amp; AUSTRALIA MARKETS</span>
+                </div>
+                <h3>High-Trust Service Contractor Web Revamp &amp; GHL Lead-Capture Architecture (Demi Reference Build)</h3>
+              </div>
+              <div class="case-stack">
+                <span class="tag-pill">GoHighLevel Web Builder</span>
+                <span class="tag-pill">5-Page Conversion Architecture</span>
+                <span class="tag-pill">Validated Inquiry Forms</span>
+                <span class="tag-pill">Instant Lead Notification</span>
+                <span class="tag-pill">Responsive QA</span>
+              </div>
+            </div>
+
+            <div class="case-grid">
+              <div class="case-col">
+                <div class="case-col-title">01 / THE BOTTLENECK &amp; AUDIT</div>
+                <p>
+                  Established outdoor-build, hardscaping, and high-ticket trade contractors frequently rely on outdated brochure websites with broken contact forms, missing SSL certificates, unclear service areas, and zero automated speed-to-lead when a homeowner requests an estimate.
+                </p>
+                <ul style="margin-top: 0.65rem;">
+                  <li><strong>Mobile Drop-Off:</strong> Homeowners browsing project galleries on mobile hit slow-loading pages and unvalidated forms.</li>
+                  <li><strong>Delayed Follow-Up:</strong> Form submissions land in unmonitored email inboxes without CRM pipeline visibility or instant notification.</li>
+                </ul>
+              </div>
+
+              <div class="case-col">
+                <div class="case-col-title">02 / THE SYSTEM ARCHITECTURE</div>
+                <ul>
+                  <li><strong>5-Page Conversion Blueprint on GHL:</strong> Engineered a repeatable, high-converting architecture (Home, Services/Capabilities, Project Gallery, About/Trust, and Dedicated Quote Request Page) modeled on the reference build delivered for client Demi.</li>
+                  <li><strong>Validated Inquiry &amp; Routing Engine:</strong> Built custom inquiry forms with strict field validation (project scope, location, timeline) connected to instant owner email/SMS notifications and CRM opportunity creation.</li>
+                  <li><strong>Technical SEO &amp; Deployment Standards:</strong> Semantic heading hierarchy (single H1, structured service H2s), clean metadata, HTTPS deployment, and fast-loading visual hierarchy in a refined Navy &amp; Champagne aesthetic.</li>
+                </ul>
+              </div>
+
+              <div class="case-col">
+                <div class="case-col-title">03 / QA &amp; MEASURABLE PROOF</div>
+                <ul>
+                  <li><strong>Functional &amp; Responsive QA Checklist:</strong> Every build undergoes multi-viewport stress testing (mobile, tablet, desktop), form validation error-state verification, and notification delivery confirmation before launch.</li>
+                  <li><strong>CRM Handoff Ready:</strong> Designed so the website isn't a static island—every inquiry enters a structured GHL pipeline ready for two-way SMS and automated follow-up.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="case-footer">
+              <div class="case-outcome-highlight">
+                <span>✓ VERIFIED OUTCOME: Reusable 5-Page GHL Web + Validated Lead Capture + Instant Pipeline Notification System</span>
+              </div>
+              <button class="btn-blueprint-toggle" data-target="drawer-02" id="toggle-drawer-02">Inspect System Blueprint +</button>
+            </div>
+
+            <div class="blueprint-drawer" id="drawer-02">
+              <span class="mono-label" style="color: var(--accent-lime);">CONTRACTOR WEB &amp; GHL LEAD CAPTURE ARCHITECTURE</span>
+              <div class="flow-diagram">
+                <div class="flow-node">
+                  <span class="flow-node-step">NODE 01 · UX HIERARCHY</span>
+                  <h4>5-Page Trust Architecture</h4>
+                  <p>Clear service-area positioning, project proof gallery, and frictionless mobile navigation.</p>
+                </div>
+                <div class="flow-node">
+                  <span class="flow-node-step">NODE 02 · VALIDATION</span>
+                  <h4>Scope-Filtered Quote Form</h4>
+                  <p>Validates contact fields, project type, and property location before submission fires.</p>
+                </div>
+                <div class="flow-node">
+                  <span class="flow-node-step">NODE 03 · CRM INGESTION</span>
+                  <h4>GHL Opportunity Creation</h4>
+                  <p>Auto-tags lead by service type, creates pipeline opportunity card, and alerts owner via SMS/Email.</p>
+                </div>
+                <div class="flow-node">
+                  <span class="flow-node-step">NODE 04 · VERIFICATION</span>
+                  <h4>Responsive &amp; HTTPS QA</h4>
+                  <p>SSL verification, cross-browser form test, and basic technical SEO metadata audit.</p>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- CASE STUDY 03: MULTI-CHANNEL OUTBOUND, MOCKUP & LEAD-GEN ARCHITECTURE -->
+          <article class="case-card" id="case-03">
+            <div class="case-top">
+              <div>
+                <div class="case-meta">
+                  <span class="case-number">CASE STUDY 03</span>
+                  <span class="case-domain">REVENUE OPERATIONS &amp; LEAD-GEN SYSTEMS · US / AU</span>
+                </div>
+                <h3>Domain-Isolated Outbound, Rapid Mockup Conversion &amp; Partner Lead-Gen Architecture</h3>
+              </div>
+              <div class="case-stack">
+                <span class="tag-pill">Deliverability Architecture</span>
+                <span class="tag-pill">Instantly Verification</span>
+                <span class="tag-pill">Rapid Homepage Mockups</span>
+                <span class="tag-pill">Editorial Marketplace UX</span>
+                <span class="tag-pill">Lead Qualification Rules</span>
+              </div>
+            </div>
+
+            <div class="case-grid">
+              <div class="case-col">
+                <div class="case-col-title">01 / THE BOTTLENECK &amp; AUDIT</div>
+                <p>
+                  B2B service teams and marketplace ventures often burn their primary domain reputation by sending cold outbound directly from their main CRM—or lose prospects by pitching generic text emails or unsolicited links that trigger spam filters.
+                </p>
+                <ul style="margin-top: 0.65rem;">
+                  <li><strong>Domain Reputation Risk:</strong> Sending cold outreach from the primary production GHL domain risks blacklisting transactional client emails.</li>
+                  <li><strong>Low Cold-to-Warm Conversion:</strong> Prospects ignore abstract pitches without concrete visual proof of what is broken on their current site.</li>
+                </ul>
+              </div>
+
+              <div class="case-col">
+                <div class="case-col-title">02 / THE SYSTEM ARCHITECTURE</div>
+                <ul>
+                  <li><strong>Strict Domain Isolation Protocol:</strong> Architected a clean separation between production CRM/web domains and dedicated outbound sending domains, paired with automated lead verification and controlled daily inbox throttling (10 emails/inbox/day via Instantly).</li>
+                  <li><strong>Algorithmic Lead Qualification Filter:</strong> Built strict targeting rules to exclude agency-managed or subscription-locked websites, focusing solely on high-fit independent operators in US (Minnesota, DFW) and Australian markets.</li>
+                  <li><strong>Value-First Mockup &amp; Editorial Funnel UX:</strong> Combined custom homepage mockup hooks (and permission-based 2-minute Loom teardown triggers) with editorial partner-matching UX (<em>The Covetry</em> model for US kitchen remodelers).</li>
+                </ul>
+              </div>
+
+              <div class="case-col">
+                <div class="case-col-title">03 / QA &amp; MEASURABLE PROOF</div>
+                <ul>
+                  <li><strong>Zero Primary-Domain Contamination:</strong> Outbound infrastructure operates 100% independently of client-facing GHL transactional messaging.</li>
+                  <li><strong>Repeatable Daily Pipeline Engine:</strong> Automated daily lead-sourcing and qualification criteria paired with rapid prototype generation to turn cold prospects into warm technical consultations.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="case-footer">
+              <div class="case-outcome-highlight">
+                <span>✓ VERIFIED OUTCOME: Isolated Deliverability Stack + Qualification Filter + Visual Mockup Conversion Loop</span>
+              </div>
+              <button class="btn-blueprint-toggle" data-target="drawer-03" id="toggle-drawer-03">Inspect System Blueprint +</button>
+            </div>
+
+            <div class="blueprint-drawer" id="drawer-03">
+              <span class="mono-label" style="color: var(--accent-lime);">OUTBOUND DELIVERABILITY &amp; MOCKUP CONVERSION PIPELINE</span>
+              <div class="flow-diagram">
+                <div class="flow-node">
+                  <span class="flow-node-step">NODE 01 · QUALIFICATION</span>
+                  <h4>Tech-Stack &amp; Agency Filter</h4>
+                  <p>Audits target sites; filters out active agency subscriptions to isolate high-need independent owners.</p>
+                </div>
+                <div class="flow-node">
+                  <span class="flow-node-step">NODE 02 · ISOLATION</span>
+                  <h4>Secondary Domain + Verification</h4>
+                  <p>Separate sending domain via Instantly (never GHL) with strict 10/day/inbox warmup &amp; verification.</p>
+                </div>
+                <div class="flow-node">
+                  <span class="flow-node-step">NODE 03 · VALUE HOOK</span>
+                  <h4>Custom Homepage Mockup</h4>
+                  <p>Delivers specific visual proof upfront; triggers 2-minute diagnostic walkthrough only upon reply.</p>
+                </div>
+                <div class="flow-node">
+                  <span class="flow-node-step">NODE 04 · CRM HANDOFF</span>
+                  <h4>Warm Reply → GHL Pipeline</h4>
+                  <p>Positive replies migrate into main GHL CRM pipeline for consultation booking and implementation.</p>
+                </div>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. INTERACTIVE GHL WORKFLOW & QA PROTOCOL SIMULATOR -->
+    <section id="qa-simulator">
+      <div class="container">
+        <div class="section-header">
+          <span class="mono-label">HOW I WORK · VERIFICATION BEFORE DEPLOYMENT</span>
+          <h2>Interactive GHL Troubleshooting &amp; QA Protocol Explorer</h2>
+          <p>
+            My rule for every client engagement: <em>"Here is what I'll build, why it works, and exactly how we will test and verify it."</em> Select a scenario below to see how I architect and stress-test the system before launch.
+          </p>
+        </div>
+
+        <div class="simulator-card">
+          <div class="sim-header">
+            <div>
+              <span class="mono-label" style="color: var(--accent-lime);">SELECT PRODUCTION SCENARIO TO INSPECT</span>
+              <h3 id="sim-title" style="font-size: 1.25rem; color: #FFFFFF; margin-top: 0.25rem;">
+                Scenario A: 2-Step Evaluation Form → Automated Booking &amp; Two-Way SMS
+              </h3>
+            </div>
+            <div class="sim-controls">
+              <button class="sim-btn active" data-scenario="booking" id="sim-btn-booking">1. Booking &amp; SMS Flow</button>
+              <button class="sim-btn" data-scenario="audit" id="sim-btn-audit">2. Conversion Drop-Off Audit</button>
+              <button class="sim-btn" data-scenario="skill" id="sim-btn-skill">3. Living SKILL.md Content QA</button>
+            </div>
+          </div>
+
+          <div class="sim-grid">
+            <div class="sim-box">
+              <h4>Architecture &amp; Execution Steps</h4>
+              <ul class="sim-list" id="sim-arch-list">
+                <li><span class="sim-check">01</span> <span>Replace cold calendar links with a high-intent GHL Evaluation/Inquiry Form to capture qualification data first.</span></li>
+                <li><span class="sim-check">02</span> <span>Trigger instant GHL workflow on form submission: tag contact, create pipeline opportunity, and send automated booking link via SMS + Email.</span></li>
+                <li><span class="sim-check">03</span> <span>Route real-time notification to business owner's GHL mobile app so they can reply via two-way SMS within minutes.</span></li>
+                <li><span class="sim-check">04</span> <span>On appointment completion, trigger automated Google Review request workflow to compound local trust.</span></li>
+              </ul>
+            </div>
+
+            <div class="sim-box">
+              <h4>Pre-Launch QA &amp; Verification Checklist</h4>
+              <ul class="sim-list" id="sim-qa-list">
+                <li><span class="sim-check">[✓]</span> <span><strong>Payload Mapping Test:</strong> Submit test contact and verify 100% of custom fields populate the GHL opportunity record accurately.</span></li>
+                <li><span class="sim-check">[✓]</span> <span><strong>Trigger Timing Audit:</strong> Confirm instant SMS/Email fires in &lt;30 seconds and duplicate submissions do not double-trigger loops.</span></li>
+                <li><span class="sim-check">[✓]</span> <span><strong>Mobile App Two-Way Check:</strong> Verify inbound SMS reply threads properly inside the GHL mobile app conversation view.</span></li>
+                <li><span class="sim-check">[✓]</span> <span><strong>Attribution &amp; Monthly Count:</strong> Verify booked evaluations increment the monthly dashboard reporting counter.</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. THE STORY & RESUME: WHERE STRUCTURAL ENGINEERING MEETS REVENUE SYSTEMS -->
+    <section id="story-resume">
+      <div class="container about-grid">
+        <div class="story-prose">
+          <span class="mono-label">THE STORY · ANALYTICAL BACKBONE</span>
+          <h2 style="font-size: 1.9rem; color: var(--accent-forest); margin: 0.4rem 0 1.15rem; letter-spacing: -0.02em;">
+            Why a background in Structural Engineering makes me a better GoHighLevel &amp; Web Systems Architect.
+          </h2>
+          <p>
+            Before building GoHighLevel CRM workflows, conversion websites, and full-funnel content engines for clients across the United States, Australia, and Europe, I trained in <strong>structural and civil engineering design</strong>—producing seismic calculation reports, foundation pile capacities, and framing layouts using <strong>ETABS, Mathcad, and Excel</strong>.
+          </p>
+          <p>
+            In structural engineering, you never guess where a load goes. Every beam, column, and shear wall has a documented load path, a clear design basis, and a verification sheet. When I transitioned into digital systems and earned <strong>Top Rated status on Upwork (100% Job Success Score across 1,600+ hours)</strong>, I brought that exact same discipline with me.
+          </p>
+          <p>
+            When a business loses leads, I don't throw random templates or trendy animations at the problem. I trace the load path:
+          </p>
+          <ul style="margin: 0 0 1.15rem 1.25rem; color: var(--text-secondary); font-size: 0.92rem; line-height: 1.65;">
+            <li><strong>Where is the structural leak?</strong> (e.g., an Instagram bio link sending high-intent traffic to a generic homepage instead of an evaluation form, or a retired booking link dropping mobile users.)</li>
+            <li><strong>How do we enforce quality at scale?</strong> (e.g., codifying a client's brand voice into a living <code>SKILL.md</code> specification with an Iteration Log and pre-publish QA checks so every caption, hook, and web section converts consistently.)</li>
+            <li><strong>How do we verify the automation holds under load?</strong> (e.g., end-to-end testing of GHL triggers, form validations, two-way SMS routing, and review requests before a single live customer touches it.)</li>
+          </ul>
+          <p>
+            Based in the Philippines (Asia/Manila, UTC+8), I work asynchronously and during flexible daytime overlap windows with founders, agencies, and operations leaders in the US, Australia, and the UK/EU who want executive-level clarity: <strong>bottom line first, evidence-backed recommendations, and complete systems that work on day one.</strong>
+          </p>
+        </div>
+
+        <!-- Structured Resume & Track Record Ledger -->
+        <aside class="resume-ledger" aria-label="Resume and Track Record">
+          <span class="mono-label">VERIFIED RESUME &amp; TRACK RECORD</span>
+          <h3 style="font-size: 1.2rem; color: var(--accent-forest); margin: 0.35rem 0 0.9rem;">
+            Experience &amp; Technical Stack
+          </h3>
+
+          <div class="ledger-item">
+            <div class="ledger-top">
+              <span class="ledger-role">GoHighLevel CRM, Web &amp; Automation Specialist</span>
+              <span class="ledger-time">UPWORK TOP RATED · 100% JSS</span>
+            </div>
+            <p class="ledger-desc">
+              1,600+ verified hours delivering CRM configuration, workflow automation, funnel/website revamps, and conversion troubleshooting for US, AU, and EU clients.
+            </p>
+          </div>
+
+          <div class="ledger-item">
+            <div class="ledger-top">
+              <span class="ledger-role">Web Systems &amp; Content Strategist — Forecast Farms</span>
+              <span class="ledger-time">MARSHALL, VA (US) · ONGOING</span>
+            </div>
+            <p class="ledger-desc">
+              Led brand repositioning ("Training built around horse and rider"), GHL evaluation-form-to-booking deployment, two-way SMS &amp; review automation, and the living <code>SKILL.md</code> 6-day TOFU–BOFU content system.
+            </p>
+          </div>
+
+          <div class="ledger-item">
+            <div class="ledger-top">
+              <span class="ledger-role">Lead Web &amp; Outbound Systems Builder</span>
+              <span class="ledger-time">US &amp; AU CONTRACTOR MARKETS</span>
+            </div>
+            <p class="ledger-desc">
+              Architected 5-page GHL conversion websites for outdoor-build &amp; hardscaping contractors (Demi reference build), domain-isolated cold outbound systems (Instantly), and editorial lead-gen UX (The Covetry).
+            </p>
+          </div>
+
+          <div class="ledger-item">
+            <div class="ledger-top">
+              <span class="ledger-role">Structural &amp; Civil Design Engineer (Analytical Foundation)</span>
+              <span class="ledger-time">PROJECT-BASED · ETABS / MATHCAD</span>
+            </div>
+            <p class="ledger-desc">
+              Structural design calculation reports (seismic input, framing layouts, 230kV substation pile foundation design, BP 220 civil road/drainage methodology).
+            </p>
+          </div>
+
+          <div style="margin-top: 1.15rem; padding-top: 0.9rem; border-top: 1px solid var(--border-light);">
+            <span class="mono-label" style="display: block; margin-bottom: 0.5rem;">CORE TOOLCHAIN</span>
+            <div style="display: flex; flex-wrap: wrap; gap: 0.35rem;">
+              <span class="tag-pill">GoHighLevel (CRM, Workflows, Sites, Calendars)</span>
+              <span class="tag-pill">HTML5 / CSS3 / JS</span>
+              <span class="tag-pill">GitHub Pages / Static Demos</span>
+              <span class="tag-pill">Instantly (Deliverability)</span>
+              <span class="tag-pill">AI SKILL.md Systems</span>
+              <span class="tag-pill">Technical SEO &amp; QA</span>
+              <span class="tag-pill">ETABS / Mathcad / Advanced Excel</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- 6. CONTACT & TECHNICAL WALKTHROUGH REQUEST SECTION -->
+    <section id="contact" style="border-bottom: none;">
+      <div class="container">
+        <div class="contact-grid">
+          <div>
+            <span class="mono-label">INITIATE A TECHNICAL CONVERSATION</span>
+            <h2 style="font-size: 1.9rem; color: var(--accent-forest); margin: 0.4rem 0 0.9rem; letter-spacing: -0.02em;">
+              Hire for Skill, Architecture, and Verified Execution.
+            </h2>
+            <p style="color: var(--text-secondary); font-size: 0.92rem; margin-bottom: 1.25rem;">
+              Whether you are hiring a <strong>GoHighLevel CRM &amp; Automation Specialist</strong>, need a <strong>conversion-first website or funnel system</strong>, or want an operator who can audit and fix a leaking inquiry-to-booking pipeline—let's review your architecture.
+            </p>
+
+            <div class="contact-specs">
+              <div class="spec-row">
+                <span class="spec-key">Target Roles</span>
+                <span class="spec-val">GHL Specialist · Funnel/Web Architect · Content Systems</span>
+              </div>
+              <div class="spec-row">
+                <span class="spec-key">Upwork Standing</span>
+                <span class="spec-val">Top Rated · 100% JSS · 1,600+ Verified Hours</span>
+              </div>
+              <div class="spec-row">
+                <span class="spec-key">Location &amp; Timezone</span>
+                <span class="spec-val">Philippines (Asia/Manila, UTC+8)</span>
+              </div>
+              <div class="spec-row">
+                <span class="spec-key">Schedule Fit</span>
+                <span class="spec-val">Flexible Daytime &amp; Async Overlap (US / AU / UK / EU)</span>
+              </div>
+              <div class="spec-row">
+                <span class="spec-key">Communication Style</span>
+                <span class="spec-val">Executive Briefings: Bottom Line + Recommendation + QA Plan</span>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <form class="contact-form" id="recruiter-brief-form" onsubmit="return handleBriefSubmit(event)">
+              <span class="mono-label">GENERATE A STRUCTURED TECHNICAL INTERVIEW / PROJECT BRIEF</span>
+              <div class="form-group">
+                <label for="recruiter-name">Your Name &amp; Company / Agency</label>
+                <input type="text" id="recruiter-name" class="form-control" placeholder="e.g., Sarah Jenkins — Apex Growth Systems" required />
+              </div>
+
+              <div class="form-group">
+                <label for="primary-need">Primary Technical Capability Needed</label>
+                <select id="primary-need" class="form-control">
+                  <option value="GoHighLevel CRM Setup, Pipeline & Workflow Automation">GoHighLevel CRM Setup, Pipeline &amp; Workflow Automation</option>
+                  <option value="GHL System Audit & Conversion Drop-Off Troubleshooting">GHL System Audit &amp; Conversion Drop-Off Troubleshooting</option>
+                  <option value="Conversion-First Website Build / Revamp (GHL or HTML/CSS)">Conversion-First Website Build / Revamp (GHL or HTML/CSS)</option>
+                  <option value="Full-Funnel Content Architecture & Living SKILL.md System">Full-Funnel Content Architecture &amp; Living SKILL.md System</option>
+                  <option value="Full-Stack Growth Operations (GHL + Web + Content Funnel)">Full-Stack Growth Operations (GHL + Web + Content Funnel)</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="project-context">Current System Bottleneck or Role Scope</label>
+                <textarea id="project-context" rows="4" class="form-control" placeholder="Describe the workflow, funnel, or CRM system you need built, audited, or scaled..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary" id="submit-brief-btn" style="width: 100%;">
+                Generate Formatted Technical Brief &amp; Copy to Clipboard
+              </button>
+
+              <div class="brief-output" id="brief-output-box" role="status" aria-live="polite"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>
+        <strong>MICH CANDELARIA</strong> · GoHighLevel CRM &amp; Automation Specialist | Conversion Web Builds | Full-Funnel Content Systems · Built with Semantic HTML, Vanilla CSS &amp; Zero Bloat.
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    // 1. Recruiter 30-Second Skill Matrix Filter
+    const auditTabs = document.querySelectorAll('.audit-tab');
+    const matrixRows = document.querySelectorAll('#skill-matrix-table tbody tr');
+
+    auditTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        auditTabs.forEach(t => {
+          t.classList.remove('active');
+          t.setAttribute('aria-selected', 'false');
+        });
+        tab.classList.add('active');
+        tab.setAttribute('aria-selected', 'true');
+
+        const filter = tab.getAttribute('data-filter');
+        matrixRows.forEach(row => {
+          if (filter === 'all' || row.getAttribute('data-category') === filter) {
+            row.style.display = '';
+          } else {
+            row.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // 2. Case Study System Blueprint Drawers
+    const drawerButtons = document.querySelectorAll('.btn-blueprint-toggle');
+    drawerButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const targetId = btn.getAttribute('data-target');
+        const drawer = document.getElementById(targetId);
+        const isOpen = drawer.classList.toggle('open');
+        btn.textContent = isOpen ? 'Hide System Blueprint −' : 'Inspect System Blueprint +';
+      });
+    });
+
+    // 3. Interactive GHL Workflow & QA Protocol Simulator
+    const scenarios = {
+      booking: {
+        title: 'Scenario A: 2-Step Evaluation Form → Automated Booking & Two-Way SMS',
+        arch: [
+          'Replace cold calendar links with a high-intent GHL Evaluation/Inquiry Form to capture qualification data first.',
+          'Trigger instant GHL workflow on form submission: tag contact, create pipeline opportunity, and send automated booking link via SMS + Email.',
+          'Route real-time notification to business owner\'s GHL mobile app so they can reply via two-way SMS within minutes.',
+          'On appointment completion, trigger automated Google Review request workflow to compound local trust.'
+        ],
+        qa: [
+          '<strong>Payload Mapping Test:</strong> Submit test contact and verify 100% of custom fields populate the GHL opportunity record accurately.',
+          '<strong>Trigger Timing Audit:</strong> Confirm instant SMS/Email fires in <30 seconds and duplicate submissions do not double-trigger loops.',
+          '<strong>Mobile App Two-Way Check:</strong> Verify inbound SMS reply threads properly inside the GHL mobile app conversation view.',
+          '<strong>Attribution & Monthly Count:</strong> Verify booked evaluations increment the monthly dashboard reporting counter.'
+        ]
+      },
+      audit: {
+        title: 'Scenario B: Diagnosing a Drop in Bookings & Fixing Social-to-CRM Leaks',
+        arch: [
+          'Audit every entry point: social bio URLs, legacy booking software links (e.g., retired ecpro links), and mobile form load speed.',
+          'Redirect bio and ad links from generic homepages directly to dedicated evaluation/inquiry intake landing pages.',
+          'Align section-by-section landing page copy with top-of-funnel mindset-reframe posts so prospect intent matches page terminology.',
+          'Configure pipeline stage tracking to measure monthly booked lessons/consultations against weekly BOFU bridge posts.'
+        ],
+        qa: [
+          '<strong>Link Path Trace:</strong> Click-test every social bio and CTA button on iOS/Android mobile browsers to verify zero dead redirects.',
+          '<strong>Terminology Consistency Check:</strong> Audit copy across IG, FB, and GHL landing pages (e.g., enforcing "Evaluation lesson" everywhere).',
+          '<strong>Form Drop-Off Diagnostic:</strong> Test validation error messages on empty or malformed phone/email inputs.',
+          '<strong>Baseline vs. Post-Fix Tracking:</strong> Establish clear monthly booked-appointment ledger inside GHL.'
+        ]
+      },
+      skill: {
+        title: 'Scenario C: Codifying a Living Brand Voice (SKILL.md) & 6-Day Content Engine',
+        arch: [
+          'Architect a governing SKILL.md specification file defining voice, banned tropes (no emojis/hashtags where inappropriate), and target buyer psychology.',
+          'Build a 10-column Master Content Table (Status, Date, Idea, Post Type, Hook, Visual, CTA, Overlay, IG Caption, FB Caption).',
+          'Structure a 6-day full-funnel weekly cadence: Sun TOFU awareness → Mon tip → Wed carousel → Thu BOFU bridge → Fri conversion → Sat brand warmth.',
+          'Log every strategic refinement in a versioned Iteration Log so the brand system compounds in accuracy over time.'
+        ],
+        qa: [
+          '<strong>Platform Word-Count Split:</strong> Enforce 60–120 word IG rule; automatically split longer educational pieces into dedicated IG and FB versions.',
+          '<strong>Theme Rotation Rule:</strong> Verify no repeated theme bucket in adjacent weeks and no consecutive same-type bridge posts.',
+          '<strong>Overlay Specificity Check:</strong> Ensure text overlays name a concrete thought/feeling the buyer already has—zero abstract fluff.',
+          '<strong>CTA Compliance Gate:</strong> Confirm every conversion post maps strictly to an approved direct message or evaluation-booking CTA.'
+        ]
+      }
+    };
+
+    const simBtns = document.querySelectorAll('.sim-btn');
+    const simTitle = document.getElementById('sim-title');
+    const simArchList = document.getElementById('sim-arch-list');
+    const simQaList = document.getElementById('sim-qa-list');
+
+    simBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        simBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const key = btn.getAttribute('data-scenario');
+        const data = scenarios[key];
+        simTitle.textContent = data.title;
+        simArchList.innerHTML = data.arch.map((item, idx) =>
+          `<li><span class="sim-check">0${idx + 1}</span> <span>${item}</span></li>`
+        ).join('');
+        simQaList.innerHTML = data.qa.map(item =>
+          `<li><span class="sim-check">[✓]</span> <span>${item}</span></li>`
+        ).join('');
+      });
+    });
+
+    // 4. Recruiter Technical Brief Generator
+    function handleBriefSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('recruiter-name').value.trim();
+      const need = document.getElementById('primary-need').value;
+      const context = document.getElementById('project-context').value.trim();
+      const outBox = document.getElementById('brief-output-box');
+
+      const formattedBrief =
+`TECHNICAL WALKTHROUGH REQUEST — FOR MICH CANDELARIA
+From: ${name}
+Focus Area: ${need}
+Scope / Bottleneck: ${context}
+Requested Next Step: Async System Audit / Technical Walkthrough (UTC+8 Daytime Overlap)`;
+
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(formattedBrief).catch(() => {});
+      }
+
+      outBox.style.display = 'block';
+      outBox.innerHTML = `<strong>✓ Technical Brief Formatted &amp; Copied to Clipboard!</strong><br/>Paste this directly into your Upwork invitation, email, or hiring message for Mich:<pre style="margin-top:0.5rem;white-space:pre-wrap;font-family:var(--font-mono);font-size:0.75rem;color:#24440F;">${formattedBrief.replace(/</g, '&lt;')}</pre>`;
+      return false;
+    }
+  </script>
+</body>
+</html>
+
