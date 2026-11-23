@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/banner.svg" alt="Mich Candelaria — GoHighLevel CRM, Automation & Web Systems" width="100%">
+  <img src="assets/banner.svg" alt="Mich Candelaria: GoHighLevel CRM, Automation & Web Systems" width="100%">
 </p>
 
 <p align="center">

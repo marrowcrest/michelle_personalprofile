@@ -57,8 +57,8 @@ Taken from a photo looking up through sunlit leaves into a clear sky. Deep fores
 | Secondary brand | Forest Moss | `#2C5422` | 8.76:1 on white, 8.10:1 on mist | Links, eyebrows, tags, text bubbles |
 | Structural accent | Clear Sky Blue | `#4E91D2` | 3.33:1 on white, 4.95:1 on Deep Canopy | **Graphics only on light** (lines, dots). Text only on dark surfaces |
 | Action accent | Sunlit Leaf | `#B8D432` | 9.81:1 with Deep Canopy text | Primary CTA buttons only. Add a `#6F8418` edge on light surfaces (it's 1.68:1 against white) |
-| Base | Pure Daylight | `#FFFFFF` | — | 60% base surface |
-| Tint | Morning Mist | `#F4F7F2` | — | Alternating sections |
+| Base | Pure Daylight | `#FFFFFF` | n/a | 60% base surface |
+| Tint | Morning Mist | `#F4F7F2` | n/a | Alternating sections |
 | Divider | Soft Sage | `#E4ECE0` | 1.21:1 (decorative) | Card borders and dividers. Form fields need a darker border (`#7C8A76`, 3.65:1) |
 
 **Corrections to the original notes:**
